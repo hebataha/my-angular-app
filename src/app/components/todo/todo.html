@@ -1,26 +1,19 @@
 
-<button matButton="outlined" routerLink="/" class="mb-2">back to home</button>
 
-<div class="">
+<div class="container">
+  <button matButton="outlined" routerLink="/" class="my-4">back to home</button>
+<div class="d-flex gap-2">
 <button matButton="outlined" matButton="tonal">  add</button>
 
-<button matButton="outlined" matButton="tonal">delete</button>
+<button matButton="outlined" matButton="tonal" class="btn btn-danger">delete</button>
 
 <button matButton="outlined" matButton="tonal" >update</button>
+
 </div>
 
-<app-todo-item></app-todo-item>
-<!--
-Source - https://stackoverflow.com/a
-Posted by Augie Gardner, modified by community. See post 'Timeline' for change history
-Retrieved 2026-01-19, License - CC BY-SA 4.0
--->
+</div>
 
-<div layout="row" class="gutter" layout-align="center center">
-    <div flex="50">
-        ...
-    </div>
-    <div flex="50">
-        ...
-    </div>
+<div class="container my-5">
+<app-todo-item></app-todo-item>
+
 </div>
