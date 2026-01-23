@@ -1,19 +1,23 @@
-
-
 <div class="container">
-  <button matButton="outlined" routerLink="/" class="my-4">back to home</button>
-<div class="d-flex gap-2">
-<button matButton="outlined" matButton="tonal">  add</button>
-
-<button matButton="outlined" matButton="tonal" class="btn btn-danger">delete</button>
-
-<button matButton="outlined" matButton="tonal" >update</button>
-
+    <button matButton="outlined" routerLink="/" class="my-4">back to home</button>
 </div>
-
-</div>
-
-<div class="container my-5">
-<app-todo-item></app-todo-item>
-
+<div class="">
+    <div classs="row">
+        <div class="col-lg-6">
+            <div class="container my-5 todo-wrapper">
+                <app-todo-search></app-todo-search>
+                <mat-form-field class="w-100">
+                    <mat-label>add task</mat-label>
+                    <input
+                        type="search"
+                        class="w-100"
+                        matInput
+                        placeholder="add task"
+                    >
+                </mat-form-field>
+                <button matButton="outlined"  matButton="tonal">ADD</button>
+                <app-todo-item></app-todo-item>
+            </div>
+        </div>
+    </div>
 </div>
