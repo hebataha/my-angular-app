@@ -12,7 +12,7 @@ import {FormsModule} from '@angular/forms';
   selector: 'app-todo',
   imports: [MatToolbarModule,MatButtonModule,MatIconModule,TodoItem,RouterLink,TodoSearch,FormsModule, MatFormFieldModule, MatInputModule],
   templateUrl: './todo.html',
-  styleUrl: './todo.scss',
+  styleUrl: './todo.scss', 
 })
 export class Todo {
 
