@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TodoItem } from "./todo-item/todo-item";
+import { TodoItem } from "./components/todo-item/todo-item";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon'

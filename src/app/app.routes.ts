@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { Todo } from './components/todo/todo';
 import { Home } from './home/home';
+import { Todo } from './todo/todo';
 
 export const routes: Routes = [
   { path: "", component: Home },
