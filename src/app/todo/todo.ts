@@ -17,7 +17,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './todo.scss',
 })
 export class Todo implements OnInit{
-  todoArray:any = [""]
+  todoArray:any = []
   constructor() {
     this.todoArray = [""]
   }
