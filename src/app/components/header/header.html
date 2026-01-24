@@ -1,4 +1,30 @@
-<mat-toolbar color="primary">
-    <span>My App Title</span>
-    <button matButton="filled" routerLink="/todoApp" class="ms-3">todo App</button>
-</mat-toolbar>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">My App</a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/" routerLinkActive="active">Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/todoApp" routerLinkActive="active" >todo app</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
