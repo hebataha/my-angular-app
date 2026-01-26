@@ -29,7 +29,8 @@
             <!-- <h1> {{inputTask}}</h1> -->
            
             @for (item of todoArray; track $index) {
-             <app-todo-item [item]="item"> </app-todo-item>
+              <!-- <h1>{{item.title| json}}</h1> -->
+              <app-todo-item [item]="item"></app-todo-item>
             }
             
             <!-- @empty {

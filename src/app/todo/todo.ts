@@ -7,10 +7,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { TodoIem } from './interface/todo';
-import { CommonModule } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { log } from 'console';
 import { TodoItem } from './components/todo-item/todo-item';
-
 
 @Component({
   selector: 'app-todo',
@@ -19,11 +18,18 @@ import { TodoItem } from './components/todo-item/todo-item';
   styleUrl: './todo.scss',
 })
 export class Todo implements OnInit {
-  todoArray: any = []
+  todoArray: TodoIem[] = []
   filterArray: any = []
   inputTask: string = ""
+
   constructor() {
-    this.todoArray = ["task1", "task2", "task3", "task4", "heba" , "taha"]
+    this.todoArray = [{
+      id: 1,
+      title: "",
+      description: "",
+      isRead: true,
+    }]
+
   }
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -31,18 +37,24 @@ export class Todo implements OnInit {
 
   }
   addTodo(): any {
-    this.todoArray.push(this.inputTask)
+    this.todoArray.push({
+      id:  this.todoArray.length + 1,
+      title: this.inputTask,
+    })
+    this.inputTask = "";
+    console.log(this.todoArray);
+
   }
   valInput() {
-    this.todoArray = this.todoArray.filter((todo: any) => todo.includes(this.inputTask));
- 
+    this.todoArray = this.todoArray.filter((todo: any) => todo.title.includes(this.inputTask));
+
     // console.log(this.todoArray)
     // if (this.todoArray == "") {
     // }
   }
   checkInp() {
     console.log("hhhhhhhhhi");
-    
+
     if (this.inputTask == "") {
       alert("empty")
     }
