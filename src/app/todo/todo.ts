@@ -20,10 +20,10 @@ import { TodoItem } from './components/todo-item/todo-item';
 })
 export class Todo implements OnInit {
   todoArray: any = []
+  filterArray: any = []
   inputTask: string = ""
   constructor() {
     this.todoArray = ["task1", "task2", "task3", "task4"]
-
   }
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -34,7 +34,9 @@ export class Todo implements OnInit {
     this.todoArray.push(this.inputTask)
   }
   valInput() {
-     this.todoArray.filter((todo: any) => todo == this.inputTask)
-    // console.log("heba")
+    this.todoArray = this.todoArray.filter((todo: any) => todo == this.inputTask)
+    // console.log(this.todoArray)
+    // if (this.todoArray == "") {
+    // }
   }
 }

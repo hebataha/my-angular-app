@@ -13,10 +13,12 @@
                         matInput
                         placeholder="add task"
                         [(ngModel)]="inputTask"
-                        (mouseleave)="valInput()"
+                       
                     >
                 </mat-form-field>
                 <button (click)="addTodo()" class="btn-primary btn">ADD</button>
+                <button (click)="valInput()" class="btn-primary btn mx-2">Search</button>
+
                 <!-- 
                 <app-todo-item></app-todo-item>
                 <app-todo-item></app-todo-item> -->
@@ -27,12 +29,14 @@
            
             @for (item of todoArray; track $index) {
              <app-todo-item [item]="item"> </app-todo-item>
-            }@empty {
+            }
+            
+            <!-- @empty {
               <div class="container">
                   <h1>No Available TODo</h1>
               </div>
 
-            }
+            } -->
            
         </div>
     </div>
