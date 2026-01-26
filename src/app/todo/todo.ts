@@ -8,7 +8,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { TodoIem } from './interface/todo';
 import { CommonModule, JsonPipe } from '@angular/common';
-import { log } from 'console';
 import { TodoItem } from './components/todo-item/todo-item';
 
 @Component({
@@ -38,7 +37,7 @@ export class Todo implements OnInit {
   }
   addTodo(): any {
     this.todoArray.push({
-      id:  this.todoArray.length + 1,
+      id: this.todoArray.length + 1,
       title: this.inputTask,
     })
     this.inputTask = "";
@@ -47,16 +46,17 @@ export class Todo implements OnInit {
   }
   valInput() {
     this.todoArray = this.todoArray.filter((todo: any) => todo.title.includes(this.inputTask));
-
     // console.log(this.todoArray)
     // if (this.todoArray == "") {
     // }
   }
   checkInp() {
-    console.log("hhhhhhhhhi");
+    // if (this.inputTask == "") {
+    //   alert("empty")
+    // }
+  }
 
-    if (this.inputTask == "") {
-      alert("empty")
-    }
+  deleteTodo(id: number) {
+    this.todoArray = this.todoArray.filter((todo: any) => todo.id !== id)
   }
 }
