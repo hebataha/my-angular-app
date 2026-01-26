@@ -12,12 +12,12 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-todo',
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, TodoItem, RouterLink, FormsModule, MatFormFieldModule, MatInputModule,CommonModule],
+  imports: [MatToolbarModule, MatButtonModule, MatIconModule, TodoItem, RouterLink, FormsModule, MatFormFieldModule, MatInputModule, CommonModule],
   templateUrl: './todo.html',
   styleUrl: './todo.scss',
 })
-export class Todo implements OnInit{
-  todoArray:any = []
+export class Todo implements OnInit {
+  todoArray: any = []
   constructor() {
     this.todoArray = [""]
   }
@@ -26,10 +26,10 @@ export class Todo implements OnInit{
     //Add 'implements OnInit' to the class.
 
   }
-  addTodo():any{
-  this.todoArray.push("heba")
+  addTodo(): any {
+    this.todoArray.push("heba")
   }
-  valInput(): void{
+  valInput(): void {
 
-}
+  }
 }
