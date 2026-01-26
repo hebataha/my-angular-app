@@ -34,7 +34,7 @@ export class Todo implements OnInit {
     console.log(this.inputTask)
   }
   valInput(): void {
-    this.todoArray.filter((todo)=> this.inputTask === todo )
+    // this.todoArray.filter((todo)=> this.inputTask === todo )
 
   }
 }
