@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon'
@@ -10,5 +10,7 @@ import { MatIconModule } from '@angular/material/icon'
   styleUrl: './todo-item.scss',
 })
 export class TodoItem {
+  @Input() item: string = "";
+
 
 }
