@@ -20,7 +20,7 @@ import { TodoItem } from './components/todo-item/todo-item';
 })
 export class Todo implements OnInit {
   todoArray: any = []
-  inputTask:string  =""
+  inputTask: string = ""
   constructor() {
     this.todoArray = []
   }
@@ -34,6 +34,7 @@ export class Todo implements OnInit {
     console.log(this.inputTask)
   }
   valInput(): void {
+    this.todoArray.filter((todo)=> this.inputTask === todo )
 
   }
 }
