@@ -23,7 +23,7 @@ export class Todo implements OnInit {
   filterArray: any = []
   inputTask: string = ""
   constructor() {
-    this.todoArray = ["task1", "task2", "task3", "task4"]
+    this.todoArray = ["task1", "task2", "task3", "task4", "heba" , "taha"]
   }
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -34,9 +34,17 @@ export class Todo implements OnInit {
     this.todoArray.push(this.inputTask)
   }
   valInput() {
-    this.todoArray = this.todoArray.filter((todo: any) => todo == this.inputTask)
+    this.todoArray = this.todoArray.filter((todo: any) => todo.includes(this.inputTask));
+ 
     // console.log(this.todoArray)
     // if (this.todoArray == "") {
     // }
+  }
+  checkInp() {
+    console.log("hhhhhhhhhi");
+    
+    if (this.inputTask == "") {
+      alert("empty")
+    }
   }
 }
