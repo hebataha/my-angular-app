@@ -43,13 +43,17 @@ export class Todo implements OnInit {
       title: this.inputTask,
     })
     console.log(this.todoArray.length);
-    
+
     this.inputTask = "";
+    this.searchResult = "";
+
   }
   valInput() {
     this.todoArray = this.todoArray.filter((todo: any) => {
       if (todo.title.includes(this.inputTask)) {
         console.log("match");
+        this.searchResult = "";
+
         return todo.title.includes(this.inputTask)
       } else {
         this.searchResult = "No Terms match!";
@@ -62,7 +66,7 @@ export class Todo implements OnInit {
     // if (this.todoArray == "") {
     // }
   }
- 
+
   checkInp() {
     // if (this.inputTask == "") {
     //   alert("empty")
