@@ -24,12 +24,12 @@ export class Todo implements OnInit {
   searchResult: string = ""
 
   constructor() {
-    this.todoArray = [{
-      id: 0,
-      title: "",
-      description: "",
-      isRead: true,
-    }]
+    // this.todoArray = [{
+    //   id: 0,
+    //   title: "",
+    //   description: "",
+    //   isRead: true,
+    // }]
 
   }
   ngOnInit(): void {
@@ -42,8 +42,6 @@ export class Todo implements OnInit {
       id: this.todoArray.length + 1,
       title: this.inputTask,
     })
-    console.log(this.todoArray.length);
-
     this.inputTask = "";
     this.searchResult = "";
 
@@ -51,9 +49,7 @@ export class Todo implements OnInit {
   valInput() {
     this.todoArray = this.todoArray.filter((todo: any) => {
       if (todo.title.toLowerCase().includes(this.inputTask.toLowerCase())) {
-        console.log(this.inputTask.toLowerCase());
         this.searchResult = "";
-
         return todo.title.toLowerCase().includes(this.inputTask)
       } else {
         this.searchResult = "No Terms match!";
