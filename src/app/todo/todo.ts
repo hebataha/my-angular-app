@@ -50,11 +50,11 @@ export class Todo implements OnInit {
   }
   valInput() {
     this.todoArray = this.todoArray.filter((todo: any) => {
-      if (todo.title.includes(this.inputTask)) {
-        console.log("match");
+      if (todo.title.toLowerCase().includes(this.inputTask.toLowerCase())) {
+        console.log(this.inputTask.toLowerCase());
         this.searchResult = "";
 
-        return todo.title.includes(this.inputTask)
+        return todo.title.toLowerCase().includes(this.inputTask)
       } else {
         this.searchResult = "No Terms match!";
         console.log(this.searchResult);
