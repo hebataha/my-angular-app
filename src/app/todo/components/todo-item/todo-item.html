@@ -7,7 +7,7 @@
                 <!-- <p>typed: {{typedTodo}}</p>   -->
             </div>
             <div class="todo__actions d-flex gap-3">
-                <button class="btn-info btn" (click)="handleEditItem()">edit</button>
+                <button class="btn-info btn" (click)="handleEditItem(item.title)">edit</button>
                 <button class="btn-danger btn" (click)="handelDeleteItem()">delete</button>
             </div>
         </div>

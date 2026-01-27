@@ -19,7 +19,7 @@ export class TodoItem {
     this.deleteItem.emit(this.item.id);
     console.log(this.listArray);
   }
-  handleEditItem() {
-
+  handleEditItem(title:string) {
+    this.typedTodo = title
   }
 }
