@@ -13,8 +13,6 @@ export class TodoItem {
   @Input() item: any = "";
   @Output() deleteItem = new EventEmitter<number>();
   handelDeleteItem() {
-  console.log('child id:', this.item.id);
-  this.deleteItem.emit(this.item.id);
- 
+    this.deleteItem.emit(this.item.id);
   }
 }

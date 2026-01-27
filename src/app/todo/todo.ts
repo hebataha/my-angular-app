@@ -23,7 +23,7 @@ export class Todo implements OnInit {
 
   constructor() {
     this.todoArray = [{
-      id: 1,
+      id: 0,
       title: "",
       description: "",
       isRead: true,
