@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container ">
     <button matButton="outlined" routerLink="/" >back to home</button>
 </div>
 <div class="">
@@ -14,32 +14,32 @@
                         placeholder="add task"
                         (change)="checkInp()"
                         [(ngModel)]="inputTask"
-                       
+
                     >
                 </mat-form-field>
                 <button (click)="addTodo()" class="btn-primary btn">ADD</button>
                 <button (click)="valInput()" class="btn-secondary btn mx-2">Search</button>
 
-                <!-- 
+                <!--
                 <app-todo-item></app-todo-item>
                 <app-todo-item></app-todo-item> -->
 
 
             </div>
             <!-- <h1> {{inputTask}}</h1> -->
-           
+
             @for (item of todoArray; track $index) {
               <!-- <h1>{{item.title| json}}</h1> -->
-              <app-todo-item [item]="item"></app-todo-item>
+              <app-todo-item [item]="item" (deleteItem)="deleteItem($event)"></app-todo-item>
             }
-            
+
             <!-- @empty {
               <div class="container">
                   <h1>No Available TODo</h1>
               </div>
 
             } -->
-           
+
         </div>
     </div>
 </div>

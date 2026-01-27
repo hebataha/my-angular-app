@@ -56,7 +56,9 @@ export class Todo implements OnInit {
     // }
   }
 
-  deleteTodo(id: number) {
+  deleteItem(id: number) {
     this.todoArray = this.todoArray.filter((todo: any) => todo.id !== id)
+    // console.log('parent received:', id);
+    // console.log(this.todoArray);
   }
 }
