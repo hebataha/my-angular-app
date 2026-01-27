@@ -17,22 +17,24 @@
         </mat-form-field>
         <button (click)="addTodo()" class="btn-primary btn" [disabled]="inputTask == ''">ADD</button>
         <button (click)="valInput()"
-          class="btn-secondary btn mx-2" [disabled]="inputTask == ''">Search</button>
-
-        <!--
+          class="btn-secondary btn mx-2" [disabled]="inputTask == ''" [ngClass]="{'disabled': todoArray.length <= 1}">Search</button>
+   
+          <!--
                 <app-todo-item></app-todo-item>
                 <app-todo-item></app-todo-item> -->
 
       </div>
       <!-- <h1> {{inputTask}}</h1> -->
-      @for (item of todoArray; track $index) {
-      <!-- <h1>{{item.title| json}}</h1> -->
-       @if (item.title !== "") {
-        <app-todo-item [item]="item"
-        (deleteItem)="deleteItem($event)"></app-todo-item>
-       }
-  
-      }
+            @for (item of todoArray; track $index) {
+            <!-- <h1>{{item.title| json}}</h1> -->
+
+            @if (item.title !== "") {
+              <app-todo-item [item]="item"
+              (deleteItem)="deleteItem($event)" 
+              [listArray]="todoArray" [typedTodo]="inputTask"></app-todo-item>
+            }
+        
+            }
       
       <!-- @empty {
               <div class="container">

@@ -20,6 +20,8 @@ export class Todo implements OnInit {
   todoArray: TodoIem[] = []
   filterArray: any = []
   inputTask: string = ""
+  updatedTodoArray: TodoIem[] = []
+  searchResult: string = ""
 
   constructor() {
     this.todoArray = [{
@@ -40,16 +42,27 @@ export class Todo implements OnInit {
       id: this.todoArray.length + 1,
       title: this.inputTask,
     })
+    console.log(this.todoArray.length);
+    
     this.inputTask = "";
-    console.log(this.todoArray);
-
   }
   valInput() {
-    this.todoArray = this.todoArray.filter((todo: any) => todo.title.includes(this.inputTask));
+    this.todoArray = this.todoArray.filter((todo: any) => {
+      if (todo.title.includes(this.inputTask)) {
+        console.log("match");
+        return todo.title.includes(this.inputTask)
+      } else {
+        this.searchResult = "No Terms match!";
+        console.log(this.searchResult);
+      }
+
+    });
+
     // console.log(this.todoArray)
     // if (this.todoArray == "") {
     // }
   }
+ 
   checkInp() {
     // if (this.inputTask == "") {
     //   alert("empty")
