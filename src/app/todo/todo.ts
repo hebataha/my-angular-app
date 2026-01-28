@@ -54,9 +54,11 @@ export class Todo implements OnInit {
     });
     this.inputTask = '';
     this.searchResult = '';
+    console.log("todoArray", this.todoArray);
+
   }
   valInput() {
-    this.todoArray = this.todoArray.filter((todo: any) => {
+    this.filterArray = this.todoArray.filter((todo: any) => {
       if (todo.title.toLowerCase().includes(this.inputTask.toLowerCase())) {
         this.searchResult = '';
         return todo.title.toLowerCase().includes(this.inputTask);
@@ -69,11 +71,17 @@ export class Todo implements OnInit {
     // console.log(this.todoArray)
     // if (this.todoArray == "") {
     // }
+    this.todoArray = this.filterArray;
+    console.log("filterArray", this.filterArray);
+  
+
+
   }
 
   checkInp() {
     // if (this.inputTask == "") {
-    //   alert("empty")
+    //   alert("heba")
+      
     // }
   }
 
@@ -98,6 +106,9 @@ export class Todo implements OnInit {
     // console.log("object title", this.itemSelected.title);
 
     this.itemSelected.title = this.inputTask
+    // this.inputTask = ""
+     this.showEdit = false;
+
 
   }
 }

@@ -15,7 +15,7 @@ export class TodoItem {
   @Output() deleteItem = new EventEmitter<number>();
   @Input() listArray: TodoIem[] = []
   @Output() itemTodo = new EventEmitter<TodoIem>();
-  
+  @Input() inputType: string = "";
   titleItem: {} = {}
   handelDeleteItem() {
     this.deleteItem.emit(this.item.id);
@@ -24,6 +24,10 @@ export class TodoItem {
   handleEditItem(item: any) {
     console.log(item);
     this.itemTodo.emit(this.item);
+    this.inputType = item.title;
+    item.title = this.inputType;
+    this.item.title = this.inputType
+
 
   }
 }
