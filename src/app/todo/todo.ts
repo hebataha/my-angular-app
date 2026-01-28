@@ -32,7 +32,8 @@ export class Todo implements OnInit {
   inputTask: string = '';
   updatedTodoArray: TodoIem[] = [];
   searchResult: string = '';
-  itemSelected: {} = {};
+  itemSelected!: TodoIem;
+  showEdit: boolean = false;
 
   constructor() {
     // this.todoArray = [{
@@ -82,9 +83,21 @@ export class Todo implements OnInit {
     // console.log(this.todoArray);
   }
 
-  handleTitle(item: any) {
-    console.log(item , "from parent");
+  handleTitle(item: TodoIem) {
+    // console.log(item, "from parent");
     this.itemSelected = item;
     this.inputTask = item.title;
+    item.title = this.inputTask;
+    this.showEdit = true;
+
+  }
+
+  update() {
+    // this.inputTask = this.itemSelected.title;
+    // console.log("input val", this.inputTask);
+    // console.log("object title", this.itemSelected.title);
+
+    this.itemSelected.title = this.inputTask
+
   }
 }

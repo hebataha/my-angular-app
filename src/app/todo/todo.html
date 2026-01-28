@@ -3,6 +3,8 @@
 </div>
 <div class>
   <div classs="row">
+              {{inputTask}}
+
     <div class="col-lg-6">
       <div class="container my-5 todo-wrapper offset-lg-6">
         <mat-form-field class="w-100">
@@ -13,7 +15,9 @@
         <button (click)="addTodo()" class="btn-primary btn" [disabled]="inputTask == ''">ADD</button>
         <button (click)="valInput()" class="btn-secondary btn mx-2" [disabled]="inputTask == ''"
           [ngClass]="{'disabled': todoArray.length <= 1}">Search</button>
-
+          @if(showEdit){
+          <button class="btn btn-danger"  (click)="update()">update</button>
+          }
         <!--
                 <app-todo-item></app-todo-item>
                 <app-todo-item></app-todo-item> -->
@@ -35,7 +39,9 @@
       <app-todo-item [item]="item"
       (itemTodo) = "handleTitle($event)"
       (deleteItem)="deleteItem($event)"
-      [listArray]="todoArray"> </app-todo-item> } }
+      [listArray]="todoArray"
+      (click)="handleTitle(item)"
+      > </app-todo-item> } }
     </div>
   </div>
 </div>

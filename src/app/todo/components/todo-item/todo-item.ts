@@ -14,7 +14,7 @@ export class TodoItem {
   @Input() item: any = [];
   @Output() deleteItem = new EventEmitter<number>();
   @Input() listArray: TodoIem[] = []
-  @Output() itemTodo = new EventEmitter<object>();
+  @Output() itemTodo = new EventEmitter<TodoIem>();
   
   titleItem: {} = {}
   handelDeleteItem() {
