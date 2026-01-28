@@ -23,21 +23,19 @@
         <h1>{{searchResult}}</h1>
       </div> -->
       <div class="container offset-lg-6">
-         <h4 class="text-capitalize"> {{todoArray.length ? ` todo items count : ${todoArray.length}` : ""}} </h4>
+        <h4 class="text-capitalize"> {{todoArray.length ? ` todo items count : ${todoArray.length}` : ""}} </h4>
         @if(todoArray.length === 0){
-        <h3 class="offset-lg-6">No todos Available !</h3>
+        <h3 class="">No todos Available !</h3>
         }
       </div>
       <!-- <h1> {{inputTask}}</h1> -->
       @for (item of todoArray; track $index) {
       <!-- <h1>{{item.title| json}}</h1> -->
       @if (item.title !== "") {
-      <app-todo-item [item]="item" (deleteItem)="deleteItem($event)" [listArray]="todoArray"
-        [typedTodo]="inputTask"></app-todo-item>
-      }
-      }
-
-
+      <app-todo-item [item]="item"
+      (itemTodo) = "handleTitle($event)"
+      (deleteItem)="deleteItem($event)"
+      [listArray]="todoArray"> </app-todo-item> } }
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, input, Input, output, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon'
@@ -14,12 +14,16 @@ export class TodoItem {
   @Input() item: any = [];
   @Output() deleteItem = new EventEmitter<number>();
   @Input() listArray: TodoIem[] = []
-  @Input() typedTodo: string = ""
+  @Output() itemTodo = new EventEmitter<object>();
+  
+  titleItem: {} = {}
   handelDeleteItem() {
     this.deleteItem.emit(this.item.id);
     console.log(this.listArray);
   }
-  handleEditItem(title:string) {
-    this.typedTodo = title
+  handleEditItem(item: any) {
+    console.log(item);
+    this.itemTodo.emit(this.item);
+
   }
 }
