@@ -16,7 +16,9 @@
           @if(showEdit){
           <button class="btn btn-danger"  (click)="update()">update</button>
           }
+          @if(showClear){
           <button class="btn btn-success" (click)="clear()" [disabled]="todoArray.length == 0 "> clear</button>
+          }
           
         <!--
                 <app-todo-item></app-todo-item>
