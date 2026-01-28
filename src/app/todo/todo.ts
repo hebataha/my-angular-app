@@ -34,6 +34,8 @@ export class Todo implements OnInit {
   searchResult: string = '';
   itemSelected!: TodoIem;
   showEdit: boolean = false;
+  showClear: boolean = false;
+
 
   constructor() {
     // this.todoArray = [{
@@ -73,7 +75,8 @@ export class Todo implements OnInit {
     // }
     this.todoArray = this.filterArray;
     console.log("filterArray", this.filterArray);
-  
+    this.showClear = true
+
 
 
   }
@@ -81,7 +84,7 @@ export class Todo implements OnInit {
   checkInp() {
     // if (this.inputTask == "") {
     //   alert("heba")
-      
+
     // }
   }
 
@@ -107,8 +110,12 @@ export class Todo implements OnInit {
 
     this.itemSelected.title = this.inputTask
     // this.inputTask = ""
-     this.showEdit = false;
-
-
+    this.showEdit = false;
+  }
+  clear() {
+    this.inputTask = "";
+    this.todoArray = []
+    
+    
   }
 }

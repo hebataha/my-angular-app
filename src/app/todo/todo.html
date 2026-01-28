@@ -7,7 +7,7 @@
       <div class="container my-5 todo-wrapper offset-lg-6">
         <mat-form-field class="w-100">
           <mat-label>add OR search task</mat-label>
-          <input type="search" class="w-100" matInput placeholder="add task" (click)="checkInp()"
+          <input type="search" class="w-100" matInput placeholder="add task" (ngModelChange)="checkInp()"
             [(ngModel)]="inputTask">
         </mat-form-field>
         <button (click)="addTodo()" class="btn-primary btn" [disabled]="inputTask == ''">ADD</button>
@@ -16,6 +16,8 @@
           @if(showEdit){
           <button class="btn btn-danger"  (click)="update()">update</button>
           }
+          <button class="btn btn-success" (click)="clear()" [disabled]="todoArray.length == 0 "> clear</button>
+          
         <!--
                 <app-todo-item></app-todo-item>
                 <app-todo-item></app-todo-item> -->

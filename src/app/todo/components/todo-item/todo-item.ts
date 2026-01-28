@@ -27,7 +27,5 @@ export class TodoItem {
     this.inputType = item.title;
     item.title = this.inputType;
     this.item.title = this.inputType
-
-
   }
 }
