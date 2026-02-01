@@ -1,115 +1,116 @@
 <app-container-wrapper>
-@if(form.controls.email.errors){
-  <pre> سسس{{ form.controls.email.errors | json }}</pre>
-}
-    <form class="d-flex flex-column gap-2" [formGroup]="form" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Enter email"
-                formControlName="email"
-            >
-            @if(form.controls.email.touched && form.controls.email.errors?.['required'] ){
-                <p class="text-danger"> please enter email</p>
-            }
+  <form class="d-flex flex-column gap-2" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter email" formControlName="email">
+      @if(form.controls.email.touched && form.controls.email.errors?.['required'] ){
+      <p class="text-danger"> please enter email</p>
+      }
+          @if(form.controls.email.touched && form.controls.email.errors?.['email'] ){
+      <p class="text-danger"> please valid enter email</p>
+      }
 
-             @if(form.controls.email.touched && form.controls.email.errors?.['minlength']){
-                <p class="text-danger"> charters should be bigger than 6 </p>
-            }
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input
-                type="password"
-                class="form-control"
-                id="exampleInputPassword1"
-                placeholder="Password"
-                formControlName="password"
-            >
-            @if (form.controls.password.touched && form.controls.password.errors?.['required']  ) {
-              <p class="text-danger">please enter password</p>
-            }
-                 @if (form.controls.password.touched && form.controls.password.errors?.['minlength']  ) {
-              <p class="text-danger">charters should be bigger than 8</p>
-            }
-          <!-- pass:  {{form.controls.password.value}} -->
+      @if(form.controls.email.touched && form.controls.email.errors?.['minlength']){
+      <p class="text-danger"> charters should be bigger than 6 </p>
+      }
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+        formControlName="password">
+      @if (form.controls.password.touched && form.controls.password.errors?.['required'] ) {
+      <p class="text-danger">please enter password</p>
+      }
+      @if (form.controls.password.touched && form.controls.password.errors?.['minlength'] ) {
+      <p class="text-danger">charters should be bigger than 8</p>
+      }
+      pass:  {{form.controls.password.value}}
 
-        </div>
-        <div class="form-group   mb-2">
-            <label for="inputPassword2" class="sr-only">Re-Password</label>
-            <input
-                type="password"
-                class="form-control"
-                id="inputPassword2"
-                placeholder="Password"
-                formControlName="rePassword"
-        >   
-          <!-- repass:  {{form.controls.rePassword.value}} -->
-          @if(form.controls.password.touched && form.controls.rePassword.touched && form.controls.rePassword.value !== form.controls.password.value){
-                <p class="text-danger my-2">passwords Don't match</p>
-          }@else{
-````````<p class="text-success my-2">password matches</p>
-          }
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">city</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-        </div>
-        <div class="form-group my-2">
-            <label for="exampleFormControlFile1">Example file input</label>
-            <input type="file" class="form-control-file d-block my-2" id="exampleFormControlFile1">
-        </div>
+    </div>
+    <div class="form-group   mb-2">
+      <label for="inputPassword2" class="sr-only">Re-Password</label>
+      <input type="password" class="form-control" id="inputPassword2" placeholder="Password"
+        formControlName="rePassword">
+      repass:  {{form.controls.rePassword.value}}
+      @if(form.controls.rePassword.value   && form.controls.password.value && form.controls.password.touched && form.controls.rePassword.touched && form.controls.rePassword.value !==
+      form.controls.password.value  && form.controls.password.value !==
+      form.controls.rePassword.value){
+      <p class="text-danger my-2">passwords Don't match</p>
+      }
+      @if(form.controls.rePassword.value && form.controls.password.value && form.controls.password.touched && form.controls.rePassword.touched && form.controls.rePassword.value ==
+      form.controls.password.value && form.controls.password.value ==
+      form.controls.rePassword.value){
+      <p class="text-success my-2">passwords match</p>
+      }
+      @if(form.controls.rePassword.touched &&form.controls.rePassword.errors?.['required']){
+        <p class="text-danger"> rePassword is required</p>
+      }
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">city</label>
+      <select class="form-control" id="exampleFormControlSelect1" formControlName="city">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+        @if( form.controls.city?.invalid && form.controls.city.touched )
+              {
+              <p class="text-danger my-2"> this is required
+              }
+      <!-- {{form.controls.city | json}} -->
+    </div>
+    <div class="form-group my-2">
+      <label for="exampleFormControlFile1">Example file input</label>
+      <input type="file" class="form-control-file d-block my-2" id="exampleFormControlFile1" formControlName="imageUrl">
+    </div>
+    @if(form.controls.imageUrl.touched && form.controls.imageUrl.errors?.['required'] && form.controls.imageUrl.invalid){
+      <p class="text-danger">please upload image</p>
+    }
+
+<!-- <p>controls : {{form.value | json}}</p> -->
+    <div class="form-group my-2">
+      <label for="exampleFormControlFile1">date</label>
+      <input type="date" class="d-block my-2"  formControlName="date">
+    </div>
+    @if(form.controls.date.touched && form.controls.date?.errors){
+      <p class="text-danger">this filed required <p>
+    }
+        <!-- date: {{form.value | json}} -->
 
 
-        <div>
-            <label class="form-label">gender</label>
-            <div class="form-check">
-                <input
-                    class="form-check-input"
-                    type="radio"
-                    name="exampleRadios"
-                    id="exampleRadios1"
-                    value="option1"
-                    checked
-                >
-                <label class="form-check-label" for="exampleRadios1">
-                    male
-                </label>
-            </div>
-            <div class="form-check">
-                <input
-                    class="form-check-input"
-                    type="radio"
-                    name="exampleRadios"
-                    id="exampleRadios2"
-                    value="option2"
-                >
-                <label class="form-check-label" for="exampleRadios2">
-                    female
-                </label>
-            </div>
-        </div>
-        <div class="form-check">
-            <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="defaultCheck1"
-            >
-            <label class="form-check-label text-capitalize" for="defaultCheck1">
-                accept terms and condition
-            </label>
-        </div>
-        <button type="submit"  class="btn btn-primary">Submit</button>
-    </form>
+    <div >
+      <label class="form-label">gender</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="male" formControlName="gender">
+        <label class="form-check-label" for="exampleRadios1">
+          male
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="female" formControlName="gender">
+        <label class="form-check-label" for="exampleRadios2">
+          female
+        </label>
+      </div>
+      @if(form.controls.gender?.invalid && form.controls.gender.touched){
+        <p class="text-danger">please choose one</p>
+      }
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" [checked]="terms" (click)="onTerms()"
+        formControlName="terms">
+      <label class="form-check-label text-capitalize" for="defaultCheck1">
+        accept terms and condition
+      </label>
+      @if(!terms){
+      <p class="text-danger my-2">please accept terms</p>
+      }
+    </div>
+ <p>{{form.valid}}</p> 
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid && form.controls.email.invalid === true">Submit</button>
+  </form>
 </app-container-wrapper>
