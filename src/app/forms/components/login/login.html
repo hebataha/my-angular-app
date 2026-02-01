@@ -1,1 +1,33 @@
-
+<app-container-wrapper>
+  <form [formGroup]="form">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
+        formControlName="email">
+      @if(email.touched && email.errors?.['required']){
+      <p class="text-danger">this field is required</p>
+      }
+      <!-- {{email.errors | json}} -->
+      @if(email.touched && email.errors?.['minlength']){
+      <p class="text-danger"> charters should be more than 6</p>
+      }
+    </div>
+      @if(email.touched && email.errors?.['email']){
+      <p class="text-danger"> please enter valid email</p>
+      }
+   
+    <!-- :::: {{form.controls.email.errors| json}} -->
+    <div class="mb-3">
+      <label for="exampleFormControlInput2" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="enter your password"
+        formControlName="password">
+      @if(password.touched && password.errors?.['required']){
+      <p class="text-danger">this field is required</p>
+      }
+      @if(password.touched && password.errors?.['minlength']){
+      <p class="text-danger">charters should be more than 6</p>
+      }
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid"> Submit</button>
+  </form>
+</app-container-wrapper>
