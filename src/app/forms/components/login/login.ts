@@ -21,4 +21,9 @@ export class Login {
     get password() {
     return this.form.controls.password
   }
+
+  onSubmit() {
+    console.log(this.form.value);
+    
+  }
 }
