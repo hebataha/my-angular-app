@@ -44,11 +44,11 @@
       <p class="text-success my-2">passwords match</p>
       }
       @if(form.controls.rePassword.touched &&form.controls.rePassword.errors?.['required']){
-        <p class="text-danger"> rePassword is required</p>
+        <p class="text-danger my-3"> rePassword is required</p>
       }
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect1">city</label>
+      <label class="form-label" for="exampleFormControlSelect1">city</label>
       <select class="form-control" id="exampleFormControlSelect1" formControlName="city">
         <option>1</option>
         <option>2</option>
