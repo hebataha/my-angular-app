@@ -6,7 +6,7 @@ import { Login } from './forms/components/login/login';
 import { ForgetPassword } from './forms/components/forget-password/forget-password';
 
 export const routes: Routes = [
-  { path: "", component: Home },
+  { path: "home", component: Home },
   { path: "todoApp", component: Todo },
   { path: "register", component: Register },
   { path: "login", component: Login },
