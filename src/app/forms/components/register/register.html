@@ -4,14 +4,14 @@
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
         placeholder="Enter email" formControlName="email">
-      @if(form.controls.email.touched && form.controls.email.errors?.['required'] ){
+      @if(email.touched && email.errors?.['required'] ){
       <p class="text-danger"> please enter email</p>
       }
-          @if(form.controls.email.touched && form.controls.email.errors?.['email'] ){
+          @if(email.touched && email.errors?.['email'] ){
       <p class="text-danger"> please valid enter email</p>
       }
 
-      @if(form.controls.email.touched && form.controls.email.errors?.['minlength']){
+      @if(email.touched && email.errors?.['minlength']){
       <p class="text-danger"> charters should be bigger than 6 </p>
       }
     </div>
@@ -111,6 +111,6 @@
       }
     </div>
  <p>{{form.valid}}</p> 
-    <button type="submit" class="btn btn-primary" [disabled]="form.invalid && form.controls.email.invalid === true">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid && email.invalid === true">Submit</button>
   </form>
 </app-container-wrapper>

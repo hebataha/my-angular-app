@@ -24,7 +24,9 @@ export class Register {
   constructor() {
 
   }
-
+get email(){
+  return this.form.controls.email
+}
   onSubmit() {
     console.log(this.form.value)
   }
