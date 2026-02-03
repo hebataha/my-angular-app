@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-register',
-  imports: [ ReactiveFormsModule, JsonPipe],
+  imports: [ ReactiveFormsModule],
   templateUrl: './register.html',
   styleUrl: './register.scss',
 })

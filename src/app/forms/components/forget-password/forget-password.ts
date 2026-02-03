@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-forget-password',
-  imports: [ReactiveFormsModule,JsonPipe],
+  imports: [ReactiveFormsModule],
   templateUrl: './forget-password.html',
   styleUrl: './forget-password.scss',
 })
