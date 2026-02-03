@@ -28,7 +28,7 @@ get email(){
   return this.form.controls.email
 }
   onSubmit() {
-    console.log(this.form.value)
+    console.log(this.form.valid)
   }
   onTerms() {
     this.terms = !this.terms

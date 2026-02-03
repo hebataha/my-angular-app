@@ -7,10 +7,9 @@
       @if(email.touched && email.errors?.['required'] ){
       <p class="text-danger"> please enter email</p>
       }
-          @if(email.touched && email.errors?.['email'] ){
+        @if(email.touched && email.errors?.['email'] ){
       <p class="text-danger"> please valid enter email</p>
       }
-
       @if(email.touched && email.errors?.['minlength']){
       <p class="text-danger"> charters should be bigger than 6 </p>
       }
@@ -111,6 +110,6 @@
       }
     </div>
  <p>{{form.valid}}</p> 
-    <button type="submit" class="btn btn-primary" [disabled]="form.invalid && email.invalid === true">Register</button>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Register</button>
   </form>
 </app-container-wrapper>
