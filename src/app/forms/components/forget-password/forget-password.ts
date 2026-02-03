@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { ContainerWrapper } from '../../../shared/container-wrapper/components/container-wrapper/container-wrapper';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-forget-password',
-  imports: [ContainerWrapper,ReactiveFormsModule,JsonPipe],
+  imports: [ReactiveFormsModule,JsonPipe],
   templateUrl: './forget-password.html',
   styleUrl: './forget-password.scss',
 })
