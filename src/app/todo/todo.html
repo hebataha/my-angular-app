@@ -1,50 +1,36 @@
-<div class="container ">
-  <button matButton="outlined" routerLink="/">back to home</button>
-</div>
-<div class>
-  <div classs="row">
-    <div class="col-lg-6">
-      <div class="container my-5 todo-wrapper offset-lg-6">
-        <mat-form-field class="w-100">
-          <mat-label>add OR search task</mat-label>
-          <input type="search" class="w-100" matInput placeholder="add task" (ngModelChange)="checkInp()"
-            [(ngModel)]="inputTask">
-        </mat-form-field>
-        <button (click)="addTodo()" class="btn-primary btn" [disabled]="inputTask == ''">ADD</button>
-        <button (click)="valInput()" class="btn-secondary btn mx-2" [disabled]="inputTask == ''"
-          [ngClass]="{'disabled': todoArray.length <= 1}">Search</button>
-          @if(showEdit){
-          <button class="btn btn-danger"  (click)="update()">update</button>
-          }
-          @if(showClear){
-          <button class="btn btn-success mx-2" (click)="clear()" [disabled]="todoArray.length == 0 "> clear</button>
-          }
-          
-        <!--
-                <app-todo-item></app-todo-item>
-                <app-todo-item></app-todo-item> -->
+<button matButton="outlined" routerLink="/">back to home</button>
 
-      </div>
-      <!-- <div class="container offset-lg-6">
-        <h1>{{searchResult}}</h1>
-      </div> -->
-      <div class="container offset-lg-6">
-        <h4 class="text-capitalize"> {{todoArray.length ? ` todo items count : ${todoArray.length}` : ""}} </h4>
-        @if(todoArray.length === 0){
-        <h3>No todos Available !</h3>
-        }
-      </div>
-      <!-- <h1> {{inputTask}}</h1> -->
-      @for (item of todoArray; track $index) {
-      <!-- <h1>{{item.title| json}}</h1> -->
-      @if (todoArray) {
-      <app-todo-item [item]="item"
-      (itemTodo) = "handleTitle($event)"
-      (deleteItem)="deleteItem($event)"
-      [listArray]="todoArray"
-      [inputType]="inputTask"
-      > </app-todo-item> } }
-    </div>
-  </div>
+<div class=" my-5 todo-wrapper">
+  <mat-form-field class="w-100">
+    <mat-label>add OR search task</mat-label>
+    <input type="search" class="w-100" matInput placeholder="add task" (ngModelChange)="checkInp()"
+      [(ngModel)]="inputTask">
+  </mat-form-field>
+  <button (click)="addTodo()" class="btn-primary btn" [disabled]="inputTask == ''">ADD</button>
+  <button (click)="valInput()" class="btn-secondary btn mx-2" [disabled]="inputTask == ''"
+    [ngClass]="{'disabled': todoArray.length <= 1}">Search</button>
+  @if(showEdit){
+  <button class="btn btn-danger" (click)="update()">update</button>
+  }
+  @if(showClear){
+  <button class="btn btn-success mx-2" (click)="clear()" [disabled]="todoArray.length == 0 "> clear</button>
+  }
+
+
+
 </div>
-      <!-- (click)="handleTitle(item)" -->
+
+<div class="">
+  <h4 class="text-capitalize"> {{todoArray.length ? ` todo items count : ${todoArray.length}` : ""}} </h4>
+  @if(todoArray.length === 0){
+  <h3>No todos Available !</h3>
+  }
+</div>
+<!-- <h1> {{inputTask}}</h1> -->
+@for (item of todoArray; track $index) {
+<!-- <h1>{{item.title| json}}</h1> -->
+@if (todoArray) {
+<app-todo-item [item]="item" (itemTodo)="handleTitle($event)" (deleteItem)="deleteItem($event)" [listArray]="todoArray"
+  [inputType]="inputTask"> </app-todo-item> } }
+
+<!-- (click)="handleTitle(item)" -->
