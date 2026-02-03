@@ -19,10 +19,8 @@ export class TodoItem {
   titleItem: {} = {}
   handelDeleteItem() {
     this.deleteItem.emit(this.item.id);
-    console.log(this.listArray);
   }
   handleEditItem(item: any) {
-    console.log(item);
     this.itemTodo.emit(this.item);
     this.inputType = item.title;
     item.title = this.inputType;

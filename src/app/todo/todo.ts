@@ -56,7 +56,6 @@ export class Todo implements OnInit {
     });
     this.inputTask = '';
     this.searchResult = '';
-    console.log("todoArray", this.todoArray);
 
   }
   valInput() {
@@ -66,15 +65,12 @@ export class Todo implements OnInit {
         return todo.title.toLowerCase().includes(this.inputTask);
       } else {
         this.searchResult = 'No Terms match!';
-        console.log(this.searchResult);
       }
     });
 
-    // console.log(this.todoArray)
     // if (this.todoArray == "") {
     // }
     this.todoArray = this.filterArray;
-    console.log("filterArray", this.filterArray);
     this.showClear = true
 
 
@@ -90,12 +86,9 @@ export class Todo implements OnInit {
 
   deleteItem(id: number) {
     this.todoArray = this.todoArray.filter((todo: any) => todo.id !== id);
-    // console.log('parent received:', id);
-    // console.log(this.todoArray);
   }
 
   handleTitle(item: TodoIem) {
-    // console.log(item, "from parent");
     this.itemSelected = item;
     this.inputTask = item.title;
     item.title = this.inputTask;
@@ -105,9 +98,6 @@ export class Todo implements OnInit {
 
   update() {
     // this.inputTask = this.itemSelected.title;
-    // console.log("input val", this.inputTask);
-    // console.log("object title", this.itemSelected.title);
-
     this.itemSelected.title = this.inputTask
     // this.inputTask = ""
     this.showEdit = false;
