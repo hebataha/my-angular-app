@@ -54,9 +54,9 @@
         <option>4</option>
         <option>5</option>
       </select>
-        @if( form.controls.city?.invalid && form.controls.city.touched )
+        @if( form.controls.city.invalid && form.controls.city.touched )
               {
-              <p class="text-danger my-2"> this is required
+              <p class="text-danger my-2"> this is required </p>
               }
       <!-- {{form.controls.city | json}} -->
     </div>
@@ -73,8 +73,8 @@
       <label for="exampleFormControlFile1">date</label>
       <input type="date" class="d-block my-2 form-control"  formControlName="date">
     </div>
-    @if(form.controls.date.touched && form.controls.date?.errors){
-      <p class="text-danger">this filed required <p>
+    @if(form.controls.date.touched && form.controls.date.errors?.["required"]){
+      <p class="text-danger">this filed required </p>
     }
         <!-- date: {{form.value | json}} -->
 
@@ -93,7 +93,7 @@
           female
         </label>
       </div>
-      @if(form.controls.gender?.invalid && form.controls.gender.touched){
+      @if(form.controls.gender.invalid && form.controls.gender.touched){
         <p class="text-danger">please choose one</p>
       }
     </div>
