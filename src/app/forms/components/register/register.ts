@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
@@ -24,7 +24,6 @@ export class Register {
     date: new FormControl('', [Validators.required])
   })
 
-  @Output() loginDetailsData: object = new EventEmitter();
 
   constructor() {
 
