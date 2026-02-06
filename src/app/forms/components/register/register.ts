@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginCredentials } from '../../../shared/services/login-credentials';
+import { DataLogin } from '../../../shared/services/interface/data-login';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ import { LoginCredentials } from '../../../shared/services/login-credentials';
 })
 export class Register {
   terms: boolean = false;
-  loginData: object = {
+  loginData: DataLogin = {
     email: "",
     password: "",
   }
@@ -34,11 +35,13 @@ export class Register {
   }
   onSubmit() {
     this.loginData = {
-      email: this.form.controls.email.value,
-      password: this.form.controls.password.value
+      email: this.form.controls.email.value!,
+      password: this.form.controls.password.value!
     }
-    // console.log(this.loginData)
+
+    // console.log(typeof(this.loginData.password))
     this._loginCredentials.loginDataService = this.loginData;
+
     console.log("service shared data" , this._loginCredentials.loginDataService);
 
 
