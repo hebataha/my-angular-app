@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { LoginCredentials } from '../../../shared/services/login-credentials';
 
 @Component({
   selector: 'app-register',
@@ -25,7 +26,7 @@ export class Register {
   })
 
 
-  constructor() {
+  constructor(private _loginCredentials:LoginCredentials) {
 
   }
   get email() {
@@ -36,7 +37,11 @@ export class Register {
       email: this.form.controls.email.value,
       password: this.form.controls.password.value
     }
-    console.log(this.loginData)
+    // console.log(this.loginData)
+    this._loginCredentials.loginDataService = this.loginData;
+    console.log("service shared data" , this._loginCredentials.loginDataService);
+
+
   }
   onTerms() {
     this.terms = !this.terms
