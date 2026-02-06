@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from "@angular/router";
+import { LoginCredentials } from '../../../shared/services/login-credentials';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,9 @@ import { RouterLink } from "@angular/router";
   styleUrl: './login.scss',
 })
 export class Login {
+  constructor(private _loginCredentials:LoginCredentials) {
+
+  }
   form =new FormGroup({
     email: new FormControl("", [Validators.required, Validators.minLength(6) ,Validators.email]),
     password: new FormControl("", [Validators.required, Validators.minLength(6)])
@@ -22,7 +26,8 @@ export class Login {
   }
 
   onSubmit() {
-    console.log(this.form.value);
+    // console.log(this.form.value);
+    console.log(this._loginCredentials.loginDataService)
 
   }
 }
