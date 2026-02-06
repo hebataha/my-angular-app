@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
-  imports: [ ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './register.html',
   styleUrl: './register.scss',
 })
 export class Register {
-  terms: boolean = false
+  terms: boolean = false;
+  loginData: object = {
+    email: "",
+    password: "",
+  }
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.minLength(6), Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
@@ -19,14 +23,21 @@ export class Register {
     gender: new FormControl('', [Validators.required]),
     date: new FormControl('', [Validators.required])
   })
+
+  @Output() loginDetailsData: object = new EventEmitter();
+
   constructor() {
 
   }
-get email(){
-  return this.form.controls.email
-}
+  get email() {
+    return this.form.controls.email
+  }
   onSubmit() {
-    console.log(this.form.valid)
+    this.loginData = {
+      email: this.form.controls.email.value,
+      password: this.form.controls.password.value
+    }
+    console.log(this.loginData)
   }
   onTerms() {
     this.terms = !this.terms
