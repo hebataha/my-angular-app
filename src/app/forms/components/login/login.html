@@ -20,7 +20,7 @@
     <div class="mb-3">
       <label for="exampleFormControlInput2" class="form-label">Password</label>
       <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="enter your password"
-        formControlName="password">
+        formControlName="password" autocomplete="on">
       @if(password.touched && password.errors?.['required']){
       <p class="text-danger">this field is required</p>
       }
