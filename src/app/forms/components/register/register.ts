@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginCredentials } from '../../../shared/services/login-credentials';
 import { DataLogin } from '../../../shared/services/interface/data-login';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -27,7 +28,7 @@ export class Register {
   })
 
 
-  constructor(private _loginCredentials:LoginCredentials) {
+  constructor(private _loginCredentials:LoginCredentials , private router: Router ) {
 
   }
   get email() {
@@ -42,7 +43,10 @@ export class Register {
     // console.log(typeof(this.loginData.password))
     this._loginCredentials.loginDataService = this.loginData;
 
-    console.log("service shared data" , this._loginCredentials.loginDataService);
+    console.log("service shared data", this._loginCredentials.loginDataService);
+    if (this.form.valid) {
+      this.router.navigate(['/login'])
+    }
 
 
   }
