@@ -12,10 +12,7 @@ import { Router } from '@angular/router';
 })
 export class Register {
   terms: boolean = false;
-  loginData: DataLogin = {
-    email: "",
-    password: "",
-  }
+
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.minLength(6), Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
@@ -28,22 +25,20 @@ export class Register {
   })
 
 
-  constructor(private _loginCredentials:LoginCredentials , private router: Router ) {
+  constructor(private _loginCredentials: LoginCredentials, private router: Router) {
 
   }
   get email() {
     return this.form.controls.email
   }
   onSubmit() {
-    this.loginData = {
-      email: this.form.controls.email.value!,
-      password: this.form.controls.password.value!
-    }
+    this._loginCredentials.setEmail(this.form.controls.email.value!);
+    this._loginCredentials.setPassword(this.form.controls.password.value!)
+    const email = this._loginCredentials.getEmail();
+    const password = this._loginCredentials.getPassword();
+    console.log(email);
+    console.log(password);
 
-    // console.log(typeof(this.loginData.password))
-    this._loginCredentials.loginDataService = this.loginData;
-
-    console.log("service shared data", this._loginCredentials.loginDataService);
     if (this.form.valid) {
       this.router.navigate(['/login'])
     }

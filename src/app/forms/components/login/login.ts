@@ -11,10 +11,11 @@ import { LoginCredentials } from '../../../shared/services/login-credentials';
 })
 export class Login {
   errorMsg: string = "";
+  welcome: string = '';
 
   constructor(private _loginCredentials: LoginCredentials, private router: Router) {
-
   }
+
   form = new FormGroup({
     email: new FormControl("", [Validators.required, Validators.minLength(6), Validators.email]),
     password: new FormControl("", [Validators.required, Validators.minLength(6)])
@@ -29,14 +30,17 @@ export class Login {
 
   onSubmit() {
     // console.log(this.form.value);
-    console.log(this._loginCredentials.loginDataService)
-    if (this.form.controls.email.value === this._loginCredentials.loginDataService.email && this.form.controls.password.value === this._loginCredentials.loginDataService.password) {
-      console.log("matched");
+    if (this.form.controls.email.value === this._loginCredentials.getEmail() && this.form.controls.password.value === this._loginCredentials.getPassword()) {
+      this._loginCredentials.setLoggedIn(true)
+
       this.router.navigate(['/todoApp'])
     } else {
       console.log("not matched");
       this.errorMsg = "password or username not correct!";
+      this._loginCredentials.setLoggedIn(false)
+
     }
 
   }
 }
+

@@ -19,13 +19,16 @@
                         Home
                     </a>
                 </li> -->
-                <li class="nav-item">
+                <h2>{{logged }}</h2>
+
+                
+                <li class="nav-item" *ngIf="!logged">
                     <a class="nav-link" routerLink="/" routerLinkActive=" bg-dark text-light rounded-2" [routerLinkActiveOptions]="{ exact: true }">login</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="logged">
                     <a class="nav-link" routerLink="/todoApp" routerLinkActive=" bg-dark text-light rounded-2" >todo app</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="logged">
                     <a class="nav-link" routerLink="/register" routerLinkActive=" bg-dark text-light rounded-2">Register</a>
                 </li>
 
