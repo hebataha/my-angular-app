@@ -19,19 +19,23 @@
                         Home
                     </a>
                 </li> -->
-                <h2>{{logged }}</h2>
-
-                
-                <li class="nav-item" *ngIf="!logged">
-                    <a class="nav-link" routerLink="/" routerLinkActive=" bg-dark text-light rounded-2" [routerLinkActiveOptions]="{ exact: true }">login</a>
+                @if(logged){
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/todoApp" routerLinkActive=" bg-dark text-light rounded-2">todo app</a>
                 </li>
-                <li class="nav-item" *ngIf="logged">
-                    <a class="nav-link" routerLink="/todoApp" routerLinkActive=" bg-dark text-light rounded-2" >todo app</a>
+                }@else{
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        routerLink="/"
+                        routerLinkActive=" bg-dark text-light rounded-2"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                    >login</a>
                 </li>
-                <li class="nav-item" *ngIf="logged">
+                <li class="nav-item">
                     <a class="nav-link" routerLink="/register" routerLinkActive=" bg-dark text-light rounded-2">Register</a>
                 </li>
-
+                }
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/forgetPassword" routerLinkActive=" bg-dark text-light rounded-2">forget Password</a>
                 </li>
