@@ -10,6 +10,14 @@
                 aria-describedby="emailHelp"
                 formControlName="name"
             >
+            @if(form.controls.name.touched && form.controls.name.errors?.["required"]){
+          <p class="text-danger">filed is required</p>
+            }
+                 @if(form.controls.name.touched && form.controls.name.errors?.["minlength"]){
+          <p class="text-danger">min length is 4</p>
+            }
+
+            
         </div>
    <h1> NAME: {{form.value | json}}</h1>
         <div class="mb-3">
@@ -47,5 +55,5 @@
             <textarea class="form-control"  rows="3" formControlName="notes" placeholder="add your notes"></textarea>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
 </form>

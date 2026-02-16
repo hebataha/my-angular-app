@@ -11,7 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class FromGroup {
 
   form = new FormGroup({
-    name: new FormControl("", [Validators.required]),
+    name: new FormControl("", [Validators.required , Validators.minLength(4)]),
     address: new FormControl("", [Validators.required]),
     product: new FormGroup({
       proName: new FormControl("", [Validators.required]),
