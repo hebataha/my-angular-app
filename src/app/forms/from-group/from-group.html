@@ -32,10 +32,21 @@
       <label for="exampleInputEmail1" class="form-label"> product Name</label>
       <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
         formControlName="proName">
+
+    @if(form.controls.product.controls.proName.touched && form.controls.product.controls.proName.errors?.["required"]){
+    <p class="text-danger">field is required</p>
+    }
+
+  <!-- @if(form.controls.product.controls.proName.touched && form.controls.product.controls.proName.value === 0 ){
+    <p class="text-danger">field is required</p>
+    } -->
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">product Quantity</label>
       <input type="number" class="form-control" id="exampleInputPassword1" formControlName="proQuantity">
+    @if(form.controls.product.controls.proQuantity.touched && form.controls.product.controls.proQuantity.errors?.["required"]){
+    <p class="text-danger">field is required</p>
+    }
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword2" class="form-label">product Price</label>
