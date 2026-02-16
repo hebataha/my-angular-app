@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="form" (ngSubmit)="submit()">
     <div class="mb-5">
         <h4 class="my-4 text-capitalize">personal information</h4>
         <div class="mb-3">
@@ -8,49 +8,43 @@
                 class="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
+                formControlName="name"
             >
         </div>
+   <h1> NAME: {{form.value | json}}</h1>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Address</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="address">
         </div>
     </div>
     <hr>
-    <div class="mb-5">
+    <div class="mb-5" formGroupName="product">
         <h4 class="my-4 text-capitalize"> product details</h4>
-        <div class="mb-3">
+        <div class="mb-3" >
             <label for="exampleInputEmail1" class="form-label"> product Name</label>
             <input
-                type="email"
+                type="text"
                 class="form-control"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
+                formControlName="proName"
             >
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">product Quantity</label>
-            <input type="number" class="form-control" id="exampleInputPassword1">
+            <input type="number" class="form-control" id="exampleInputPassword1" formControlName="proQuantity"
+>
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword2" class="form-label">product Price</label>
-            <input type="number" class="form-control" id="exampleInputPassword2">
+            <input type="number" class="form-control" id="exampleInputPassword2" formControlName="proPrice">
         </div>
     </div>
     <hr>
     <div class="mb-5">
-        <h4 class="my-4 text-capitalize"> product details</h4>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"> product Name</label>
-            <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-            >
-        </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Notes</label>
-            <textarea class="form-control"  rows="3"> add your notes</textarea>
+            <textarea class="form-control"  rows="3" formControlName="notes" placeholder="add your notes"></textarea>
         </div>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
