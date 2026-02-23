@@ -30,27 +30,46 @@
     <h4 class="my-4 text-capitalize"> product details</h4>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label"> product Name</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-        formControlName="proName">
 
-    @if(form.controls.product.controls.proName.touched && form.controls.product.controls.proName.errors?.["required"]){
-    <p class="text-danger">field is required</p>
-    }
 
-  <!-- @if(form.controls.product.controls.proName.touched && form.controls.product.controls.proName.value === 0 ){
+      <select class="form-select" aria-label="Default select example" formControlName="proName">
+
+        <option *ngFor="let item of productInfo" [ngValue]="item">
+          {{item.name}}</option>
+        <!-- <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option> -->
+      </select>
+
+      @if(form.controls.product.controls.proName.touched &&
+      form.controls.product.controls.proName.errors?.["required"]){
+      <p class="text-danger">field is required</p>
+      }
+
+      <!-- @if(form.controls.product.controls.proName.touched && form.controls.product.controls.proName.value === 0 ){
     <p class="text-danger">field is required</p>
     } -->
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">product Quantity</label>
       <input type="number" class="form-control" id="exampleInputPassword1" formControlName="proQuantity">
-    @if(form.controls.product.controls.proQuantity.touched && form.controls.product.controls.proQuantity.errors?.["required"]){
-    <p class="text-danger">field is required</p>
-    }
+      @if(form.controls.product.controls.proQuantity.touched &&
+      form.controls.product.controls.proQuantity.errors?.["required"]){
+      <p class="text-danger">field is required</p>
+      }
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword2" class="form-label">product Price</label>
-      <input type="number" class="form-control" id="exampleInputPassword2" formControlName="proPrice">
+      <label class="form-label">product Price</label>
+      <div  >
+
+      </div>
+    </div>
+
+       <div class="mb-3">
+      <label class="form-label">total Price</label>
+      <div>
+
+      </div>
     </div>
   </div>
   <hr>
