@@ -27,7 +27,11 @@
   </div>
   <hr>
   <div class="mb-5" formGroupName="product">
-    <h4 class="my-4 text-capitalize"> product details</h4>
+    <div class="d-flex justify-content-between align-items-center">
+      <h4 class="my-4 text-capitalize"> product details</h4>
+    <button type="button" class="btn btn-info text-light" (click)="add()">+ add product</button>
+    </div>
+
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label"> product Name</label>
 
@@ -77,6 +81,7 @@
     </div>
   </div>
   <hr>
+  
   <div class="mb-5">
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Notes</label>

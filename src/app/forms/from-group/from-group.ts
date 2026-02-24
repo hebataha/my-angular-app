@@ -1,6 +1,6 @@
 import { CommonModule, JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Product } from './interface/product';
 
 @Component({
@@ -32,18 +32,33 @@ export class FromGroup {
     address: new FormControl("", [Validators.required]),
     product: new FormGroup({
       proName: new FormControl<any>(null, [Validators.required]),
-      proQuantity: new FormControl(1, [Validators.required,Validators.min(1)]),
+      proQuantity: new FormControl(1, [Validators.required, Validators.min(1)]),
       proPrice: new FormControl(0, [Validators.required]),
 
     }),
     notes: new FormControl("", [Validators.required]),
+    allProducts: new FormArray([])
 
 
   })
 
+  createProductGroup(): FormGroup {
+    return new FormGroup({
+      proName: new FormControl<any>(null, [Validators.required]),
+      proQuantity: new FormControl(1, [Validators.required, Validators.min(1)]),
+      proPrice: new FormControl(0, [Validators.required]),
+    })
+  }
+
   submit() {
     console.log(this.form.value);
 
+  }
+
+  add() {
+    (this.form.get('allProducts') as FormArray).push(this.createProductGroup())
+    console.log(this.form.get('allProducts'));
+    
   }
 
 }
