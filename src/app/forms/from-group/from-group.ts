@@ -28,11 +28,11 @@ export class FromGroup {
     ]
   }
   form = new FormGroup({
-    name: new FormControl<Product | null>(null, [Validators.required, Validators.minLength(4)]),
+    name: new FormControl("", [Validators.required, Validators.minLength(4)]),
     address: new FormControl("", [Validators.required]),
     product: new FormGroup({
-      proName: new FormControl("", [Validators.required]),
-      proQuantity: new FormControl(0, [Validators.required]),
+      proName: new FormControl<any>(null, [Validators.required]),
+      proQuantity: new FormControl(1, [Validators.required,Validators.min(1)]),
       proPrice: new FormControl(0, [Validators.required]),
 
     }),
@@ -44,5 +44,12 @@ export class FromGroup {
   submit() {
     console.log(this.form.value);
 
+  }
+
+  select(){
+    const selectedItem = this.form.controls.product.controls.proName.value
+    console.log(selectedItem);
+    
+    
   }
 }
