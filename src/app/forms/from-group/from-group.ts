@@ -46,10 +46,4 @@ export class FromGroup {
 
   }
 
-  select(){
-    const selectedItem = this.form.controls.product.controls.proName.value
-    console.log(selectedItem);
-    
-    
-  }
 }
