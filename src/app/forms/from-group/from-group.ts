@@ -37,11 +37,15 @@ export class FromGroup {
 
     }),
     notes: new FormControl("", [Validators.required]),
-    allProducts: new FormArray([])
+    allProducts: new FormArray([
+
+    ])
 
 
   })
-
+get allProducts(): FormArray {
+  return this.form.get('allProducts') as FormArray;
+}
   createProductGroup(): FormGroup {
     return new FormGroup({
       proName: new FormControl<any>(null, [Validators.required]),

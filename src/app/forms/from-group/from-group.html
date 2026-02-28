@@ -29,15 +29,14 @@
   <div class="mb-5" formGroupName="product">
     <div class="d-flex justify-content-between align-items-center">
       <h4 class="my-4 text-capitalize"> product details</h4>
-    <button type="button" class="btn btn-info text-light" (click)="add()">+ add product</button>
+      <button type="button" class="btn btn-info text-light" (click)="add()">+ add product</button>
     </div>
 
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label"> product Name</label>
 
 
-      <select class="form-select" aria-label="Default select example" formControlName="proName" 
-        #mySelect>
+      <select class="form-select" aria-label="Default select example" formControlName="proName" #mySelect>
 
         <option *ngFor="let item of productInfo" [ngValue]="item">
           {{item.name}}</option>
@@ -72,7 +71,7 @@
       <label class="form-label">total Price</label>
       <div *ngIf="(form.value.product?.proQuantity || 0) <= 0">
         <p class="text-danger"> product Quantity can't be less than 1</p>
-        
+
       </div>
 
       <div>
@@ -81,12 +80,55 @@
     </div>
   </div>
   <hr>
-  
+
   <div class="mb-5">
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Notes</label>
       <textarea class="form-control" rows="3" formControlName="notes" placeholder="add your notes"></textarea>
     </div>
+  </div>
+
+  <div formArrayName="allProducts">
+    @for (item of allProducts.controls; track $index) {
+    <div [formGroupName]="$index">
+     #item {{$index +1}}
+      <div class="mb-3" >
+        <label for="exampleInputEmail1" class="form-label"> product Name</label>
+
+
+        <select class="form-select" aria-label="Default select example" formControlName="proName" #mySelect>
+
+          <option *ngFor="let item of productInfo" [ngValue]="item">
+            {{item.name}}</option>
+
+        </select>
+
+        @if(form.controls.product.controls.proName.touched &&
+        form.controls.product.controls.proName.errors?.["required"]){
+        <p class="text-danger">field is required</p>
+        }
+
+        <!-- @if(form.controls.product.controls.proName.touched && form.controls.product.controls.proName.value === 0 ){
+    <p class="text-danger">field is required</p>
+    } -->
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">product Quantity</label>
+        <input type="number" class="form-control" id="exampleInputPassword1" formControlName="proQuantity" min="1">
+        @if(form.controls.product.controls.proQuantity.touched &&
+        form.controls.product.controls.proQuantity.errors?.["required"]){
+        <p class="text-danger">field is required</p>
+        }
+      </div>
+   
+
+
+
+    </div>
+
+    }
+
+
   </div>
   <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
 </form>
