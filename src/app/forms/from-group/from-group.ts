@@ -65,4 +65,9 @@ get allProducts(): FormArray {
     
   }
 
+  delete(i:number){
+  this.allProducts.removeAt(i)
+    
+  }
+
 }
