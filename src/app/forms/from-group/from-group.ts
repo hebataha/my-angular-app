@@ -5,7 +5,7 @@ import { Product } from './interface/product';
 
 @Component({
   selector: 'app-from-group',
-  imports: [ReactiveFormsModule, CommonModule , JsonPipe],
+  imports: [ReactiveFormsModule, CommonModule, JsonPipe],
   templateUrl: './from-group.html',
   styleUrl: './from-group.scss',
 })
@@ -26,26 +26,31 @@ export class FromGroup {
       price: 15000
     }
     ]
+
+    this.form.valueChanges.subscribe(newValue => {
+       console.log(newValue);
+    });
+  }
+
+  selectChange(){
+    console.log();
+    
+    
   }
   form = new FormGroup({
     name: new FormControl("", [Validators.required, Validators.minLength(4)]),
     address: new FormControl("", [Validators.required]),
-    product: new FormGroup({
-      proName: new FormControl<any>(null, [Validators.required]),
-      proQuantity: new FormControl(1, [Validators.required, Validators.min(1)]),
-      proPrice: new FormControl(0, [Validators.required]),
-
-    }),
     notes: new FormControl("", [Validators.required]),
+    selectDrop:  new FormControl("", [Validators.required]),
     allProducts: new FormArray([
-
+     
     ])
 
 
   })
-get allProducts(): FormArray {
-  return this.form.get('allProducts') as FormArray;
-}
+  get allProducts(): FormArray {
+    return this.form.get('allProducts') as FormArray;
+  }
   createProductGroup(): FormGroup {
     return new FormGroup({
       proName: new FormControl<any>(null, [Validators.required]),
@@ -62,12 +67,12 @@ get allProducts(): FormArray {
   add() {
     (this.form.get('allProducts') as FormArray).push(this.createProductGroup())
     console.log(this.form.get('allProducts'));
-    
+
   }
 
-  delete(i:number){
-  this.allProducts.removeAt(i)
-    
+  delete(i: number) {
+    this.allProducts.removeAt(i)
+
   }
 
 }
