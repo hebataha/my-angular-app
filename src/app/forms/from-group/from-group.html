@@ -56,10 +56,8 @@
             <label class="form-label">product Name</label>
 
             <select class="form-select" (change)="selectChange()" >
-              <option *ngFor="let item of productInfo;let i = index" [ngValue]="item">
+              <option *ngFor="let item of productInfo;let i = index" [ngValue]="item" >
                 {{ item.name }}
-                {{item.price| json}}
-          
               </option>
             </select>
 
@@ -84,7 +82,6 @@
 
 
 
-      <div></div>
 
     </div>
     }

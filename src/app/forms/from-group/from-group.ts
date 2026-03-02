@@ -33,20 +33,15 @@ export class FromGroup {
   }
 
   selectChange(){
-    console.log();
-    
-    
+    console.log(this.form.controls);   
   }
   form = new FormGroup({
     name: new FormControl("", [Validators.required, Validators.minLength(4)]),
     address: new FormControl("", [Validators.required]),
     notes: new FormControl("", [Validators.required]),
-    selectDrop:  new FormControl("", [Validators.required]),
     allProducts: new FormArray([
      
     ])
-
-
   })
   get allProducts(): FormArray {
     return this.form.get('allProducts') as FormArray;
