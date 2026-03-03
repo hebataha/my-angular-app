@@ -1,21 +1,22 @@
 import { CommonModule, JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Product } from './interface/product';
 
 @Component({
   selector: 'app-from-group',
-  imports: [ReactiveFormsModule, CommonModule, JsonPipe],
+  imports: [ReactiveFormsModule, CommonModule, JsonPipe, FormsModule],
   templateUrl: './from-group.html',
   styleUrl: './from-group.scss',
 })
 export class FromGroup {
-  productInfo: Product[] = []
-
+  productInfo: Product[] = [];
   constructor() {
+
     this.productInfo = [{
       name: "laptop",
-      price: 4000
+      price: 4000,
+
     },
     {
       name: "Ipad",
@@ -27,21 +28,26 @@ export class FromGroup {
     }
     ]
 
-    this.form.valueChanges.subscribe(newValue => {
-       console.log(newValue);
-    });
+
   }
 
-  selectChange(){
-    console.log(this.form.controls);   
+  selectChange() {
+    this.allProducts.at(0).valueChanges.subscribe(newValue => {
+      console.log(newValue.proName);
+    });
   }
   form = new FormGroup({
     name: new FormControl("", [Validators.required, Validators.minLength(4)]),
     address: new FormControl("", [Validators.required]),
     notes: new FormControl("", [Validators.required]),
     allProducts: new FormArray([
-     
+      new FormGroup({
+        proName: new FormControl<any>(null, [Validators.required]),
+        proQuantity: new FormControl(1, [Validators.required, Validators.min(1)]),
+        proPrice: new FormControl(0, [Validators.required]),
+      })
     ])
+
   })
   get allProducts(): FormArray {
     return this.form.get('allProducts') as FormArray;
@@ -61,13 +67,15 @@ export class FromGroup {
 
   add() {
     (this.form.get('allProducts') as FormArray).push(this.createProductGroup())
-    console.log(this.form.get('allProducts'));
+    // this.allProducts.at(0).get('proName')?.value
+    console.log(this.allProducts.value);
 
   }
 
   delete(i: number) {
-    this.allProducts.removeAt(i)
+    this.allProducts.removeAt(i);
 
+    console.log(i ,this.allProducts);
   }
 
 }
