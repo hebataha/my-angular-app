@@ -61,7 +61,7 @@ export class FromGroup implements OnInit {
   form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(4)]),
     address: new FormControl('', [Validators.required]),
-    notes: new FormControl('', [Validators.required]),
+    // notes: new FormControl('', [Validators.required]),
     allProducts: new FormArray([
       new FormGroup({
         proName: new FormControl<any>(null, [Validators.required]),
@@ -106,7 +106,6 @@ export class FromGroup implements OnInit {
     });
 
     this.allProducts.push(group);
-
     group.get('proName')?.valueChanges.subscribe((value) => {
       value ? group.get('proPrice')?.setValue(value?.price) : '';
     });
@@ -115,6 +114,6 @@ export class FromGroup implements OnInit {
   delete(i: number) {
     this.allProducts.removeAt(i);
 
-    console.log(i, this.allProducts);
+    console.log(i,this.allProducts.controls);
   }
 }
