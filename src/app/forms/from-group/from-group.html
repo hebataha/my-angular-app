@@ -28,9 +28,9 @@
         <button type="button" class="btn btn-dark text-light" (click)="add()" >+ add product</button>
       </div>
     </div>
-    <hr>
+
     @for (item of allProducts.controls; track $index;) {
-    <div>
+    <div class="my-5">
       <div class="d-flex justify-content-between">
         <span>#item {{$index+1}}</span>
         <button class="btn btn-danger" type="button" (click)="delete($index)">
@@ -73,6 +73,7 @@
         </div>
       </div>
     </div>
+      <hr>
     }
   </div>
   <!-- <div class="mb-5">
