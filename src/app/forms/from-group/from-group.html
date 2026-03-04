@@ -41,7 +41,7 @@
         <div class="row">
           <div class="col-12 col-lg-4">
             <label class="form-label">product Name</label>
-            <select class="form-select" (change)="selectChange()" formControlName="proName">
+            <select class="form-select" formControlName="proName">
               <option *ngFor="let item of productInfo;let i = index" [ngValue]="item" value={i}>
                 {{ item.name }}
 

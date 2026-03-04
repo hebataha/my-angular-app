@@ -52,11 +52,7 @@ export class FromGroup implements OnInit {
     ];
   }
 
-  selectChange() {
-    // this.allProducts.at(0).valueChanges.subscribe(newValue => {
-    //   console.log(newValue.proName);
-    // });
-  }
+
 
   form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(4)]),
