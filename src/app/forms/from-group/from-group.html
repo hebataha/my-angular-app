@@ -19,6 +19,7 @@
    <p class="text-danger">field is required</p>
    }
 </div>
+{{form.value | json}}
 <hr>
 <div  formArrayName="allProducts">
    <div class="mb-5">
@@ -31,7 +32,7 @@
    @for (item of allProducts.controls; track $index;) {
    <div>
       <div class="d-flex justify-content-between">
-         <span>#item {{$index}}</span>
+         <span>#item {{$index+1}}</span>
          <button class="btn btn-danger" type="button" (click)="delete($index)">
          delete
          </button>
@@ -41,8 +42,9 @@
             <div class="col-12 col-lg-4">
                <label class="form-label">product Name</label>
                <select class="form-select" (change)="selectChange()" formControlName="proName">
-               <option *ngFor="let item of productInfo;let i = index" [ngValue]="item" >
+               <option *ngFor="let item of productInfo;let i = index" [ngValue]="item" value={i}>
                {{ item.name }}
+
                </option>
                </select>
 
@@ -51,12 +53,14 @@
             <div class="col-12 col-lg-4">
                <label class="form-label">product Quantity</label>
                <input type="number" class="form-control mt-0" min="1" value="1" formControlName="proQuantity">
+
+
+              
             </div>
             <div class="col-12 col-lg-4">
                <label class="form-label">product Price</label>
-               <input type="number" class="form-control" formControlName="proPrice" readonly>
+               <input type="number" class="form-control" formControlName="proPrice" readonly >
                <!-- {{this.form.get('proPrice')}} -->
-
             </div>
          </div>
       </div>
@@ -68,7 +72,7 @@
      <label class="form-label">Notes</label>
      <textarea class="form-control" rows="3" formControlName="notes" placeholder="add your notes">
      </textarea>
-   
+
      @if (form.controls.notes.touched && form.controls.notes.errors) {
      <p class="mt-3 text-danger">this is required</p>
      }
