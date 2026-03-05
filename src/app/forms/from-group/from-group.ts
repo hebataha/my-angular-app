@@ -105,6 +105,9 @@ export class FromGroup implements OnInit {
     group.get('proName')?.valueChanges.subscribe((value) => {
       value ? group.get('proPrice')?.setValue(value?.price) : '';
     });
+
+    console.log(this.allProducts.length);
+
   }
 
   delete(i: number) {
@@ -115,4 +118,8 @@ export class FromGroup implements OnInit {
 
   }
 
+  clearAll(): void{
+    this.allProducts.clear();
+
+  }
 }

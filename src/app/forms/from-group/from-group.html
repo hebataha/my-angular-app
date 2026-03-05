@@ -29,7 +29,11 @@
       </div>
     </div>
 
+@if (allProducts.controls.length > 1) {
+<button class="btn btn-danger" (click)="clearAll()" type="button">Delete All</button>
+}
     @for (item of allProducts.controls; track $index; ) {
+
     <div class="my-5">
       <div class="d-flex justify-content-between">
         <span>#item {{$index+1}}</span>
@@ -63,7 +67,7 @@
             proPrice {{ form.value.allProducts?.[$index]?.proPrice }}
             proQuantity {{ form.value.allProducts?.[$index]?.proQuantity }} -->
             <p>
-              
+
               {{( form.value.allProducts?.[$index]?.proPrice || 0) * (form.value.allProducts?.[$index]?.proQuantity ||
               0) }}
             </p>
