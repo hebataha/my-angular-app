@@ -23,16 +23,16 @@ export class FromGroup implements OnInit {
 
     const firstGroup = this.allProducts.at(0);
     // console.log(firstGroup.get('proQuantity')?.value);
-  firstGroup.get('proQuantity')?.valueChanges.subscribe(value => {
-     this.quantity = value
+    firstGroup.get('proQuantity')?.valueChanges.subscribe(value => {
+      this.quantity = value
 
     })
     firstGroup.get('proName')?.valueChanges.subscribe(value => {
-      value ? firstGroup.get('proPrice')?.setValue(value.price ) : ""
+      value ? firstGroup.get('proPrice')?.setValue(value.price) : ""
 
     })
 
-  
+
   }
 
   constructor() {
@@ -108,8 +108,11 @@ export class FromGroup implements OnInit {
   }
 
   delete(i: number) {
+    this.allProducts.updateValueAndValidity();
     this.allProducts.removeAt(i);
+    // this.form.updateValueAndValidity();
+    // this.allProducts.updateValueAndValidity();
 
-    console.log(i,this.allProducts.controls);
   }
+
 }
