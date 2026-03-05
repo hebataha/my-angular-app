@@ -18,15 +18,13 @@ import { Product } from './interface/product';
 })
 export class FromGroup implements OnInit {
   productInfo: Product[] = [];
-  quantity: number = 1;
   ngOnInit() {
 
     const firstGroup = this.allProducts.at(0);
     // console.log(firstGroup.get('proQuantity')?.value);
-    firstGroup.get('proQuantity')?.valueChanges.subscribe(value => {
-      this.quantity = value
-
-    })
+    // firstGroup.get('proQuantity')?.valueChanges.subscribe(value => {
+    //   value
+    // })
     firstGroup.get('proName')?.valueChanges.subscribe(value => {
       value ? firstGroup.get('proPrice')?.setValue(value.price) : ""
 
@@ -106,19 +104,19 @@ export class FromGroup implements OnInit {
       value ? group.get('proPrice')?.setValue(value?.price) : '';
     });
 
-    console.log(this.allProducts.length);
 
   }
 
   delete(i: number) {
-    this.allProducts.updateValueAndValidity();
     this.allProducts.removeAt(i);
+    this.allProducts.updateValueAndValidity();
+
     // this.form.updateValueAndValidity();
     // this.allProducts.updateValueAndValidity();
 
   }
 
-  clearAll(): void{
+  clearAll(): void {
     this.allProducts.clear();
 
   }
