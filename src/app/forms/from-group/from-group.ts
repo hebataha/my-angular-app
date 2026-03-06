@@ -18,6 +18,10 @@ import { Product } from './interface/product';
 })
 export class FromGroup implements OnInit {
   productInfo: Product[] = [];
+  selectedValue: [string] = [""];
+  // selectedValue2: string = "";
+
+
   ngOnInit() {
 
     const firstGroup = this.allProducts.at(0);
@@ -26,7 +30,10 @@ export class FromGroup implements OnInit {
     //   value
     // })
     firstGroup.get('proName')?.valueChanges.subscribe(value => {
-      value ? firstGroup.get('proPrice')?.setValue(value.price) : ""
+      value ? firstGroup.get('proPrice')?.setValue(value.price) : "";
+      this.selectedValue.push(value.name);
+      console.log(this.selectedValue);
+      
 
     })
 
@@ -53,8 +60,8 @@ export class FromGroup implements OnInit {
 
 
   form = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(4)]),
-    address: new FormControl('', [Validators.required]),
+    name: new FormControl('ssssssssssssssssssssssss', [Validators.required, Validators.minLength(4)]),
+    address: new FormControl('amltaha866@yahoo.com', [Validators.required]),
     // notes: new FormControl('', [Validators.required]),
     allProducts: new FormArray([
       new FormGroup({
@@ -102,8 +109,18 @@ export class FromGroup implements OnInit {
     this.allProducts.push(group);
     group.get('proName')?.valueChanges.subscribe((value) => {
       value ? group.get('proPrice')?.setValue(value?.price) : '';
-    });
+      this.selectedValue.push(value?.name!);
 
+    });
+    // console.log(this.selectedValue);
+
+    // this.productInfo.map((pro) => {
+
+    //   if (pro.name === this.selectedValue) {
+
+    //   }
+    // }
+    // )
 
   }
 
