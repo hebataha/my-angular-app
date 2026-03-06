@@ -33,7 +33,7 @@ export class FromGroup implements OnInit {
       value ? firstGroup.get('proPrice')?.setValue(value.price) : "";
       this.selectedValue.push(value.name);
       console.log(this.selectedValue);
-      
+
 
     })
 
@@ -108,8 +108,11 @@ export class FromGroup implements OnInit {
 
     this.allProducts.push(group);
     group.get('proName')?.valueChanges.subscribe((value) => {
+
       value ? group.get('proPrice')?.setValue(value?.price) : '';
       this.selectedValue.push(value?.name!);
+          console.log(this.selectedValue);
+
 
     });
     // console.log(this.selectedValue);
@@ -127,6 +130,11 @@ export class FromGroup implements OnInit {
   delete(i: number) {
     this.allProducts.removeAt(i);
     this.allProducts.updateValueAndValidity();
+    this.selectedValue.splice(i, 1)
+    console.log("deleted" ,this.selectedValue);
+    console.log(this.allProducts);
+    
+    
 
     // this.form.updateValueAndValidity();
     // this.allProducts.updateValueAndValidity();
