@@ -143,6 +143,7 @@ export class FromGroup implements OnInit {
 
   clearAll(): void {
     this.allProducts.clear();
+    this.selectedValue = [""]
 
   }
 }
