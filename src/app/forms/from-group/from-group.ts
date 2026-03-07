@@ -1,4 +1,4 @@
-import { CommonModule, JsonPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {
   FormArray,
@@ -12,7 +12,7 @@ import { Product } from './interface/product';
 
 @Component({
   selector: 'app-from-group',
-  imports: [ReactiveFormsModule, CommonModule, JsonPipe, FormsModule],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule],
   templateUrl: './from-group.html',
   styleUrl: './from-group.scss',
 })

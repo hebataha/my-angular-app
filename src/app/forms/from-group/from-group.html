@@ -24,19 +24,10 @@
   <!-- {{form.value | json}} -->
   <hr />
   <div formArrayName="allProducts">
-    <div class="mb-5">
+    <div class="">
       <div class="d-flex justify-content-between align-items-center">
         <h4 class="my-4 text-capitalize">product details</h4>
-        <button
-          type="button"
-          class="btn btn-dark text-light"
-          (click)="add()"
-          [disabled]="
-            form.invalid || allProducts.controls.length === productInfo.length
-          "
-        >
-          + add product
-        </button>
+
       </div>
     </div>
 
@@ -48,16 +39,14 @@
     <h3>please Press Add to ADD products</h3>
     } @for (item of allProducts.controls; track $index; ) {
 
-    <div class="my-5">
+    <div class="my-0">
       <div class="d-flex justify-content-between">
-        <span>#item {{ $index + 1 }}</span>
-        <button class="btn btn-danger" type="button" (click)="delete($index)">
-          delete
-        </button>
+        <!-- <span>#item {{ $index + 1 }}</span> -->
+
       </div>
       <div class="mb-3" [formGroupName]="$index">
         <div class="row">
-          <div class="col-12 col-lg-4">
+          <div class="col-12 col-lg-3">
             <label class="form-label">product Name</label>
             <select class="form-select" formControlName="proName">
               <option
@@ -70,7 +59,7 @@
               </option>
             </select>
           </div>
-          <div class="col-12 col-lg-4">
+          <div class="col-12 col-lg-3">
             <label class="form-label">product Quantity</label>
             <input
               type="number"
@@ -80,8 +69,8 @@
               formControlName="proQuantity"
             />
           </div>
-          <div class="col-12 col-lg-4">
-            <label class="form-label">product Price</label>
+          <div class="col-12 col-lg-3">
+            <label class="form-label">product total Price</label>
             <!-- <input type="number" class="form-control" formControlName="proPrice" readonly>
             proPrice {{ form.value.allProducts?.[$index]?.proPrice }}
             proQuantity {{ form.value.allProducts?.[$index]?.proQuantity }} -->
@@ -90,12 +79,42 @@
               0) }}
             </p>
           </div>
+
+            <div class="col-12 col-lg-2">
+            <label class="form-label">product Price</label>
+            <!-- <input type="number" class="form-control" formControlName="proPrice" readonly>
+            proPrice {{ form.value.allProducts?.[$index]?.proPrice }}
+            proQuantity {{ form.value.allProducts?.[$index]?.proQuantity }} -->
+            <p>
+              {{( form.value.allProducts?.[$index]?.proPrice || 0)  }}
+            </p>
+          </div>
+
+                <div class="col-12 col-lg-1">
+                         <button class="btn btn-danger" type="button" (click)="delete($index)">
+<i class="bi bi-trash"></i> 
+        </button>
+          </div>
+
         </div>
       </div>
     </div>
-    <hr />
     }
+
+            <button
+          type="button"
+          class="btn btn-dark text-light"
+          (click)="add()"
+          [disabled]="
+            form.invalid || allProducts.controls.length === productInfo.length
+          "
+        >
+       <i class="bi bi-cart-plus-fill"></i>
+        </button>
   </div>
+
+      <hr />
+
   <!-- <div class="mb-5">
    <div class="mb-3">
      <label class="form-label">Notes</label>
