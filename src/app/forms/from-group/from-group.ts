@@ -19,16 +19,17 @@ import { Product } from './interface/product';
 export class FromGroup implements OnInit {
   productInfo: Product[] = [];
   selectedValue: string[] = [];
-  // selectedValue2: string = "";
+  totalPrice :[] = [];
+ 
 
 
   ngOnInit() {
  console.log("selectedValue",this.selectedValue);
     const firstGroup = this.allProducts.at(0);
-    // console.log(firstGroup.get('proQuantity')?.value);
-    // firstGroup.get('proQuantity')?.valueChanges.subscribe(value => {
-    //   value
-    // })
+    console.log(firstGroup.get('proQuantity')?.value);
+    firstGroup.get('proQuantity')?.valueChanges.subscribe(value => {
+      value
+    })
     firstGroup.get('proName')?.valueChanges.subscribe(value => {
       value ? firstGroup.get('proPrice')?.setValue(value.price) : "";
       this.selectedValue.push(value.name);

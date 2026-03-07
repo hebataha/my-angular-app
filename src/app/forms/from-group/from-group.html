@@ -1,132 +1,128 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <div class="mb-5">
-    <h4 class="my-4 text-capitalize">personal information</h4>
-    <div class="mb-3">
-      <label class="form-label">Name</label>
-      <input type="email" class="form-control" formControlName="name" />
-      @if(form.controls.name.touched &&
-      form.controls.name.errors?.["required"]){
-      <p class="text-danger">field is required</p>
-      } @if(form.controls.name.touched &&
-      form.controls.name.errors?.["minlength"]){
-      <p class="text-danger">min length is 4</p>
-      }
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Address</label>
-      <input type="text" class="form-control" formControlName="address" />
-    </div>
-    @if(form.controls.address.touched &&
-    form.controls.address.errors?.["required"]){
-    <p class="text-danger">field is required</p>
-    }
-  </div>
-  <!-- {{form.value | json}} -->
-  <hr />
-  <div formArrayName="allProducts">
-    <div class="">
-      <div class="d-flex justify-content-between align-items-center">
-        <h4 class="my-4 text-capitalize">product details</h4>
-
+<div class="">
+   <h4 class="my-4 text-capitalize">personal information</h4>
+   <div class="row">
+      <div class="col-12 col-lg-6">
+         <label class="form-label">Name</label>
+         <input type="email" class="form-control" formControlName="name" />
+         @if(form.controls.name.touched &&
+         form.controls.name.errors?.["required"]){
+         <p class="text-danger">field is required</p>
+         } @if(form.controls.name.touched &&
+         form.controls.name.errors?.["minlength"]){
+         <p class="text-danger">min length is 4</p>
+         }
       </div>
-    </div>
-
-    @if (allProducts.controls.length > 1) {
-    <button class="btn btn-danger" (click)="clearAll()" type="button">
-      Delete All
-    </button>
-    } @if (allProducts.controls.length === 0) {
-    <h3>please Press Add to ADD products</h3>
-    } @for (item of allProducts.controls; track $index; ) {
-
-    <div class="my-0">
+      <div class="col-12 col-lg-6">
+         <label class="form-label">Address</label>
+         <input type="text" class="form-control" formControlName="address" />
+      </div>
+      @if(form.controls.address.touched &&
+      form.controls.address.errors?.["required"]){
+      <p class="text-danger">field is required</p>
+      }
+   </div>
+</div>
+<!-- {{form.value | json}} -->
+<hr />
+<div formArrayName="allProducts">
+   <div class="">
+      <div class="d-flex justify-content-between align-items-center">
+         <h4 class="my-4 text-capitalize">product details</h4>
+      </div>
+   </div>
+   @if (allProducts.controls.length > 1) {
+   <button class="btn btn-danger mb-3" (click)="clearAll()" type="button">
+   <i class="bi bi-shield-fill-x"></i>  clear
+   </button>
+   } @if (allProducts.controls.length === 0) {
+   <h3>please Press Add to ADD products</h3>
+   } @for (item of allProducts.controls; track $index; ) {
+   <div class="my-0">
       <div class="d-flex justify-content-between">
-        <!-- <span>#item {{ $index + 1 }}</span> -->
-
+         <!-- <span>#item {{ $index + 1 }}</span> -->
       </div>
       <div class="mb-3" [formGroupName]="$index">
-        <div class="row">
-          <div class="col-12 col-lg-3">
-            <label class="form-label">product Name</label>
-            <select class="form-select" formControlName="proName">
-              <option
-                *ngFor="let item of productInfo; let i = index"
-                [ngValue]="item"
-                value="{i}"
-                [disabled]="selectedValue.includes(item.name)"
-              >
-                {{ item.name }}
-              </option>
-            </select>
-          </div>
-          <div class="col-12 col-lg-3">
-            <label class="form-label">product Quantity</label>
-            <input
-              type="number"
-              class="form-control mt-0"
-              min="1"
-              value="1"
-              formControlName="proQuantity"
-            />
-          </div>
-          <div class="col-12 col-lg-3">
-            <label class="form-label">product total Price</label>
-            <!-- <input type="number" class="form-control" formControlName="proPrice" readonly>
-            proPrice {{ form.value.allProducts?.[$index]?.proPrice }}
-            proQuantity {{ form.value.allProducts?.[$index]?.proQuantity }} -->
-            <p>
-              {{( form.value.allProducts?.[$index]?.proPrice || 0) * (form.value.allProducts?.[$index]?.proQuantity ||
-              0) }}
-            </p>
-          </div>
-
+         <div class="row align-items-center">
+            <div class="col-12 col-lg-3">
+               <label class="form-label">product Name</label>
+               <select class="form-select" formControlName="proName">
+               <option
+               *ngFor="let item of productInfo; let i = index"
+               [ngValue]="item"
+               value="{i}"
+               [disabled]="selectedValue.includes(item.name)"
+               >
+               {{ item.name }}
+               </option>
+               </select>
+            </div>
+            <div class="col-12 col-lg-3">
+               <label class="form-label">product Quantity</label>
+               <input
+                  type="number"
+                  class="form-control mt-0"
+                  min="1"
+                  value="1"
+                  formControlName="proQuantity"
+                  />
+            </div>
+            <div class="col-12 col-lg-3">
+               <label class="form-label">product total Price</label>
+               <!-- <input type="number" class="form-control" formControlName="proPrice" readonly>
+                  proPrice {{ form.value.allProducts?.[$index]?.proPrice }}
+                  proQuantity {{ form.value.allProducts?.[$index]?.proQuantity }} -->
+               <p>
+                  {{( form.value.allProducts?.[$index]?.proPrice || 0) * (form.value.allProducts?.[$index]?.proQuantity ||
+                  0) }}
+               </p>
+            </div>
             <div class="col-12 col-lg-2">
-            <label class="form-label">product Price</label>
-            <!-- <input type="number" class="form-control" formControlName="proPrice" readonly>
-            proPrice {{ form.value.allProducts?.[$index]?.proPrice }}
-            proQuantity {{ form.value.allProducts?.[$index]?.proQuantity }} -->
-            <p>
-              {{( form.value.allProducts?.[$index]?.proPrice || 0)  }}
-            </p>
-          </div>
-
-                <div class="col-12 col-lg-1">
-                         <button class="btn btn-danger" type="button" (click)="delete($index)">
-<i class="bi bi-trash"></i> 
-        </button>
-          </div>
-
-        </div>
+               <label class="form-label">product Price</label>
+               <!-- <input type="number" class="form-control" formControlName="proPrice" readonly>
+                  proPrice {{ form.value.allProducts?.[$index]?.proPrice }}
+                  proQuantity {{ form.value.allProducts?.[$index]?.proQuantity }} -->
+               <p>
+                  {{( form.value.allProducts?.[$index]?.proPrice || 0)  }}
+               </p>
+            </div>
+            <div class="col-12 col-lg-1">
+               <button class="btn btn-danger" type="button" (click)="delete($index)">
+               <i class="bi bi-trash"></i> 
+               </button>
+            </div>
+         </div>
       </div>
-    </div>
-    }
-
-            <button
-          type="button"
-          class="btn btn-dark text-light"
-          (click)="add()"
-          [disabled]="
-            form.invalid || allProducts.controls.length === productInfo.length
-          "
-        >
-       <i class="bi bi-cart-plus-fill"></i>
-        </button>
-  </div>
-
-      <hr />
-
-  <!-- <div class="mb-5">
+   </div>
+   <hr>
+   }
+   <button
+   type="button"
+   class="btn btn-dark text-light"
+   (click)="add()"
+   [disabled]="
+   form.invalid || allProducts.controls.length === productInfo.length
+   "
+   >
+   <i class="bi bi-cart-plus-fill"></i>
+   </button>
+</div>
+<hr />
+<div class="d-flex flex-row-reverse">
+   total price :
+</div>
+<!-- <div class="mb-5">
    <div class="mb-3">
      <label class="form-label">Notes</label>
      <textarea class="form-control" rows="3" formControlName="notes" placeholder="add your notes">
      </textarea>
-
+   
      @if (form.controls.notes.touched && form.controls.notes.errors) {
      <p class="mt-3 text-danger">this is required</p>
      }
    </div>
    </div> -->
-  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
-    Submit
-  </button>
+<button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+Submit
+</button>
 </form>
