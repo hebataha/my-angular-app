@@ -67,23 +67,24 @@
                   formControlName="proQuantity"
                   />
             </div>
+  
+            <div class="col-12 col-lg-2">
+               <label class="form-label"> Price</label>
+               <!-- <input type="number" class="form-control" formControlName="proPrice" readonly>
+                  proPrice {{ form.value.allProducts?.[$index]?.proPrice }}
+                  proQuantity {{ form.value.allProducts?.[$index]?.proQuantity }} -->
+               <p>
+                  {{( form.value.allProducts?.[$index]?.proPrice || 0)  }}
+               </p>
+            </div>
             <div class="col-12 col-lg-3">
-               <label class="form-label">product total Price</label>
+               <label class="form-label"> total Price</label>
                <!-- <input type="number" class="form-control" formControlName="proPrice" readonly>
                   proPrice {{ form.value.allProducts?.[$index]?.proPrice }}
                   proQuantity {{ form.value.allProducts?.[$index]?.proQuantity }} -->
                <p>
                   {{( form.value.allProducts?.[$index]?.proPrice || 0) * (form.value.allProducts?.[$index]?.proQuantity ||
                   0) }}
-               </p>
-            </div>
-            <div class="col-12 col-lg-2">
-               <label class="form-label">product Price</label>
-               <!-- <input type="number" class="form-control" formControlName="proPrice" readonly>
-                  proPrice {{ form.value.allProducts?.[$index]?.proPrice }}
-                  proQuantity {{ form.value.allProducts?.[$index]?.proQuantity }} -->
-               <p>
-                  {{( form.value.allProducts?.[$index]?.proPrice || 0)  }}
                </p>
             </div>
             <div class="col-12 col-lg-1">
