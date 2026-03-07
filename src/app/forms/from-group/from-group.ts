@@ -112,7 +112,7 @@ export class FromGroup implements OnInit {
 
       value ? group.get('proPrice')?.setValue(value?.price) : '';
       this.selectedValue.push(value?.name!);
-      console.log(this.selectedValue);
+      // console.log(this.selectedValue);
 
 
     });
