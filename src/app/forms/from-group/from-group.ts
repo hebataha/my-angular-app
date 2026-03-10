@@ -6,13 +6,14 @@ import {
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
-  Validators,} from '@angular/forms';
+  Validators,
+} from '@angular/forms';
 import { Product } from './interface/product';
 import { R } from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-from-group',
-  imports: [ReactiveFormsModule, CommonModule, FormsModule,JsonPipe],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, JsonPipe],
   templateUrl: './from-group.html',
   styleUrl: './from-group.scss',
 })
@@ -29,13 +30,15 @@ export class FromGroup implements OnInit {
     const firstGroup = this.allProducts.at(0);
     // console.log(firstGroup.get('proQuantity')?.value);
     // firstGroup.get('proQuantity')?.valueChanges.subscribe(value => {
-   
+
 
     // })
     firstGroup.get('proName')?.valueChanges.subscribe(value => {
       value ? firstGroup.get('proPrice')?.setValue(value.price) : "";
       this.selectedValue.push(value.name);
-     console.log(this.allProducts.controls);
+      console.log(this.allProducts.controls);
+          // console.log(this.allProducts)
+
 
     })
 
@@ -117,14 +120,6 @@ export class FromGroup implements OnInit {
     });
     // console.log(this.selectedValue);
 
-    // this.productInfo.map((pro) => {
-
-    //   if (pro.name === this.selectedValue) {
-
-    //   }
-    // }
-    // )
-
   }
 
   delete(i: number) {
@@ -140,22 +135,20 @@ export class FromGroup implements OnInit {
     // this.allProducts.updateValueAndValidity();
 
   }
-get total(): number {
-  const result = this.allProducts.controls.reduce((sum, product) => {
-    const price = product.value.proPrice || 0;
-    const quantity = product.value.proQuantity || 0;
+  get total(): number {
+    const result = this.allProducts.controls.reduce((sum, product) => {
+      const price = product.value.proPrice || 0;
+      const quantity = product.value.proQuantity || 0;
 
-    return sum + price * quantity;
-  }, 0);
+      return sum + price * quantity;
+    }, 0);
 
-  return result;
-}
+    return result;
+  }
   clearAll(): void {
     this.allProducts.clear();
     this.selectedValue = [""]
 
   }
-
-
 
 }

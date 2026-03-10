@@ -37,12 +37,13 @@
     </button>
     } @if (allProducts.controls.length === 0) {
     <h3>please Press Add to ADD products</h3>
-    } @for (item of allProducts.controls; track $index; ) {
+    }
+   @for (item of allProducts.controls; track item; let index= $index ) {
     <div class="my-0">
       <div class="d-flex justify-content-between">
         <!-- <span>#item {{ $index + 1 }}</span> -->
       </div>
-      <div class="mb-3" [formGroupName]="$index">
+      <div class="mb-3" [formGroupName]="index">
         <div class="row align-items-center">
           <div class="col-12 col-lg-3">
             <label class="form-label">product Name</label>
