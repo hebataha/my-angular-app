@@ -8,5 +8,6 @@ import { BehaviorSubject } from 'rxjs';
   styleUrl: './product-popup.scss',
 })
 export class ProductPopup {
+  
  
 }
