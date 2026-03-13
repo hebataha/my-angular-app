@@ -1,5 +1,11 @@
-.modal{
+.modal {
   display: block !important;
   opacity: 1;
   background-color: rgb(31 34 34 / 76%) !important;
+}
+
+.btn-close {
+  position: absolute;
+  inset-inline-end: 10px;
+  top: 10px;
 }
