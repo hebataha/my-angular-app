@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon'
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LoginCredentials } from '../services/login-credentials';
-import { ProductPopup } from '../popup/product-popup';
+import { servicePopup } from '../popup/service-popup';
 import { log } from 'console';
 @Component({
   selector: 'app-header',
@@ -14,14 +14,14 @@ import { log } from 'console';
 })
 export class Header {
   logged: boolean = true;
-  constructor(private _loginCredentials: LoginCredentials,private _productPopup:ProductPopup) {
+  constructor(private _loginCredentials: LoginCredentials, private _servicePopup: servicePopup) {
     this._loginCredentials.loggedIn.subscribe((val) =>
       this.logged = val
-  )
+    )
 
   }
 
   togglePopup() {
-    this._productPopup.togglePopup()    
-}
+    this._servicePopup.togglePopup()
+  }
 }

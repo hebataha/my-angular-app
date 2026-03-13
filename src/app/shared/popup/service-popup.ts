@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class ProductPopup {
+export class servicePopup {
    popupStatus = new BehaviorSubject(false);
 
   togglePopup(){

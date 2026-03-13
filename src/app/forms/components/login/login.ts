@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from "@angular/router";
 import { LoginCredentials } from '../../../shared/services/login-credentials';
-import { ProductPopup } from '../../../shared/popup/product-popup';
+import {  servicePopup } from '../../../shared/popup/service-popup';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class Login {
   pop: boolean = false;
 
 
-  constructor(private _loginCredentials: LoginCredentials, private router: Router, private _productPopup: ProductPopup) {
+  constructor(private _loginCredentials: LoginCredentials, private router: Router, private _productPopup: servicePopup) {
     this._productPopup.popupStatus.subscribe((val) =>
       this.pop = val)
   }
