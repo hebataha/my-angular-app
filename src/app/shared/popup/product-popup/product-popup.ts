@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-product-popup',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './product-popup.scss',
 })
 export class ProductPopup {
-
+ 
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from "@angular/router";
 import { LoginCredentials } from '../../../shared/services/login-credentials';
+import { ProductPopup } from '../../../shared/popup/product-popup';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +13,12 @@ import { LoginCredentials } from '../../../shared/services/login-credentials';
 export class Login {
   errorMsg: string = "";
   welcome: string = '';
+  pop: boolean = false;
 
-  constructor(private _loginCredentials: LoginCredentials, private router: Router) {
+
+  constructor(private _loginCredentials: LoginCredentials, private router: Router, private _productPopup: ProductPopup) {
+    this._productPopup.popupStatus.subscribe((val) =>
+      this.pop = val)
   }
 
   form = new FormGroup({
@@ -42,5 +47,7 @@ export class Login {
     }
 
   }
+
+
 }
 
