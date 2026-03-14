@@ -6,6 +6,98 @@
 
 .btn-close {
   position: absolute;
-  inset-inline-end: 10px;
-  top: 10px;
+  inset-inline-end: 15px;
+  top: 15px;
+}
+
+
+.product-options{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:20px;
+}
+
+.product-card{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border:1px solid #eee;
+  border-radius:12px;
+  padding:18px;
+  cursor:pointer;
+  transition:0.3s;
+  background:#fff;
+}
+
+.product-card:hover{
+  border-color:#e60000;
+}
+
+.product-card .left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.product-card .icon{
+  width:40px;
+  height:40px;
+  background:#fdeaea;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.product-card span{
+  font-weight:500;
+  font-size:15px;
+}
+
+.product-card input[type="radio"]{
+  width:18px;
+  height:18px;
+  accent-color:#e60000;
+  cursor:pointer;
+}
+
+.modal-footer-custom{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:25px;
+}
+
+.proceed-btn{
+  background:#e60000;
+  color:white;
+  border:none;
+  padding:10px 28px;
+  border-radius:25px;
+  font-weight:500;
+}
+
+.modal-header{
+  border-bottom:none;
+}
+
+.modal-header h5{
+  text-transform:capitalize;
+  font-weight:600;
+}
+
+.modal-header h6{
+  color:#555;
+  margin-top:5px;
+}
+
+.modal-header p{
+  color:#888;
+  font-size:13px;
+  margin:0;
+}
+
+i {
+  color: #E00800;
+  font-size: 20px;
 }

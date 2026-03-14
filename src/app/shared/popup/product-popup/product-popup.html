@@ -8,7 +8,53 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="close()"></button>
       </div>
       <div class="modal-body">
-        Show a second modal and hide this one with the button below.
+<div class="product-options">
+
+  <label class="product-card">
+    <div class="left">
+      <div class="icon">
+         <i class="bi bi-phone"></i>
+      </div>
+      <span>Voice SIM</span>
+    </div>
+    <input type="radio" name="product" checked />
+  </label>
+
+  <label class="product-card">
+    <div class="left">
+      <div class="icon">
+      <i class="bi bi-mic"></i>
+      </div>
+      <span>Data SIM</span>
+    </div>
+    <input type="radio" name="product" />
+  </label>
+
+  <label class="product-card">
+    <div class="left">
+      <div class="icon">
+<i class="bi bi-phone-vibrate-fill"></i>
+</div>
+      <span>Landline</span>
+    </div>
+    <input type="radio" name="product" />
+  </label>
+
+  <label class="product-card">
+    <div class="left">
+      <div class="icon">
+        <img src="/icons/adsl.svg" />
+      </div>
+      <span>ADSL</span>
+    </div>
+    <input type="radio" name="product" />
+  </label>
+
+</div>
+
+<div class="modal-footer-custom">
+  <button class="proceed-btn">Proceed</button>
+</div>
       </div>
 
     </div>
