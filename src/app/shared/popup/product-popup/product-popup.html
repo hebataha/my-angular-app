@@ -2,17 +2,19 @@
   tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header flex-column align-items-start">
+      <div class="modal-header flex-column align-items-start" >
         <h5 class="modal-title" id="exampleModalToggleLabel">purchase</h5>
         <h6>select product type</h6>
         <p>choose purchase type to proceed purchasing</p>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="close()"></button>
       </div>
+
       <div class="modal-body">
         <div class="product-options">
 
           <label class="product-card">
-            <div class="left">
+            
+            <div class="left" routerLink ="/productStepper" >
               <div class="icon">
                 <i class="bi bi-phone"></i>
               </div>

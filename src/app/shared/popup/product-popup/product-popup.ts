@@ -1,19 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { servicePopup } from '../service-popup';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-popup',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './product-popup.html',
   styleUrl: './product-popup.scss',
 })
-export class ProductPopup {
-  constructor(private _servicePopup: servicePopup) {
+export class ProductPopup{
+  constructor(private _servicePopup: servicePopup,) {
 
   }
+
   close() {
-    console.log("close");
     this._servicePopup.togglePopup()
 
   }
