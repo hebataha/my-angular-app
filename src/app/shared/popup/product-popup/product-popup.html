@@ -14,7 +14,7 @@
 
           <label class="product-card">
             
-            <div class="left" routerLink ="/productStepper" >
+            <div class="left" >
               <div class="icon">
                 <i class="bi bi-phone"></i>
               </div>
@@ -56,7 +56,9 @@
         </div>
 
         <div class="modal-footer-custom">
-          <button class="proceed-btn">Proceed</button>
+
+          <button class="proceed-btn" routerLink="/productStepper" (click)="close()" > Proceed</button>
+
         </div>
       </div>
 
