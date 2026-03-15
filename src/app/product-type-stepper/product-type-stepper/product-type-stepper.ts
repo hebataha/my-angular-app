@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { servicePopup } from '../../shared/popup/service-popup';
 
 @Component({
   selector: 'app-product-type-stepper',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './product-type-stepper.scss',
 })
 export class ProductTypeStepper {
+  stepNum: number = 1;
+  constructor(private _servicePopup: servicePopup) {
+    this._servicePopup.popupNumber.subscribe((val) => this.stepNum = val)
+  }
+
 
 }

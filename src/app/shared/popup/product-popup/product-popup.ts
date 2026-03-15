@@ -18,4 +18,11 @@ export class ProductPopup{
     this._servicePopup.togglePopup()
 
   }
+
+  numberFun(num:number) {
+   console.log(this._servicePopup.popupNumber.value);
+    return this._servicePopup.changePopupNumber(num)
+    
+    
+  }
 }
