@@ -1,21 +1,64 @@
 <!-- <h1>{{stepNum }}</h1> -->
-
 @if(stepNum === ProductType.ADSL){
-  <h1>hello ADSL</h1>
-
+<h1>hello ADSL</h1>
 }
 
 @if(stepNum === ProductType.DATA){
-  <h1>hello DATA</h1>
-
+<h1>hello DATA</h1>
 }
 
 @if(stepNum === ProductType.LANDLINE){
-  <h1>hello LANDLINE</h1>
-
+<h1>hello LANDLINE</h1>
 }
 
 @if(stepNum === ProductType.VOICE){
-  <h1>hello VOICE</h1>
-
+<h5> Purchase VOICE SIM</h5>
 }
+<div class="stepper">
+    <div class="stepper__wrapper">
+        <div class="step" [class.active]="stepNum >= 1">
+            <div class="circle"></div>
+            <span>Purchase Type</span>
+        </div>
+        <div class="line"></div>
+        <div class="step" [class.active]="stepNum >= 2">
+            <div class="circle"></div>
+            <span>Choose Dial</span>
+        </div>
+        <div class="line"></div>
+        <div class="step" [class.active]="stepNum >= 3">
+            <div class="circle"></div>
+            <span>Customer Info</span>
+        </div>
+        <div class="line"></div>
+        <div class="step" [class.active]="stepNum >= 4">
+            <div class="circle"></div>
+            <span>Choose Plan</span>
+        </div>
+        <div class="line"></div>
+        <div class="step" [class.active]="stepNum >= 5">
+            <div class="circle"></div>
+            <span>Choose Bundle</span>
+        </div>
+    </div>
+    <div class="stepper__data">
+        <h5>Choose Reservation Type</h5>
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="d-flex justify-content-between">
+                    <label>
+                        <input type="radio" name="reservationType" value="pool">
+                        Pool Selection
+                    </label>
+                    <label>
+                        <input type="radio" name="reservationType" value="manual">
+                        Manual Input
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stepper__footer d-flex flex-row-reverse">
+        <button class="proceed-btn"> Next</button>
+    </div>
+</div>

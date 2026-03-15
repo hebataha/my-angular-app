@@ -16,5 +16,4 @@ export class ProductTypeStepper {
     this._servicePopup.popupNumber.subscribe((val) => this.stepNum = val)
   }
 
-
 }

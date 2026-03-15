@@ -61,3 +61,17 @@ hr{
   color: #ddd;
   opacity: 1;
 }
+
+.proceed-btn{
+  background:#e60000;
+  color:white;
+  border:none;
+  padding:10px 28px;
+  border-radius:25px;
+  font-weight:500;
+  transition: all .3s ease-in-out;
+  &:hover{
+      background:#e60000c0;
+
+  }
+}
