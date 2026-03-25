@@ -23,6 +23,5 @@ export class ProductPopup{
    console.log(this._servicePopup.popupNumber.value);
     return this._servicePopup.changePopupNumber(num)
     
-    
   }
 }
