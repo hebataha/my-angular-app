@@ -2,16 +2,24 @@ import { Component } from '@angular/core';
 import { servicePopup } from '../../shared/popup/service-popup';
 import { ProductType } from '../../shared/enums/product-type';
 import { Summery } from './summery/summery';
+import { SetupOptions } from './steps/setup-options/setup-options';
+import { StepperStep } from './stepper-step/stepper-step';
+import { ChooseDial } from "./steps/choose-dial/choose-dial";
+import { ChooseDialOptions } from './steps/choose-dial-options/choose-dial-options';
+import { CustomerInfo } from "./steps/customer-info/customer-info";
+import { ChoosePlan } from "./steps/choose-plan/choose-plan";
+import { ChooseBundle } from "./steps/choose-bundle/choose-bundle";
+
 @Component({
   selector: 'app-product-type-stepper',
-  imports: [Summery],
+  imports: [Summery, SetupOptions, StepperStep, ChooseDialOptions, ChooseDial, CustomerInfo, ChoosePlan, ChooseBundle],
   templateUrl: './product-type-stepper.html',
   styleUrl: './product-type-stepper.scss',
 })
 export class ProductTypeStepper {
   stepNum: number = 1;
   ProductType = ProductType;
-  ngOnInit() {  }
+  ngOnInit() { }
   constructor(private _servicePopup: servicePopup) {
     this._servicePopup.popupNumber.subscribe((val) => this.stepNum = val)
   }
