@@ -4,6 +4,12 @@
   margin-bottom: 30px;
 }
 
+.step.active{
+  background-color: red;
+ .circle{
+  background: green;
+ } 
+}
 .step {
   display: flex;
   flex-direction: column;
