@@ -11,10 +11,15 @@ import { ChoosePlan } from "./steps/choose-plan/choose-plan";
 import { ChooseBundle } from "./steps/choose-bundle/choose-bundle";
 import { ExtraAddons } from "./steps/extra-addons/extra-addons";
 import { UsePoints } from "./steps/use-points/use-points";
+import { DialInformation } from "./steps/dial-information/dial-information";
+import { ChooseDialInput } from "./steps/choose-dial-input/choose-dial-input";
+import { IdInformation } from "./steps/id-information/id-information";
+import { UploadContract } from "../../upload-contract/upload-contract";
+import { ContractLanguage } from './steps/contract-language/contract-language';
 
 @Component({
   selector: 'app-product-type-stepper',
-  imports: [Summery, SetupOptions, StepperStep, ChooseDialOptions, ChooseDial, CustomerInfo, ChoosePlan, ChooseBundle, ExtraAddons, UsePoints],
+  imports: [Summery, SetupOptions, StepperStep, ChooseDialOptions, ChooseDial, CustomerInfo, ChoosePlan, ChooseBundle, ExtraAddons, UsePoints, DialInformation, ChooseDialInput, IdInformation, UploadContract, ContractLanguage],
   templateUrl: './product-type-stepper.html',
   styleUrl: './product-type-stepper.scss',
 })

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { DialBox } from "../dial-box/dial-box";
 
 @Component({
   selector: 'app-use-points',
-  imports: [],
+  imports: [DialBox],
   templateUrl: './use-points.html',
   styleUrl: './use-points.scss',
 })
