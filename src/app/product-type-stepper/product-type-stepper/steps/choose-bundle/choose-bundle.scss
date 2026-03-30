@@ -67,7 +67,7 @@ $primary: #ff6b6b;
   .bundle-card {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    // align-items: flex-start;
     flex-direction: row-reverse;
     padding: 16px;
     border: 1px solid $border-color;
@@ -82,7 +82,7 @@ $primary: #ff6b6b;
       height: 18px;
       border: 2px solid $border-color;
       border-radius: 50%;
-      margin-left: auto;
+      // margin-left: auto;
       position: relative;
       cursor: pointer;
 
@@ -127,5 +127,12 @@ $primary: #ff6b6b;
       border-color: $primary;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
+  }
+}
+
+.icon {
+  img {
+    width: 18px;
+    height: 18px
   }
 }

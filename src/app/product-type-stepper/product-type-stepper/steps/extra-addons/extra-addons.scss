@@ -1,0 +1,164 @@
+$border: #e5e5e5;
+$text-dark: #222;
+$text-light: #777;
+$primary: #111;
+$bg: #f7f7f7;
+
+.addons-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+
+  .header {
+    margin-bottom: 16px;
+
+    .dial-select {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      label {
+        font-size: 14px;
+        color: $text-light;
+      }
+
+      select {
+        width: 220px;
+        padding: 10px 14px;
+        border-radius: 20px;
+        border: 1px solid $border;
+        outline: none;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .card {
+    border: 1px solid $border;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // margin-bottom: 16px;
+      background-color: transparent;
+
+      h3 {
+        margin: 0;
+        font-size: 16px;
+        color: $text-dark;
+      }
+
+      span {
+        font-size: 13px;
+        color: $text-light;
+      }
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      background: $border;
+      padding: 15px ;
+
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        label {
+          font-size: 13px;
+          color: $text-light;
+        }
+
+        input,
+        select {
+          padding: 10px 14px;
+          border-radius: 20px;
+          border: 1px solid $border;
+          font-size: 14px;
+          outline: none;
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 16px;
+
+      button {
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 1px solid $primary;
+        color: $primary;
+      }
+
+      .btn-primary {
+        background: $primary;
+        color: #fff;
+        border: none;
+      }
+    }
+  }
+
+  .toggle-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .toggle-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      border: 1px solid $border;
+      border-radius: 10px;
+      padding: 12px 14px;
+      cursor: pointer;
+      position: relative;
+
+      span {
+        font-size: 14px;
+      }
+
+      input {
+        display: none;
+      }
+
+      .checkmark {
+        width: 18px;
+        height: 18px;
+        border: 2px solid $border;
+        border-radius: 4px;
+        position: relative;
+      }
+
+      input:checked+.checkmark {
+        border-color: #e60000;
+        background: #e60000;
+
+        &::after {
+          content: "✔";
+          color: #fff;
+          font-size: 12px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Pagination } from "../pagination/pagination";
 
 @Component({
   selector: 'app-choose-bundle',
-  imports: [],
+  imports: [Pagination],
   templateUrl: './choose-bundle.html',
   styleUrl: './choose-bundle.scss',
 })

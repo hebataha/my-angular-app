@@ -1,5 +1,5 @@
 <!-- <h1>{{stepNum }}</h1> -->
-@if(stepNum === ProductType.ADSL){
+<!-- @if(stepNum === ProductType.ADSL){
 <h5>Purchase ADSL</h5>
 }
 
@@ -13,7 +13,7 @@
 
 @if(stepNum === ProductType.VOICE){
 <h5> Purchase VOICE SIM</h5>
-}
+} -->
 <div class="row">
     <div class="col-12 col-lg-9">
         <div class="stepper">
@@ -26,6 +26,8 @@
             <app-choose-dial></app-choose-dial>
             <app-choose-plan></app-choose-plan>
             <app-choose-bundle></app-choose-bundle>
+            <app-extra-addons></app-extra-addons>
+            <app-use-points></app-use-points>
             <div class="stepper__footer d-flex flex-row-reverse">
                 <button class="proceed-btn"> Next</button>
             </div>
