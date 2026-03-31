@@ -75,3 +75,19 @@ hr{
 
   }
 }
+
+.outline-btn{
+  background:white;
+  color:#e60000c0;
+  border:none;
+  padding:10px 28px;
+  border-radius:25px;
+  font-weight:500;
+  transition: all .3s ease-in-out;
+  border: 1px solid #e60000c0;
+  &:hover{
+      background:#e60000c0;
+      color: white;
+  }
+}
+
