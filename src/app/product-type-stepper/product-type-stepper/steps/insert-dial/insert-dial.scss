@@ -1,0 +1,77 @@
+// Variables
+$primary-text: #333;
+$border-color: #e0e0e0;
+$btn-disabled-bg: #e0e0e2;
+$btn-disabled-text: #fff;
+$font-stack: 'Segoe UI', Tahoma, sans-serif;
+
+.insert-dial-container {
+  font-family: $font-stack;
+  padding: 20px;
+  max-width: 600px;
+
+  .input-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: $primary-text;
+    margin-bottom: 10px;
+  }
+
+  .input-row {
+    display: flex;
+    align-items: center;
+    gap: 15px; // Space between input and buttons
+
+    .dial-input {
+      flex: 1; // Allows input to grow
+      padding: 10px 20px;
+      border: 1px solid $border-color;
+      border-radius: 25px; // Pill shape
+      font-size: 1rem;
+      outline: none;
+      color: #555;
+
+      &::placeholder {
+        color: #aaa;
+      }
+    }
+
+    .btn {
+      height: 42px;
+      padding: 0 30px;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      // "Check" Button Style
+      &.btn-outline {
+        background-color: transparent;
+        border: 1.5px solid #555;
+        color: $primary-text;
+
+        &:hover {
+          background-color: #f5f5f5;
+        }
+      }
+
+      // "Add" Button Style (Disabled by default in your image)
+      &.btn-filled {
+        background-color: $btn-disabled-bg;
+        color: $btn-disabled-text;
+        cursor: not-allowed;
+
+        &:not(:disabled) {
+          background-color: #333; // Color when active
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
