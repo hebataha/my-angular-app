@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SummeryDialsInfornation } from './summery-dials-infornation';
+import { SummeryTotal } from './summery-total';
 
-describe('SummeryDialsInfornation', () => {
-  let component: SummeryDialsInfornation;
-  let fixture: ComponentFixture<SummeryDialsInfornation>;
+describe('SummeryTotal', () => {
+  let component: SummeryTotal;
+  let fixture: ComponentFixture<SummeryTotal>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SummeryDialsInfornation]
+      imports: [SummeryTotal]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SummeryDialsInfornation);
+    fixture = TestBed.createComponent(SummeryTotal);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
