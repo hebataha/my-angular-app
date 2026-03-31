@@ -88,8 +88,8 @@ $input-radius: 20px;
 }
 
 // Mobile
-@media (max-width: 768px) {
-  .grid-layout.cols-3 { grid-template-columns: 1fr; }
+@media (max-width: 1200px) {
+  .grid-layout.cols-3 { grid-template-columns: 1fr !important; }
 }
 
 .delete{

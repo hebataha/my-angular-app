@@ -5,10 +5,11 @@ import { SummeryCustomerInformation } from "./summery-customer-information/summe
 import { SummeryCardAdvanced } from "./summery-card-advanced/summery-card-advanced";
 import { SummeryTotal } from "./summery-total/summery-total";
 import { SummeryTotalDetails } from "./summery-total-details/summery-total-details";
+import { DialCardAdvanced } from "./dial-card-advanced/dial-card-advanced";
 
 @Component({
   selector: 'app-summery',
-  imports: [SummeryChooseDials, SummeryDialsInformation, SummeryCustomerInformation, SummeryCardAdvanced, SummeryTotal, SummeryTotalDetails],
+  imports: [SummeryChooseDials, SummeryDialsInformation, SummeryCustomerInformation, SummeryCardAdvanced, SummeryTotal, SummeryTotalDetails, DialCardAdvanced],
   templateUrl: './summery.html',
   styleUrl: './summery.scss',
 })
