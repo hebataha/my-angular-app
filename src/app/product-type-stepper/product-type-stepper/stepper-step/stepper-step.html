@@ -1,7 +1,10 @@
 <div class="stepper__wrapper">
-    <div class="step ative ">
+    <div class="step ative">
         <div class="circle"></div>
-        <span>Purchase Type</span>
+        <!-- <span>Purchase Type</span> -->
+        @if(stepNum === ProductType.VOICE){
+        <span> setup options</span>
+        }
     </div>
     <div class="line"></div>
     <div class="step unactive">

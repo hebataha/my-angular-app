@@ -1,18 +1,17 @@
 .customer-form {
-  font-family: $font-family;
   padding: 20px;
   max-width: 1000px;
 
   h2 {
     font-size: 1.2rem;
-    color: $label-color;
+    color: #555;
     margin-bottom: 20px;
   }
 
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); // 3 equal columns
-    gap: 20px 30px; // vertical horizontal gap
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 30px;
 
     .form-group {
       display: flex;
@@ -22,15 +21,16 @@
         font-weight: 600;
         font-size: 0.85rem;
         margin-bottom: 8px;
-        color: $label-color;
+        color: #555;
       }
 
-      input, select {
+      input,
+      select {
         padding: 10px 15px;
-        border: 1px solid $border-color;
-        border-radius: 25px; // The rounded "pill" look
+        border: 1px solid #ccc;
+        border-radius: 25px;
         font-size: 0.9rem;
-        background-color: $input-bg;
+        background-color: #f9f9f9;
         outline: none;
         transition: border-color 0.2s;
 
@@ -38,22 +38,6 @@
           border-color: #a0a0a0;
         }
       }
-
-      select {
-        appearance: none;
-        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-        background-repeat: no-repeat;
-        background-position: right 15px center;
-        background-size: 15px;
-        padding-right: 40px;
-      }
     }
-  }
-}
-
-// Responsive: Stack columns on smaller screens
-@media (max-width: 768px) {
-  .customer-form .grid-container {
-    grid-template-columns: 1fr;
   }
 }

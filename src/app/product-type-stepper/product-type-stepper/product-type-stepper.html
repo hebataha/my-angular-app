@@ -1,5 +1,5 @@
 <!-- <h1>{{stepNum }}</h1> -->
-<!-- @if(stepNum === ProductType.ADSL){
+@if(stepNum === ProductType.ADSL){
 <h5>Purchase ADSL</h5>
 }
 
@@ -13,18 +13,42 @@
 
 @if(stepNum === ProductType.VOICE){
 <h5> Purchase VOICE SIM</h5>
-} -->
+}
 <div class="row">
     <div class="col-12 col-lg-8">
         <div class="stepper">
             <app-stepper-step></app-stepper-step>
-            <app-choose-dial-options></app-choose-dial-options>
+            <!-- <app-choose-dial-options></app-choose-dial-options> -->
+            {{stepCount}}
             <div class="stepper__data">
-                <app-setup-options></app-setup-options>
-                <app-customer-info></app-customer-info>
+                <!-- <app-setup-options></app-setup-options>
+                <app-customer-info></app-customer-info> -->
+                @if(stepNum === ProductType.VOICE){
+                @if (stepCount === 1) {
+                <app-choose-dial></app-choose-dial>
+
+                }
+                @if (stepCount === 2) {
+                <app-choose-dial-options></app-choose-dial-options>
+
+                }
+                @if (stepCount === 3) {
+                <app-consumer-info-card></app-consumer-info-card>
+
+                }
+
+
+                @if (stepCount === 4) {
+                <app-choose-bundle></app-choose-bundle>
+
+                }
+                @if (stepCount === 5) {
+                <app-choose-plan></app-choose-plan>
+
+                }
+                }
             </div>
-            <app-choose-dial></app-choose-dial>
-            <app-choose-plan></app-choose-plan>
+            <!-- <app-choose-plan></app-choose-plan>
             <app-choose-bundle></app-choose-bundle>
             <app-extra-addons></app-extra-addons>
             <app-use-points></app-use-points>
@@ -36,10 +60,18 @@
             <app-contract-language></app-contract-language>
             <app-dial-info-card></app-dial-info-card>
             <app-dial-pattern-container></app-dial-pattern-container>
-            <app-insert-dial></app-insert-dial>
+            <app-insert-dial></app-insert-dial> -->
             <div class="stepper__footer d-flex justify-content-between">
-                <button class="outline-btn"> Back</button>
-                <button class="proceed-btn"> Next</button>
+                <div>
+                    @if (stepCount > 1) {
+                    <button class="outline-btn" (click)="back()" [disabled]="stepCount === 1"> Back</button>
+                    }
+                </div>
+                <div>
+                    <button class="proceed-btn" (click)="next()" [disabled]="stepCount === 5">Next</button>
+
+                </div>
+
             </div>
         </div>
     </div>
