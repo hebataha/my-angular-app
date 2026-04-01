@@ -20,6 +20,7 @@ import { DialInfoCard } from "./summery/dial-info-card/dial-info-card";
 import { InsertDial } from "./steps/insert-dial/insert-dial";
 import { DialPatternContainer } from "./steps/dial-pattern-container/dial-pattern-container";
 import { ConsumerInfoCard } from "./steps/consumer-info-card/consumer-info-card";
+import { CountStepperService } from './services/count-stepper-service';
 
 @Component({
   selector: 'app-product-type-stepper',
@@ -31,11 +32,12 @@ export class ProductTypeStepper {
   stepNum: number = 1;
   ProductType = ProductType;
   stepCount: number = 1;
-  constructor(private _servicePopup: servicePopup) {
-    this._servicePopup.popupNumber.subscribe((val) => this.stepNum = val)
+  constructor(private _servicePopup: servicePopup ,private _countStepperService:CountStepperService) {
+    this._servicePopup.popupNumber.subscribe((val) => this.stepNum = val);
+    this._countStepperService.stepperCount.subscribe((stepNumber)=> this.stepCount = stepNumber )
   }
-  back(): void {
 
+  back(): void {
     this.stepCount = this.stepCount - 1
     console.log(this.stepCount);
     if ( this.stepCount === 1) {
