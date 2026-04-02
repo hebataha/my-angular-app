@@ -1,11 +1,18 @@
 <div class="summary-card">
+    <h1>{{stepCount}}</h1>
     <h2 class="card-title">Summary</h2>
+    @if(stepNum === 1){
+    @if (stepCount === 1 || stepCount === 2) {
     <app-summery-choose-dials></app-summery-choose-dials>
-    <app-summery-dials-information></app-summery-dials-information>
+    }
+        @if (stepCount === 3) {
+ <app-summery-dials-information></app-summery-dials-information>    }
+    }
+    <!-- <app-summery-dials-information></app-summery-dials-information>
     <app-summery-customer-information></app-summery-customer-information>
     <app-summery-card-advanced></app-summery-card-advanced>
     <app-summery-total></app-summery-total>
     <app-summery-total-details></app-summery-total-details>
-    <app-dial-card-advanced></app-dial-card-advanced>
+    <app-dial-card-advanced></app-dial-card-advanced> -->
     <button class="proceed-btn mt-4"> Purachse</button>
 </div>

@@ -7,11 +7,13 @@ import { BehaviorSubject } from 'rxjs';
 export class CountStepperService {
   stepperCount = new BehaviorSubject(1);
 
-  increaseCount(stepperCount: number) {
-    return stepperCount + 1
+  increaseCount() {
+    this.stepperCount.next(this.stepperCount.value + 1);
+ 
+    
   }
 
-  decreaseCount(stepperCount: number) {
-    return stepperCount - 1
+  decreaseCount() {
+    this.stepperCount.next(this.stepperCount.value - 1)
   }
 }

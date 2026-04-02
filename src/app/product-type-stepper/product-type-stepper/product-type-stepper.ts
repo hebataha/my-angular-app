@@ -32,23 +32,27 @@ export class ProductTypeStepper {
   stepNum: number = 1;
   ProductType = ProductType;
   stepCount: number = 1;
-  constructor(private _servicePopup: servicePopup ,private _countStepperService:CountStepperService) {
+  constructor(private _servicePopup: servicePopup, private _countStepperService: CountStepperService) {
     this._servicePopup.popupNumber.subscribe((val) => this.stepNum = val);
-    this._countStepperService.stepperCount.subscribe((stepNumber)=> this.stepCount = stepNumber )
+    this._countStepperService.stepperCount.subscribe((stepNumber) => this.stepCount = stepNumber)
   }
 
   back(): void {
-    this.stepCount = this.stepCount - 1
+    // this.stepCount = this.stepCount - 1
+    this._countStepperService.decreaseCount()
+
     console.log(this.stepCount);
-    if ( this.stepCount === 1) {
+    if (this.stepCount === 1) {
       return;
     }
   }
   next(): void {
-    this.stepCount = this.stepCount + 1
+    // this.stepCount = this.stepCount + 1
+    this._countStepperService.increaseCount()
+
     console.log(this.stepCount);
-        if ( this.stepCount > 5) {
-          this.stepCount = 5;
+    if (this.stepCount > 5) {
+      this.stepCount = 5;
     }
   }
 }
