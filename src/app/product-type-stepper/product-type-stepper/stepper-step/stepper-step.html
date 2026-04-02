@@ -1,28 +1,29 @@
 <div class="stepper__wrapper">
-    <div class="step ative">
+        <div class="step" >
         <div class="circle"></div>
-        <!-- <span>Purchase Type</span> -->
+         <!-- <span>Purchase Type</span> -->
         @if(stepNum === ProductType.VOICE){
         <span> setup options</span>
         }
     </div>
+
     <div class="line"></div>
-    <div class="step unactive">
+    <div class="step" [class.active]="stepNum === step2"  [class.complete]="stepNum > step2">
         <div class="circle"></div>
         <span>Choose Dial</span>
     </div>
     <div class="line"></div>
-    <div class="step">
+    <div class="step"  [class.active]="stepNum === step3"  [class.complete]="stepNum > step3">
         <div class="circle"></div>
         <span>Customer Info</span>
     </div>
     <div class="line"></div>
-    <div class="step">
+    <div class="step"  [class.active]="stepNum === step4"  [class.complete]="stepNum > step4">
         <div class="circle"></div>
         <span>Choose Plan</span>
     </div>
     <div class="line"></div>
-    <div class="step">
+    <div class="step"   [class.active]="stepNum === step5"  [class.complete]="stepNum > step5">
         <div class="circle"></div>
         <span>Choose Bundle</span>
     </div>
