@@ -9,5 +9,6 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './choose-dial.scss',
 })
 export class ChooseDial {
-  selectedRadio: string = "pool";
+  selectedRadio: string = "";
+  selectedType: string = "";
 }
