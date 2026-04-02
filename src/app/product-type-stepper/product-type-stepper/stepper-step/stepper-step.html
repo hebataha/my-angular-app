@@ -1,5 +1,5 @@
 <div class="stepper__wrapper">
-        <div class="step" >
+        <div class="step"  [class.active]="stepNum === step1"  [class.complete]="stepNum > step1">
         <div class="circle"></div>
          <!-- <span>Purchase Type</span> -->
         @if(stepNum === ProductType.VOICE){
