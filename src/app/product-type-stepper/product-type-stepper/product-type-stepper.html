@@ -16,8 +16,9 @@
 }
 <div class="row">
     <div class="col-12 col-lg-8">
-        <div class="stepper">
-            <app-stepper-step></app-stepper-step>
+        <div class="stepper d-flex flex-column justify-content-between">
+            <div>
+       <app-stepper-step></app-stepper-step>
             <!-- <app-choose-dial-options></app-choose-dial-options> -->
             {{stepCount}}
             <div class="stepper__data">
@@ -37,7 +38,6 @@
 
                 }
 
-
                 @if (stepCount === 4) {
                 <app-choose-bundle></app-choose-bundle>
 
@@ -48,6 +48,9 @@
                 }
                 }
             </div>
+
+            </div>
+     
             <!-- <app-choose-plan></app-choose-plan>
             <app-choose-bundle></app-choose-bundle>
             <app-extra-addons></app-extra-addons>
@@ -65,11 +68,13 @@
             <div class="stepper__footer d-flex justify-content-between">
                 <div>
                     @if (stepCount > 1) {
-                    <button class="outline-btn" (click)="back()" [disabled]="stepCount === 1"> Back</button>
+                    <button class="outline-btn" (click)="back()"
+                        [disabled]="stepCount === 1"> Back</button>
                     }
                 </div>
                 <div>
-                    <button class="proceed-btn" (click)="next()" [disabled]="stepCount === 5">Next</button>
+                    <button class="proceed-btn" (click)="next()"
+                        [disabled]="stepCount === 5">Next</button>
 
                 </div>
 
