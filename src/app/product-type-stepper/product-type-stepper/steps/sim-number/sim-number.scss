@@ -1,0 +1,54 @@
+.sim-container {
+  width: 320px;
+  font-family: Arial, sans-serif;
+}
+
+.sim-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.sim-input-group {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 25px;
+  padding: 4px;
+}
+
+.sim-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px 14px;
+  font-size: 14px;
+  border-radius: 25px;
+
+  &::placeholder {
+    color: #aaa;
+  }
+}
+
+.sim-btn {
+  border: none;
+  background: #e0e0e0;
+  color: #999;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: not-allowed;
+  transition: 0.3s;
+
+  &:not(:disabled) {
+    background: #4caf50;
+    color: white;
+    cursor: pointer;
+  }
+
+  &:hover:not(:disabled) {
+    background: #43a047;
+  }
+}

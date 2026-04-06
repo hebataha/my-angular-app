@@ -1,108 +1,52 @@
-.reserved-dials-container {
-  // Use your application's global font
-  font-family: 'Inter', 'Roboto', sans-serif;
-  background-color: #ffffff;
-  width: 100%;
+.dials-container {
+  display: flex;
+  gap: 16px;
+}
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-    .title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #333333;
-      margin: 0;
-    }
+.dial-card {
+  display: block;
+}
 
-    .reserve-btn {
-      color: #d94036; // Red text color matching the image
-      background-color: transparent;
-      border: none;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      padding: 0;
-      transition: opacity 0.2s ease;
+.wrapper {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px;
+  background: #fff;
+}
 
-      &:hover {
-        opacity: 0.8;
-      }
-    }
+.card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sim-wrapper {
+  margin-top: 12px;
+  animation: slideDown 0.25s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
   }
-
-  .dials-grid {
-    // display: grid;
-    // grid-template-columns: repeat(2, 1fr); // Two columns layout
-    // gap: 16px; // Spacing between grid items
-
-    // Responsive down to 1 column on smaller tablets/mobile
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  .dial-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 20px;
-    border: 1px solid #f0f0f0; // Very subtle border like in the image
-    border-radius: 12px;
-    background-color: #ffffff;
-    margin-bottom: 20px;
-    cursor: pointer;
-
-
-    // Very subtle box shadow to give it a slight pop
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      border-color: #e2e2e2;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
-    }
-
-    .dial-info {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-
-      .phone-number {
-        font-size: 15px;
-        font-weight: 600;
-        color: #2c2c2c;
-      }
-
-      .pool-info {
-        font-size: 13px;
-        color: #7a7a7a;
-        display: flex;
-        align-items: center;
-
-        .divider {
-          color: #d1d1d1;
-          margin: 0 6px;
-          font-weight: 300;
-        }
-      }
-    }
-
-    .checkbox-container {
-      display: flex;
-      align-items: center;
-
-      .dial-checkbox {
-        width: 18px;
-        height: 18px;
-        margin: 0;
-        cursor: pointer;
-        border: 1.5px solid #cccccc;
-        border-radius: 4px;
-        accent-color: #d94036; // Makes the checkbox red when checked
-      }
-    }
-  }
+.dial-info{
+  display: flex;
+  flex-direction: column;
+}
+.phone-number{
+  font-weight: bold;
 }

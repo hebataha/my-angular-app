@@ -1,131 +1,77 @@
-<div class="reserved-dials-container">
-    <div class="header">
-        <h3 class="title">Choose From Reserved Dials</h3>
-        <button class="reserve-btn">Reserve Dialwwww</button>
-    </div>
-    <div class="dials-grid">
-        <!-- Use *ngFor to loop through your data array -->
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <label class="dial-card" for="dial-1">
-                    <div class="dial-info">
-                        <span class="phone-number">0222679258</span>
-                        <span class="pool-info">
-                            B2B Pool
-                            <span class="divider">|</span>
-                            12344
-                        </span>
-                    </div>
-                    <div class="checkbox-container">
-                        <input id="dial-1" type="checkbox" class="dial-checkbox">
-                    </div>
-                </label>
-            </div>
-            <div class="col-12 col-lg-6">
-                <label class="dial-card" for="dial-2">
-                    <div class="dial-info">
-                        <span class="phone-number">0222679258</span>
-                        <span class="pool-info">
-                            B2B Pool
-                            <span class="divider">|</span>
-                            12344
-                        </span>
-                    </div>
-                    <div class="checkbox-container">
-                        <input id="dial-2" type="checkbox" class="dial-checkbox">
-                    </div>
-                </label>
-            </div>
-            <div class="col-12 col-lg-6">
-                <label class="dial-card" for="dial-3">
-                    <div class="dial-info">
-                        <span class="phone-number">0222679258</span>
-                        <span class="pool-info">
-                            B2B Pool
-                            <span class="divider">|</span>
-                            12344
-                        </span>
-                    </div>
-                    <div class="checkbox-container">
-                        <input id="dial-3" type="checkbox" class="dial-checkbox">
-                    </div>
-                </label>
-            </div>
-            <div class="col-12 col-lg-6">
-                <label class="dial-card" for="dial-4">
-                    <div class="dial-info">
-                        <span class="phone-number">0222679258</span>
-                        <span class="pool-info">
-                            B2B Pool
-                            <span class="divider">|</span>
-                            12344
-                        </span>
-                    </div>
-                    <div class="checkbox-container">
-                        <input id="dial-4" type="checkbox" class="dial-checkbox">
-                    </div>
-                </label>
-            </div>
-            <div class="col-12 col-lg-6">
-                <label class="dial-card" for="dial-5">
-                    <div class="dial-info">
-                        <span class="phone-number">0222679258</span>
-                        <span class="pool-info">
-                            B2B Pool
-                            <span class="divider">|</span>
-                            12344
-                        </span>
-                    </div>
-                    <div class="checkbox-container">
-                        <input id="dial-5" type="checkbox" class="dial-checkbox">
-                    </div>
-                </label>
-            </div>
-            <div class="col-12 col-lg-6">
-                <label class="dial-card" for="dial-6">
-                    <div class="dial-info">
-                        <span class="phone-number">0222679258</span>
-                        <span class="pool-info">
-                            B2B Pool
-                            <span class="divider">|</span>
-                            12344
-                        </span>
-                    </div>
-                    <div class="checkbox-container">
-                        <input id="dial-6" type="checkbox" class="dial-checkbox">
-                    </div>
-                </label>
-            </div>
-            <div class="col-12 col-lg-6">
-                <label class="dial-card" for="dial-7">
-                    <div class="dial-info">
-                        <span class="phone-number">0222679258</span>
-                        <span class="pool-info">
-                            B2B Pool
-                            <span class="divider">|</span>
-                            12344
-                        </span>
-                    </div>
-                    <div class="checkbox-container">
-                        <input id="dial-7" type="checkbox" class="dial-checkbox">
-                    </div>
-                </label>
-            </div>
-            <div class="col-12 col-lg-6">
-                <label class="dial-card" for="dial-8">
-                    <div class="dial-info">
-                        <span class="phone-number">0222679258</span>
-                        <span class="pool-info">
-                            B2B Pool
-                            <span class="divider">|</span>
-                            12344
-                        </span>
-                    </div>
-                    <div class="checkbox-container">
-                        <input id="dial-8" type="checkbox" class="dial-checkbox">
-                    </div>
-                </label>
-            </div>
+<div class="dials-container">
+
+  <!-- Column 1 -->
+
+  <div class="column">
+    <label class="dial-card">
+      <div class="wrapper">
+        <div class="card-wrapper">
+          <div class="dial-info">
+            <span class="phone-number">01112235521</span>
+            <span class="pool-info">B2B Pool | Golden | 12344</span>
+          </div>
+          <input type="checkbox" [(ngModel)]="dial1">
         </div>
-    </div>
+        @if(dial1){
+          <div class="sim-wrapper">
+            <app-sim-number></app-sim-number>
+          </div>
+        }
+      </div>
+    </label>
+    <label class="dial-card">
+      <div class="wrapper">
+        <div class="card-wrapper">
+          <div class="dial-info">
+            <span class="phone-number">011122355210000000000000000000</span>
+            <span class="pool-info">B2B Pool | Golden | 12344</span>
+          </div>
+          <input type="checkbox" [(ngModel)]="dial3" />
+        </div>
+         @if(dial3){
+          <div class="sim-wrapper">
+            <app-sim-number></app-sim-number>
+          </div>
+        }
+      </div>
+    </label>
+  </div>
+
+  <!-- Column 2 -->
+  <div class="column">
+    <label class="dial-card">
+      <div class="wrapper">
+        <div class="card-wrapper">
+          <div class="dial-info">
+            <span class="phone-number">01112235500</span>
+            <span class="pool-info">B2B Pool | Golden | 12344</span>
+          </div>
+          <input type="checkbox" [(ngModel)]="dial2" />
+        </div>
+         @if(dial2){
+          <div class="sim-wrapper">
+            <app-sim-number></app-sim-number>
+          </div>
+        }
+      </div>
+    </label>
+
+    <label class="dial-card">
+      <div class="wrapper">
+        <div class="card-wrapper">
+          <div class="dial-info">
+            <span class="phone-number">01112235521</span>
+            <span class="pool-info">B2B Pool | Golden | 12344</span>
+          </div>
+          <input type="checkbox"  [(ngModel)]="dial4">
+        </div>
+               @if(dial2){
+          <div class="sim-wrapper">
+            <app-sim-number></app-sim-number>
+          </div>
+        }
+      </div>
+    </label>
+  </div>
+
 </div>
