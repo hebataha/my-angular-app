@@ -3,29 +3,39 @@
     <label class="question">what is customer type</label>
     <div class="radio-group">
       <label class="radio-option">
-        <input type="radio" name="SIM" value="Row"/>
+        <input type="radio" name="SIM" value="Row" [(ngModel)]="type"/>
         <span>counsumer</span>
       </label>
 
       <label class="radio-option">
-        <input type="radio" name="SIM" value="Pre-Active" />
+           <input type="radio" name="SIM" value="Pre-Active" [(ngModel)]="type" />
         <span>corparate</span>
       </label>
     </div>
   </div>
-
-   <div class="form-group">
+   <div class="form-group">    
     <label class="question">pill acount case</label>
     <div class="radio-group">
       <label class="radio-option">
-        <input type="radio" name="type" value="Pool"  />
+        <input type="radio" name="type" value="Pool" [(ngModel)]="case" />
         <span>new pill account</span>
       </label>
 
       <label class="radio-option">
-        <input type="radio" name="type" value="Manual" />
+        <input type="radio" name="type" value="Manual" [(ngModel)]="case"  />
         <span>existing pill acount</span>
       </label>
     </div>
   </div>
+
+  @if(case === "Pool"){
+<app-id-information></app-id-information>
+<app-contract-language></app-contract-language>
+<app-upload-contract></app-upload-contract>
+  }
+
+  
+@if(case === "Manual"){
+<app-dial-pattern-container></app-dial-pattern-container>
+  }
 </div>

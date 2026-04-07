@@ -7,7 +7,6 @@ $input-radius: 20px;
   font-family: 'Segoe UI', sans-serif;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 20px;
 
   .form-section {
     margin-bottom: 40px;
@@ -27,6 +26,14 @@ $input-radius: 20px;
     &.cols-3 { grid-template-columns: repeat(3, 1fr); }
   }
 
+  
+  .grid-layout {
+    display: grid;
+    gap: 20px 30px;
+    margin-bottom: 20px;
+
+    &.cols-23 { grid-template-columns: repeat(2, 1fr); }
+  }
   .form-group {
     display: flex;
     flex-direction: column;
@@ -94,4 +101,98 @@ $input-radius: 20px;
 
 .delete{
   height:18px;
+}
+
+.customer-info {
+  max-width: 980px;
+  padding: 8px 6px;
+  font-family: Arial, sans-serif;
+  color: #222;
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+}
+
+.customer-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 18px;
+  border:0;
+  padding: 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1f1f1f;
+  }
+
+  input,
+  select {
+    width: 100%;
+    height: 44px;
+    padding: 0 16px;
+    border: 1px solid #d9d9d9;
+    border-radius: 24px;
+    background: #fff;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      border-color: #999;
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%23666' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+    cursor: pointer;
+  }
+}
+
+.input-icon {
+  position: relative;
+
+  input {
+    padding-right: 42px;
+  }
+
+  .icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #666;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .customer-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .customer-form {
+    grid-template-columns: 1fr;
+  }
 }
