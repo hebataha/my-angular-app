@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { SimNumber } from '../sim-number/sim-number';
 import { ReservedDials } from '../services/reserved-dials';
 
@@ -11,13 +11,12 @@ import { ReservedDials } from '../services/reserved-dials';
 })
 export class ChooseDialOptions {
   constructor(private _ReservedDials: ReservedDials) {
-    this._ReservedDials.dialsNumber.subscribe((numberVal) => this.theNumber = numberVal)
-    this._ReservedDials.dialsNumber3.subscribe((numberVal) => this.theNumber3 = numberVal)
-    this._ReservedDials.dialsNumber2.subscribe((numberVal) => this.theNumber2 = numberVal)
-    this._ReservedDials.dialsNumber4.subscribe((numberVal) => this.theNumber4 = numberVal)
-
-
+    this._ReservedDials.dialsNumber.subscribe((numberVal) => this.theNumber = numberVal);
+    this._ReservedDials.dialsNumber2.subscribe((numberVal) => this.theNumber2 = numberVal);
+    this._ReservedDials.dialsNumber3.subscribe((numberVal) => this.theNumber3 = numberVal);
+    this._ReservedDials.dialsNumber4.subscribe((numberVal) => this.theNumber4 = numberVal);
   }
+
   dial1: boolean = false;
   dial2: boolean = false;
   dial3: boolean = false;
@@ -29,43 +28,34 @@ export class ChooseDialOptions {
   theNumber4: number = 0;
 
   inputNumber(num: number): void {
-    if (this.dial3) {
-      this._ReservedDials.dialsNumber3.next(num);
-
-    }
-    else {
-      this._ReservedDials.dialsNumber3.next(0);
-
-    }
-
     if (this.dial1) {
       this._ReservedDials.dialsNumber.next(num);
-
-    }
-    else {
+    } else {
       this._ReservedDials.dialsNumber.next(0);
-
     }
+  }
+
+  inputNumber2(num: number): void {
     if (this.dial2) {
       this._ReservedDials.dialsNumber2.next(num);
-
-    }
-    else {
+    } else {
       this._ReservedDials.dialsNumber2.next(0);
-
     }
+  }
 
-    if (this.dial4) {
+  inputNumber3(num: number): void {
+    if (this.dial3) {  // fixed: was this.dial2
+      this._ReservedDials.dialsNumber3.next(num);
+    } else {
+      this._ReservedDials.dialsNumber3.next(0);
+    }
+  }
+
+  inputNumber4(num: number): void {
+    if (this.dial4) {  // fixed: was this.dial2
       this._ReservedDials.dialsNumber4.next(num);
-
-    }
-    else {
+    } else {
       this._ReservedDials.dialsNumber4.next(0);
-
     }
   }
 }
-
-
-
-

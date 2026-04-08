@@ -4,13 +4,20 @@ $border-blue: #b9d8eb;
 $text-dark: #333;
 $text-muted: #7d8a96;
 $accent-red: #d9534f;
+.brand-light-blue{
+  background-color: #eef7fd;
 
+}
+
+.brand-gray{
+  background-color:#f3f3f3;
+}
 .dial-card-advanced {
-  background-color: $brand-light-blue;
   padding: 20px;
   position: relative;
   font-family: 'Segoe UI', Tahoma, sans-serif;
   max-width: 500px;
+  margin: 10px 0;
   
   // Custom Shape with Dashed Border
   border: 1px dashed $border-blue;

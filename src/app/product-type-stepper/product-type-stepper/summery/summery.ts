@@ -23,6 +23,7 @@ export class Summery {
   stepNum: number = 1;
   stepCount: number = 1;
   ProductType = ProductType;
+  enhanceCard:boolean = true;
 
   constructor(private _servicePopup: servicePopup, private _countStepperService: CountStepperService, private _ReservedDials: ReservedDials) {
     this._servicePopup.popupNumber.subscribe((val) => this.stepNum = val);

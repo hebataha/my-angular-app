@@ -1,32 +1,29 @@
-<div class="dial-card-advanced">
-  <button class="edit-btn" aria-label="Edit">
-    <span class="icon-pencil"><i class="bi bi-pencil"></i></span>
-  </button>
-
-  <h3 class="phone-number">01112235521</h3>
-  
-  <div class="details-grid flex-wrap">
-    <div class="detail-item">
-      <label>Pool Type</label>
-      <span class="value">B2B Pool</span>
+<div class="dial-card-advanced" [class]="enhance ?   'brand-gray' : 'brand-light-blue'  ">
+    <button class="edit-btn" aria-label="Edit">
+        <span class="icon-pencil">
+            <i class="bi bi-pencil"></i>
+        </span>
+    </button>
+    <h3 class="phone-number">01112235521</h3>
+    <div class="details-grid flex-wrap">
+        <div class="detail-item">
+            <label>Pool Type</label>
+            <span class="value">B2B Pool</span>
+        </div>
+        <div class="detail-item">
+            <label>Dial Group</label>
+            <span class="value">Golden</span>
+        </div>
+        <div class="divider"></div>
+        <div class="detail-item">
+            <label>SIM Serial Number</label>
+            <span class="value">413031234567890</span>
+        </div>
     </div>
     
-    <div class="divider"></div>
-    
-    <div class="detail-item">
-      <label>Dial Group</label>
-      <span class="value">Golden</span>
+    @if(!enhance){
+    <div class="card-logo">
+        <img src="images/etisalat-and-logo.svg" alt="Card Logo">
     </div>
-
-    <div class="divider"></div>
-
-    <div class="detail-item">
-      <label>SIM Serial Number</label>
-      <span class="value">413031234567890</span>
-    </div>
-  </div>
-
-  <div class="card-logo">
-    <img src="images/etisalat-and-logo.svg" alt="Card Logo">
-  </div>
+    }
 </div>
