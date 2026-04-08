@@ -7,5 +7,9 @@ import { Component, Input } from '@angular/core';
   styleUrl: './summery-card-advanced.scss',
 })
 export class SummeryCardAdvanced {
-  @Input() enhance!:boolean;
+  @Input() cardColor!: boolean;
+  @Input() imageShown!: boolean;
+
+
+
 }

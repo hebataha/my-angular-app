@@ -7,7 +7,6 @@
     }
     <!-- app-summery-choose-dials -->
     @if (stepCount === 2 ) {
-
     <!-- dials-header -->
     @if(theNumber || theNumber2 || theNumber3 || theNumber4 ){
     <header class="dials-header">
@@ -19,7 +18,7 @@
     @if(theNumber){
     <app-summery-dials-information [numberValue]="theNumber"></app-summery-dials-information>
     }
-    <!--theNumber  -->
+    <!--theNu mber  -->
     @if(theNumber2){
     <app-summery-dials-information [numberValue]="theNumber2"></app-summery-dials-information>
     }
@@ -56,20 +55,21 @@
     }
 
         @if (stepCount === 4) {
-    <app-summery-card-advanced></app-summery-card-advanced>
-    <app-summery-card-advanced  [enhance]="enhanceCard"></app-summery-card-advanced>
+    <app-summery-card-advanced [cardColor]="cardColor" [imageShown]="true"></app-summery-card-advanced>
+    <app-summery-card-advanced  imageShown]="false"></app-summery-card-advanced>
     <app-summery-customer-information></app-summery-customer-information>
+    }
 
 
 
-
-
-
-
+     @if (stepCount === 5) {
+    <app-summery-card-advanced [cardColor]="cardColor" [imageShown]="true"></app-summery-card-advanced>
+    <app-summery-card-advanced imageShown]="true" [imageShown]="true"></app-summery-card-advanced>
+    <app-summery-customer-information></app-summery-customer-information>
+    }
     <!-- <app-dial-card-advanced></app-dial-card-advanced> -->
     <!-- <app-summery-dials-information></app-summery-dials-information> -->
     <!-- <app-summery-total></app-summery-total> -->
     <!-- <app-summery-total-details></app-summery-total-details> -->
-    }
     <!-- <button class="proceed-btn mt-4"> Purachse</button> -->
 </div>

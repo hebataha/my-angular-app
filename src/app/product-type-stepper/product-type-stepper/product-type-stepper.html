@@ -42,8 +42,7 @@
                     <app-choose-plan></app-choose-plan>
                 }
                 @if (stepCount === 5) {
-               
-
+            <app-choose-bundle></app-choose-bundle>
                 }
                 }
             </div>
@@ -51,7 +50,6 @@
             </div>
      
             <!-- <app-choose-plan></app-choose-plan>
-            <app-choose-bundle></app-choose-bundle>
             <app-extra-addons></app-extra-addons>
             <app-use-points></app-use-points>
             <app-dial-information></app-dial-information>
@@ -63,7 +61,7 @@
             <app-dial-info-card></app-dial-info-card>
             <app-dial-pattern-container></app-dial-pattern-container>
             <app-insert-dial></app-insert-dial> -->
-            <!-- <h1> {{stepCount}} </h1> -->
+            <h1> {{stepCount}} </h1>
             <div class="stepper__footer d-flex justify-content-between">
                 <div>
                     @if (stepCount > 1) {

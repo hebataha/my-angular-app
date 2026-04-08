@@ -8,10 +8,11 @@ import { ChooseDialOptions } from './steps/choose-dial-options/choose-dial-optio
 import { ChoosePlan } from "./steps/choose-plan/choose-plan";
 import { ConsumerInfoCard } from "./steps/consumer-info-card/consumer-info-card";
 import { CountStepperService } from './services/count-stepper-service';
+import { ChooseBundle } from "./steps/choose-bundle/choose-bundle";
 
 @Component({
   selector: 'app-product-type-stepper',
-  imports: [Summery, StepperStep, ChooseDialOptions, ChooseDial, ChoosePlan, ConsumerInfoCard],
+  imports: [Summery, StepperStep, ChooseDialOptions, ChooseDial, ChoosePlan, ConsumerInfoCard, ChooseBundle],
   templateUrl: './product-type-stepper.html',
   styleUrl: './product-type-stepper.scss',
 })
