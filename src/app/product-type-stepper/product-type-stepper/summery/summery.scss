@@ -3,7 +3,11 @@ $text-main: #333;
 $text-secondary: #666;
 $border-radius: 20px;
 $card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-
+// Variables
+$text-dark: #333;
+$text-muted: #888;
+$bg-card: #e6e6e6; // Very light greyish blue
+$border-radius: 12px;
 .summary-card {
   background-color: $bg-white;
   border-radius: $border-radius;
@@ -24,3 +28,20 @@ $card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
 
 }
+
+ .dials-header {
+    margin-bottom: 20px;
+    
+    .title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0;
+      color: $text-dark;
+    }
+    
+    .subtitle {
+      font-size: 0.8rem;
+      color: $text-muted;
+      margin: 4px 0 0 0;
+    }
+  }

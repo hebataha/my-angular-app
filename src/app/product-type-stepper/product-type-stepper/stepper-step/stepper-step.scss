@@ -39,11 +39,13 @@ span {
 }
 
 .step.active .circle {
-  background: rgb(114, 194, 114);
+    background: #4aa3df;
+
 }
 
 
 .step.complete .circle {
-    background: #4aa3df;
+      background: rgb(114, 194, 114);
+
 
 }

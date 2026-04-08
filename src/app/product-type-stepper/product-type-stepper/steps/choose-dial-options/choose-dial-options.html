@@ -1,10 +1,15 @@
 
+  <!-- <h1>the number1 {{theNumber}}</h1>
+
+    <h1>the number2 {{theNumber2}}</h1>
+  <h1>the number 3{{theNumber3}}</h1>
+  <h1>the number 4{{theNumber4}}</h1> -->
+
   <div class="reserved-dials-header">
   <h3 class="title">Choose From Reserved Dials</h3>
   <button type="button" class="reserve-btn">Reserve Dial</button>
 </div>
 <div class="dials-container">
-
 
   <!-- Column 1 -->
 
@@ -16,7 +21,7 @@
             <span class="phone-number">01112235521</span>
             <span class="pool-info">B2B Pool | Golden | 12344</span>
           </div>
-          <input type="checkbox" [(ngModel)]="dial1">
+          <input type="checkbox" [(ngModel)]="dial1" (change)="inputNumber(01112235521)"> 
         </div>
         @if(dial1){
           <div class="sim-wrapper">
@@ -29,10 +34,10 @@
       <div class="wrapper">
         <div class="card-wrapper">
           <div class="dial-info">
-            <span class="phone-number">011122355210000000000000000000</span>
+            <span class="phone-number">011122355210</span>
             <span class="pool-info">B2B Pool | Golden | 12344</span>
           </div>
-          <input type="checkbox" [(ngModel)]="dial3" />
+          <input type="checkbox" [(ngModel)]="dial3" (change)="inputNumber(011122355210)"/>
         </div>
          @if(dial3){
           <div class="sim-wrapper">
@@ -52,7 +57,7 @@
             <span class="phone-number">01112235500</span>
             <span class="pool-info">B2B Pool | Golden | 12344</span>
           </div>
-          <input type="checkbox" [(ngModel)]="dial2" />
+          <input type="checkbox" [(ngModel)]="dial2" (change)="inputNumber(01112235500)"/>
         </div>
          @if(dial2){
           <div class="sim-wrapper">
@@ -69,7 +74,7 @@
             <span class="phone-number">01112235521</span>
             <span class="pool-info">B2B Pool | Golden | 12344</span>
           </div>
-          <input type="checkbox"  [(ngModel)]="dial4">
+          <input type="checkbox"  [(ngModel)]="dial4" (change)="inputNumber(01112235521)">
         </div>
                @if(dial2){
           <div class="sim-wrapper">

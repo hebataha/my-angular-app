@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-summery-dials-information',
@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './summery-dials-information.scss',
 })
 export class SummeryDialsInformation {
+  @Input() numberValue!: number;
+  constructor() {
+  }
 
 }

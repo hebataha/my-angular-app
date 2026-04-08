@@ -7,24 +7,7 @@ $border-radius: 12px;
 .dials-container {
   font-family: 'Segoe UI', Tahoma, sans-serif;
   max-width: 450px;
-  padding: 20px;
 
-  .dials-header {
-    margin-bottom: 20px;
-    
-    .title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin: 0;
-      color: $text-dark;
-    }
-    
-    .subtitle {
-      font-size: 0.8rem;
-      color: $text-muted;
-      margin: 4px 0 0 0;
-    }
-  }
 
   .dial-card {
     background-color: $bg-card;
@@ -32,6 +15,7 @@ $border-radius: 12px;
     border-radius: $border-radius;
     position: relative;
     border: 1px solid dashed #fff;
+    margin-bottom: 10px;
     
     // The Notch: Cuts the top-right corner
     clip-path: polygon(

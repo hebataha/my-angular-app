@@ -9,6 +9,7 @@ import { DialCardAdvanced } from "./dial-card-advanced/dial-card-advanced";
 import { CountStepperService } from '../services/count-stepper-service';
 import { ProductType } from '../../../shared/enums/product-type';
 import { servicePopup } from '../../../shared/popup/service-popup';
+import { ReservedDials } from '../steps/services/reserved-dials';
 
 @Component({
   selector: 'app-summery',
@@ -21,11 +22,19 @@ export class Summery {
   stepCount: number = 1;
   ProductType = ProductType;
 
-  constructor(private _servicePopup: servicePopup, private _countStepperService: CountStepperService) {
+  constructor(private _servicePopup: servicePopup, private _countStepperService: CountStepperService, private _ReservedDials: ReservedDials) {
     this._servicePopup.popupNumber.subscribe((val) => this.stepNum = val);
-
     this._countStepperService.stepperCount.subscribe((stepNumber) => this.stepCount = stepNumber)
+    this._ReservedDials.dialsNumber.subscribe((numberVal) => this.theNumber = numberVal)
+    this._ReservedDials.dialsNumber3.subscribe((numberVal) => this.theNumber3 = numberVal)
+    this._ReservedDials.dialsNumber2.subscribe((numberVal) => this.theNumber2 = numberVal)
+    this._ReservedDials.dialsNumber4.subscribe((numberVal) => this.theNumber4 = numberVal)
 
   }
+  theNumber: number = 0;
+  theNumber2: number = 0;
+  theNumber3: number = 0;
+  theNumber4: number = 0;
+
 
 }
