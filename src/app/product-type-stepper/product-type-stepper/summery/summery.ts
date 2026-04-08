@@ -3,19 +3,14 @@ import { SummeryChooseDials } from "./summery-choose-dials/summery-choose-dials"
 import { SummeryDialsInformation } from "./summery-dials-information/summery-dials-information";
 import { SummeryCustomerInformation } from "./summery-customer-information/summery-customer-information";
 import { SummeryCardAdvanced } from "./summery-card-advanced/summery-card-advanced";
-import { SummeryTotal } from "./summery-total/summery-total";
-import { SummeryTotalDetails } from "./summery-total-details/summery-total-details";
-import { DialCardAdvanced } from "./dial-card-advanced/dial-card-advanced";
 import { CountStepperService } from '../services/count-stepper-service';
 import { ProductType } from '../../../shared/enums/product-type';
 import { servicePopup } from '../../../shared/popup/service-popup';
 import { ReservedDials } from '../steps/services/reserved-dials';
-import { CustomerInfo } from "../steps/customer-info/customer-info";
-import { ConsumerInfoCard } from "../steps/consumer-info-card/consumer-info-card";
 
 @Component({
   selector: 'app-summery',
-  imports: [SummeryChooseDials, SummeryDialsInformation, SummeryCustomerInformation, SummeryCardAdvanced, SummeryTotal, SummeryTotalDetails, DialCardAdvanced, CustomerInfo, ConsumerInfoCard],
+  imports: [SummeryChooseDials, SummeryDialsInformation, SummeryCustomerInformation, SummeryCardAdvanced],
   templateUrl: './summery.html',
   styleUrl: './summery.scss',
 })
