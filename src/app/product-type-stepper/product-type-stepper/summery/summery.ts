@@ -10,10 +10,12 @@ import { CountStepperService } from '../services/count-stepper-service';
 import { ProductType } from '../../../shared/enums/product-type';
 import { servicePopup } from '../../../shared/popup/service-popup';
 import { ReservedDials } from '../steps/services/reserved-dials';
+import { CustomerInfo } from "../steps/customer-info/customer-info";
+import { ConsumerInfoCard } from "../steps/consumer-info-card/consumer-info-card";
 
 @Component({
   selector: 'app-summery',
-  imports: [SummeryChooseDials, SummeryDialsInformation, SummeryCustomerInformation, SummeryCardAdvanced, SummeryTotal, SummeryTotalDetails, DialCardAdvanced],
+  imports: [SummeryChooseDials, SummeryDialsInformation, SummeryCustomerInformation, SummeryCardAdvanced, SummeryTotal, SummeryTotalDetails, DialCardAdvanced, CustomerInfo, ConsumerInfoCard],
   templateUrl: './summery.html',
   styleUrl: './summery.scss',
 })

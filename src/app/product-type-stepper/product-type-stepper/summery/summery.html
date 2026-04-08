@@ -40,7 +40,26 @@
     }
 
     @if (stepCount === 3) {
-    <app-summery-dials-information></app-summery-dials-information>
+     @if(theNumber){
+    <app-summery-dials-information [numberValue]="theNumber"></app-summery-dials-information>
+    }
+<!--theNumber  -->
+    @if(theNumber2){
+    <app-summery-dials-information [numberValue]="theNumber2"></app-summery-dials-information>
+    }
+    <!--theNumber2  -->
+
+    @if(theNumber3){
+    <app-summery-dials-information [numberValue]="theNumber3"></app-summery-dials-information>
+    }
+
+    <!--theNumber3  -->
+
+    @if(theNumber4){
+    <app-summery-dials-information [numberValue]="theNumber4"></app-summery-dials-information>
+    }
+    <app-consumer-info-card></app-consumer-info-card>
+
     }
     }
     <!-- <app-summery-dials-information></app-summery-dials-information>
