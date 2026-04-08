@@ -24,6 +24,7 @@ form{
     column-gap: 30px;
     row-gap: 20px;
     padding:0;
+
     @media(max-width:1200px){
           grid-template-columns: repeat(2, 1fr); // 3 equal columns
 

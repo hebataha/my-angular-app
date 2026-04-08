@@ -15,12 +15,12 @@
 <h5> Purchase VOICE SIM</h5>
 }
 <div class="row">
-    <div class="col-12 col-lg-8">
+    <div class="col-12 col-lg-8 mb-3">
         <div class="stepper d-flex flex-column justify-content-between">
             <div>
        <app-stepper-step></app-stepper-step>
             <!-- <app-choose-dial-options></app-choose-dial-options> -->
-            {{stepCount}}
+            <!-- {{stepCount}} -->
             <div class="stepper__data">
                 <!-- <app-setup-options></app-setup-options>
                 <app-customer-info></app-customer-info> -->
@@ -63,7 +63,7 @@
             <app-dial-info-card></app-dial-info-card>
             <app-dial-pattern-container></app-dial-pattern-container>
             <app-insert-dial></app-insert-dial> -->
-            <h1> {{stepCount}} </h1>
+            <!-- <h1> {{stepCount}} </h1> -->
             <div class="stepper__footer d-flex justify-content-between">
                 <div>
                     @if (stepCount > 1) {
@@ -81,6 +81,6 @@
         </div>
     </div>
     <div class="col-12 col-lg-4">
-        <app-summery></app-summery>
+        <app-summery class="w-100"></app-summery>
     </div>
 </div>
