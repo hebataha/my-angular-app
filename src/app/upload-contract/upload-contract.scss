@@ -26,6 +26,7 @@ $border-dashed: #ddd;
     text-align: center;
     cursor: pointer;
     margin-bottom: 10px;
+    position:relative;
 
     p {
       margin: 0;
@@ -85,3 +86,14 @@ $border-dashed: #ddd;
     }
   }
 }
+.file-upload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 4;
+
+  }
