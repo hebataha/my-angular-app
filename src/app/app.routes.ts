@@ -9,7 +9,7 @@ import { ProductPopup } from './shared/popup/product-popup/product-popup';
 import { ProductTypeStepper } from './product-type-stepper/product-type-stepper/product-type-stepper';
 
 export const routes: Routes = [
-  { path: "", component: Login , title:"login" },
+  { path: "",  redirectTo: "/login", pathMatch:"full",title:"login" },
   { path: "todoApp", component: Todo , title:"todo" },
   { path: "register", component: Register , title:"register" },
   { path: "login", component: Login ,title:"login"},
