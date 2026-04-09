@@ -9,14 +9,14 @@ import { ProductPopup } from './shared/popup/product-popup/product-popup';
 import { ProductTypeStepper } from './product-type-stepper/product-type-stepper/product-type-stepper';
 
 export const routes: Routes = [
-  { path: "", component: Login },
-  { path: "todoApp", component: Todo },
-  { path: "register", component: Register },
-  { path: "login", component: Login },
-  { path: "forgetPassword", component: ForgetPassword },
-  { path: "formGroup", component: FromGroup },
-  { path: "productPopup", component: ProductPopup },
-  { path: "productStepper", component: ProductTypeStepper },
+  { path: "", component: Login , title:"login" },
+  { path: "todoApp", component: Todo , title:"todo" },
+  { path: "register", component: Register , title:"register" },
+  { path: "login", component: Login ,title:"login"},
+  { path: "forgetPassword", component: ForgetPassword ,title:"forget pass"},
+  { path: "formGroup", component: FromGroup, title:"formGroup" },
+  { path: "productPopup", component: ProductPopup , title:"productPopup"},
+  { path: "productStepper", component: ProductTypeStepper , title:"productStepper" },
 
 
 
