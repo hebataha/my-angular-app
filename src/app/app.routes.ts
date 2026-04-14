@@ -7,6 +7,7 @@ import { ForgetPassword } from './forms/components/forget-password/forget-passwo
 import { FromGroup } from './forms/from-group/from-group';
 import { ProductPopup } from './shared/popup/product-popup/product-popup';
 import { ProductTypeStepper } from './product-type-stepper/product-type-stepper/product-type-stepper';
+import { Users } from './users-operation/users/users';
 
 export const routes: Routes = [
   { path: "",  redirectTo: "/login", pathMatch:"full",title:"login" },
@@ -16,7 +17,9 @@ export const routes: Routes = [
   { path: "forgetPassword", component: ForgetPassword ,title:"forget pass"},
   { path: "formGroup", component: FromGroup, title:"formGroup" },
   { path: "productPopup", component: ProductPopup , title:"productPopup"},
-  { path: "productStepper", component: ProductTypeStepper , title:"productStepper" },
+  { path: "productStepper", component: ProductTypeStepper, title: "productStepper" },
+    { path: "users", component: Users , title:"users" },
+
 
 
 
