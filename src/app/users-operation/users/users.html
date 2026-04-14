@@ -1,73 +1,80 @@
 <div class="users-page">
-  <div class="table-card">
-    <div class="table-header">
-      <h2>User List</h2>
+    <div class="table-card">
+        <div class="table-header">
+            <h2>User List</h2>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="users-table table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Maiden Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Username</th>
+                        <th>Birth Date</th>
+                        <th>Image</th>
+                        <th>Height</th>
+                        <th>Weight</th>
+                        <th>City</th>
+                        <th>University</th>
+                        <th>Company</th>
+                         <th>Actions</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @for (user of users; track user.id) {
+                    <tr>
+                        <td>{{user.id}}</td>
+                        <td>{{user.firstName}}</td>
+                        <td>{{user.lastName}}</td>
+                        <td>{{user.maidenName}}</td>
+                        <td>{{user.age}}</td>
+                        <td>{{user.gender}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.phone}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.birthDate}}</td>
+                        <td>{{user.image}}</td>
+                        <td>{{user.height}}</td>
+                        <td>{{user.weight}}</td>
+                        <td>{{user.address.address}}</td>
+                        <td>{{user.university}}</td>
+                        <td>{{user.company.name}}</td>
+
+
+                        <td>
+                            <div class="actions">
+                                <button class="btn btn-view">View</button>
+                                <button class="btn btn-update">Update</button>
+                                <button class="btn btn-delete">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="add-section">
+            <button class="btn btn-add">Add User</button>
+        </div>
     </div>
-
-    <div class="table-wrapper">
-      <table class="users-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>City</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Ahmed Ali</td>
-            <td>ahmed@example.com</td>
-            <td>01012345678</td>
-            <td>Cairo</td>
-            <td>
-              <div class="actions">
-                <button class="btn btn-view">View</button>
-                <button class="btn btn-update">Update</button>
-                <button class="btn btn-delete">Delete</button>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>2</td>
-            <td>Sara Mohamed</td>
-            <td>sara@example.com</td>
-            <td>01098765432</td>
-            <td>Giza</td>
-            <td>
-              <div class="actions">
-                <button class="btn btn-view">View</button>
-                <button class="btn btn-update">Update</button>
-                <button class="btn btn-delete">Delete</button>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>3</td>
-            <td>Omar Hassan</td>
-            <td>omar@example.com</td>
-            <td>01122334455</td>
-            <td>Alexandria</td>
-            <td>
-              <div class="actions">
-                <button class="btn btn-view">View</button>
-                <button class="btn btn-update">Update</button>
-                <button class="btn btn-delete">Delete</button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="add-section">
-      <button class="btn btn-add">Add User</button>
-    </div>
-  </div>
 </div>
+
+<!-- @for(let user of users){
+    sss
+  
+} -->
