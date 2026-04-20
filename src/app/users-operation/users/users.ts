@@ -29,4 +29,15 @@ export class Users implements OnInit {
 
     )
   }
+
+  view(){
+
+  }
+  update(){
+
+  }
+
+  delete() {
+    
+  }
 }

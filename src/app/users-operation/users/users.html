@@ -1,77 +1,101 @@
 <div class="users-page">
-    <div class="table-card">
-        <div class="table-header">
-            <h2>User List</h2>
-        </div>
-
-        <div class="table-wrapper">
-            <table class="users-table table table-bordered table-striped table-hover">
-                <thead>
-                    <tr>
-
-                        <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Maiden Name</th>
-                        <th>Age</th>
-                        <th>Gender</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Username</th>
-                        <th>Birth Date</th>
-                        <th>Image</th>
-                        <th>Height</th>
-                        <th>Weight</th>
-                        <th>City</th>
-                        <th>University</th>
-                        <th>Company</th>
-                         <th>Actions</th>
-
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    @for (user of users; track user.id) {
-                    <tr>
-                        <td>{{user.id}}</td>
-                        <td>{{user.firstName}}</td>
-                        <td>{{user.lastName}}</td>
-                        <td>{{user.maidenName}}</td>
-                        <td>{{user.age}}</td>
-                        <td>{{user.gender}}</td>
-                        <td>{{user.email}}</td>
-                        <td>{{user.phone}}</td>
-                        <td>{{user.username}}</td>
-                        <td>{{user.birthDate}}</td>
-                        <td>{{user.image}}</td>
-                        <td>{{user.height}}</td>
-                        <td>{{user.weight}}</td>
-                        <td>{{user.address.address}}</td>
-                        <td>{{user.university}}</td>
-                        <td>{{user.company.name}}</td>
-
-
-                        <td>
-                            <div class="actions">
-                                <button class="btn btn-view">View</button>
-                                <button class="btn btn-update">Update</button>
-                                <button class="btn btn-delete">Delete</button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    }
-
-
-                </tbody>
-            </table>
-        </div>
-
-        <div class="add-section">
-            <button class="btn btn-add">Add User</button>
-        </div>
+  <div class="table-card">
+    <div class="table-header">
+      <h2>User List</h2>
     </div>
+
+    <div class="table-wrapper">
+      <table class="users-table table table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Maiden Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Username</th>
+            <th>Birth Date</th>
+            <th>Image</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Address</th>
+            <th>department</th>
+            <th>name</th>
+            <th>title</th>
+
+            <th>city</th>
+            <td>state</td>
+            <td>stateCode</td>
+            <td>postalCode</td>
+            <th>University</th>
+            <th>Company</th>
+            <th>country</th>
+
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @if(users.length === 0 ){
+          <tr>
+            <td colspan="17" class="text-center">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </td>
+          </tr>
+          }@else { @for (user of users; track user.id) {
+          <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.maidenName }}</td>
+            <td>{{ user.age }}</td>
+            <td>{{ user.gender }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.birthDate }}</td>
+            <td>
+              <img [src]="user.image" class="w-100 h-100" />
+            </td>
+
+            <td>{{ user.height }}</td>
+            <td>{{ user.weight }}</td>
+            <td>{{ user.address.address }}</td>
+            <th>{{ user.company.department }}</th>
+            <th>{{ user.company.name }}</th>
+            <th>{{ user.company.title }}</th>
+
+            <td>{{ user.address.city }}</td>
+            <td>{{ user.address.state }}</td>
+            <td>{{ user.address.stateCode }}</td>
+            <td>{{ user.address.postalCode }}</td>
+
+            <td>{{ user.university }}</td>
+            <td>{{ user.company.name }}</td>
+            <th>{{ user.address.country }}</th>
+            <td>
+              <div class="actions">
+                <button class="btn btn-view" (click)="view()">View</button>
+                <button class="btn btn-update" (click)="update()">Update</button>
+                <button class="btn btn-delete" (click)="delete()">Delete</button>
+              </div>
+            </td>
+          </tr>
+
+          } }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="add-section">
+      <button class="btn btn-add">Add User</button>
+    </div>
+  </div>
 </div>
 
 <!-- @for(let user of users){
