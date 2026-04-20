@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../core/services/users';
 import { User } from './interface/user';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-users',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './users.html',
   styleUrl: './users.scss',
 })
@@ -17,7 +18,7 @@ export class Users implements OnInit {
 
       next: (res) => {
         this.users = res.users,
-        console.log(res)
+          console.log(res)
       },
       error: (err) => console.log(err),
       complete: () => {
@@ -30,14 +31,15 @@ export class Users implements OnInit {
     )
   }
 
-  view(){
+  view(id: number) {
+    console.log(id);
 
   }
-  update(){
+  update() {
 
   }
 
   delete() {
-    
+
   }
 }

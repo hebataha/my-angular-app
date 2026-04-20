@@ -1,7 +1,8 @@
 <div class="users-page">
+
   <div class="table-card">
     <div class="table-header">
-      <h2>User List</h2>
+      <h2>Users List</h2>
     </div>
 
     <div class="table-wrapper">
@@ -80,9 +81,15 @@
             <th>{{ user.address.country }}</th>
             <td>
               <div class="actions">
-                <button class="btn btn-view" (click)="view()">View</button>
-                <button class="btn btn-update" (click)="update()">Update</button>
-                <button class="btn btn-delete" (click)="delete()">Delete</button>
+                <a class="btn btn-view" [routerLink]="['/users', user.id]"
+                  >View</a
+                >
+                <button class="btn btn-update" (click)="update()">
+                  Update
+                </button>
+                <button class="btn btn-delete" (click)="delete()">
+                  Delete
+                </button>
               </div>
             </td>
           </tr>
