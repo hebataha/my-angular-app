@@ -40,7 +40,7 @@
         </thead>
 
         <tbody>
-          @if(users.length === 0 ){
+          @if(loading ){
           <tr>
             <td colspan="17" class="text-center">
               <div class="spinner-border text-primary" role="status">
@@ -67,9 +67,9 @@
             <td>{{ user.height }}</td>
             <td>{{ user.weight }}</td>
             <td>{{ user.address.address }}</td>
-            <th>{{ user.company.department }}</th>
-            <th>{{ user.company.name }}</th>
-            <th>{{ user.company.title }}</th>
+            <td>{{ user.company.department }}</td>
+            <td>{{ user.company.name }}</td>
+            <td>{{ user.company.title }}</td>
 
             <td>{{ user.address.city }}</td>
             <td>{{ user.address.state }}</td>

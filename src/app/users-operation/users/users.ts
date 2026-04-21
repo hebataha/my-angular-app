@@ -10,7 +10,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './users.scss',
 })
 export class Users implements OnInit {
-  users: User[] = []
+  users: User[] = [];
+  loading = true;
+  
   constructor(private _users: UsersService) {
   }
   ngOnInit(): void {
@@ -19,8 +21,12 @@ export class Users implements OnInit {
       next: (res) => {
         this.users = res.users,
           console.log(res)
+        this.loading = false
       },
-      error: (err) => console.log(err),
+      error: (err) => {console.log(err)
+                this.loading = false
+
+      },
       complete: () => {
 
       }
