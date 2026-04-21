@@ -11,8 +11,9 @@ import { RouterLink } from '@angular/router';
 })
 export class Users implements OnInit {
   users: User[] = [];
+  deletedUsers: User[] = [];
   loading = true;
-  
+
   constructor(private _users: UsersService) {
   }
   ngOnInit(): void {
@@ -23,8 +24,9 @@ export class Users implements OnInit {
           console.log(res)
         this.loading = false
       },
-      error: (err) => {console.log(err)
-                this.loading = false
+      error: (err) => {
+        console.log(err)
+        this.loading = false
 
       },
       complete: () => {
@@ -37,15 +39,14 @@ export class Users implements OnInit {
     )
   }
 
-  view(id: number) {
-    console.log(id);
 
-  }
   update() {
 
   }
 
-  delete() {
-
+  delete(id: any) {
+    this._users.deleteUser(id).subscribe(() => {
+      this.users = this.users.filter(user => user.id !== id);
+    })
   }
 }
