@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../../users-operation/users/interface/user';
+import { ApiService } from './api-service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,30 +9,30 @@ import { User } from '../../users-operation/users/interface/user';
 
 
 export class UsersService {
-  API: string = 'https://dummyjson.com/users';
-  constructor(private _http: HttpClient) {
+  constructor( private _apiService: ApiService) {
 
   }
+  //  get<T>(endpoint: string, params?: QueryParams)
   getAllUsers(): Observable<any> {
-    return this._http.get(this.API)
+    return this._apiService.get('users')
   }
 
   getUser(id: number): Observable<any> {
-    return this._http.get(`${this.API}/${id}`)
+    return this._apiService.get(`users/${id}`);
   }
 
-  updateUser(user: User): Observable<any> {
-    return this._http.put(`${this.API}/${user.id}`, user);
+  updateUser(id: number, user: User): Observable<any> {
+    return this._apiService.put(`users/${id}`, user);
   }
 
   deleteUser(id: number): Observable<any> {
-    return this._http.delete(`${this.API}/${id}`)
+    return this._apiService.delete(`users/${id}`)
   }
   addUser(user: User): Observable<any> {
-    return this._http.post(`${this.API}/add`, user);
+    return this._apiService.post(`users`, user);
   }
   searchUsers(query: string) {
-    return this._http.get(`${this.API}/search?q=${query}`);
+    return this._apiService.get(`users/search?q=${query}`);
   }
   // filterUsers() {
   //   return;
