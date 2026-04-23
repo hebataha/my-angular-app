@@ -13,27 +13,28 @@ export class UsersService {
   constructor( private _apiService: ApiService) {
 
   }
+  private endPoint = "users"
   //  get<T>(endpoint: string, params?: QueryParams)
   getAllUsers(): Observable<any> {
-    return this._apiService.get('users')
+    return this._apiService.get(this.endPoint)
   }
 
   getUser(id: number): Observable<any> {
-    return this._apiService.get(`users/${id}`);
+    return this._apiService.get(`${this.endPoint}/${id}`);
   }
 
   updateUser(id: number, user: User): Observable<any> {
-    return this._apiService.put(`users/${id}`, user);
+    return this._apiService.put(`${this.endPoint}/${id}`, user);
   }
 
   deleteUser(id: number): Observable<any> {
-    return this._apiService.delete(`users/${id}`)
+    return this._apiService.delete(`${this.endPoint}/${id}`)
   }
   addUser(user: User): Observable<any> {
-    return this._apiService.post(`users`, user);
+    return this._apiService.post(`${this.endPoint}`, user);
   }
   searchUsers(query: string) {
-    return this._apiService.get(`users/search?q=${query}`);
+    return this._apiService.get(`${this.endPoint}/search?q=${query}`);
   }
   // filterUsers() {
   //   return;
