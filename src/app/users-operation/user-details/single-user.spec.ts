@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SingleUser } from './single-user';
+import { SingleUser } from './user-details';
 
 describe('SingleUser', () => {
   let component: SingleUser;
@@ -10,7 +10,7 @@ describe('SingleUser', () => {
     await TestBed.configureTestingModule({
       imports: [SingleUser]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(SingleUser);
     component = fixture.componentInstance;

@@ -8,7 +8,7 @@ import { FromGroup } from './forms/from-group/from-group';
 import { ProductPopup } from './shared/popup/product-popup/product-popup';
 import { ProductTypeStepper } from './product-type-stepper/product-type-stepper/product-type-stepper';
 import { Users } from './users-operation/users/users';
-import { SingleUser } from './users-operation/single-user/single-user';
+import {  UserDetails } from './users-operation/user-details/user-details';
 
 export const routes: Routes = [
   { path: "", redirectTo: "/login", pathMatch: "full", title: "login" },
@@ -20,7 +20,7 @@ export const routes: Routes = [
   { path: "productPopup", component: ProductPopup, title: "productPopup" },
   { path: "productStepper", component: ProductTypeStepper, title: "productStepper" },
   { path: "users", component: Users, title: "users" },
-  { path: "users/:id", component: SingleUser, title: "SingleUser" },
+  { path: "users/:id", component: UserDetails, title: "UserDetails" },
 
 
 

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../core/services/users';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { User } from '../users/interface/user';
+import { User } from '../interface/user';
 
 @Component({
-  selector: 'app-single-user',
+  selector: 'app-user-details',
   imports: [RouterLink],
-  templateUrl: './single-user.html',
-  styleUrl: './single-user.scss',
+  templateUrl: './user-details.html',
+  styleUrl: './user-details.scss',
 })
-export class SingleUser implements OnInit {
+export class UserDetails implements OnInit {
   id!: number;
   singleUser!: User;
   loading = true;

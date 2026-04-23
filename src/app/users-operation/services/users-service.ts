@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../../users-operation/interface/user';
-import { ApiService } from './api-service';
+import { ApiService } from '../../core/services/api-service';
+import { User } from '../interface/user';
+
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,7 @@ import { ApiService } from './api-service';
 
 
 export class UsersService {
-  constructor(private _apiService: ApiService) {
+  constructor( private _apiService: ApiService) {
 
   }
   //  get<T>(endpoint: string, params?: QueryParams)
