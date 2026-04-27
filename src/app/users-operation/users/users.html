@@ -7,44 +7,58 @@
       <div class="btn-wrapper d-flex justify-content-end">
         <button class="btn btn-add" (click)="tableShown()">Add User</button>
       </div>
-      @if(showTable){
-      <form class="card shadow-sm mt-4 mb-4">
+      <!-- @if(showTable){ -->
+      <form [formGroup]="form" class="card shadow-sm mt-4 mb-4" (ngSubmit)="submit()">
         <div class="card-header bg-primary text-white">
           <h5 class="mb-0">Add New User</h5>
         </div>
-
+        <!-- <pre class="bg-light p-3 mt-4"
+          >{{ form.value | json }}
+      </pre> -->
         <div class="card-body">
           <h6 class="mb-3 text-primary">Basic Information</h6>
 
           <div class="row g-3">
             <div class="col-md-3">
               <label class="form-label">ID</label>
-              <input type="number" class="form-control" name="id" />
+              <input type="number" class="form-control" formControlName="id" />
             </div>
 
             <div class="col-md-3">
               <label class="form-label">First Name</label>
-              <input type="text" class="form-control" name="firstName" />
+              <input
+                type="text"
+                class="form-control"
+                formControlName="firstName"
+              />
             </div>
 
             <div class="col-md-3">
               <label class="form-label">Last Name</label>
-              <input type="text" class="form-control" name="lastName" />
+              <input
+                type="text"
+                class="form-control"
+                formControlName="lastName"
+              />
             </div>
 
             <div class="col-md-3">
               <label class="form-label">Maiden Name</label>
-              <input type="text" class="form-control" name="maidenName" />
+              <input
+                type="text"
+                class="form-control"
+                formControlName="maidenName"
+              />
             </div>
 
             <div class="col-md-3">
               <label class="form-label">Age</label>
-              <input type="number" class="form-control" name="age" />
+              <input type="number" class="form-control" formControlName="age" />
             </div>
 
             <div class="col-md-3">
               <label class="form-label">Gender</label>
-              <select class="form-select" name="gender">
+              <select class="form-select" formControlName="gender">
                 <option value="">Select Gender</option>
                 <option value="female">Female</option>
                 <option value="male">Male</option>
@@ -53,32 +67,52 @@
 
             <div class="col-md-3">
               <label class="form-label">Email</label>
-              <input type="email" class="form-control" name="email" />
+              <input
+                type="email"
+                class="form-control"
+                formControlName="email"
+              />
             </div>
 
             <div class="col-md-3">
               <label class="form-label">Phone</label>
-              <input type="text" class="form-control" name="phone" />
+              <input type="text" class="form-control" formControlName="phone" />
             </div>
 
             <div class="col-md-3">
               <label class="form-label">Username</label>
-              <input type="text" class="form-control" name="username" />
+              <input
+                type="text"
+                class="form-control"
+                formControlName="username"
+              />
             </div>
 
             <div class="col-md-3">
               <label class="form-label">Birth Date</label>
-              <input type="date" class="form-control" name="birthDate" />
+              <input
+                type="date"
+                class="form-control"
+                formControlName="birthDate"
+              />
             </div>
 
             <div class="col-md-3">
               <label class="form-label">Height</label>
-              <input type="number" class="form-control" name="height" />
+              <input
+                type="number"
+                class="form-control"
+                formControlName="height"
+              />
             </div>
 
             <div class="col-md-3">
               <label class="form-label">Weight</label>
-              <input type="number" class="form-control" name="weight" />
+              <input
+                type="number"
+                class="form-control"
+                formControlName="weight"
+              />
             </div>
 
             <div class="col-md-6">
@@ -86,14 +120,18 @@
               <input
                 type="text"
                 class="form-control"
-                name="image"
                 placeholder="https://..."
+                formControlName="image"
               />
             </div>
 
             <div class="col-md-6">
               <label class="form-label">University</label>
-              <input type="text" class="form-control" name="university" />
+              <input
+                type="text"
+                class="form-control"
+                formControlName="university"
+              />
             </div>
           </div>
 
@@ -104,32 +142,48 @@
           <div class="row g-3">
             <div class="col-md-6">
               <label class="form-label">Address</label>
-              <input type="text" class="form-control" name="address" />
+              <input
+                type="text"
+                class="form-control"
+                formControlName="address"
+              />
             </div>
 
             <div class="col-md-3">
               <label class="form-label">City</label>
-              <input type="text" class="form-control" name="city" />
+              <input type="text" class="form-control" formControlName="city" />
             </div>
 
             <div class="col-md-3">
               <label class="form-label">State</label>
-              <input type="text" class="form-control" name="state" />
+              <input type="text" class="form-control" formControlName="state" />
             </div>
 
             <div class="col-md-3">
               <label class="form-label">State Code</label>
-              <input type="text" class="form-control" name="stateCode" />
+              <input
+                type="text"
+                class="form-control"
+                formControlName="stateCode"
+              />
             </div>
 
             <div class="col-md-3">
               <label class="form-label">Postal Code</label>
-              <input type="text" class="form-control" name="postalCode" />
+              <input
+                type="text"
+                class="form-control"
+                formControlName="postalCode"
+              />
             </div>
 
             <div class="col-md-6">
               <label class="form-label">Country</label>
-              <input type="text" class="form-control" name="country" />
+              <input
+                type="text"
+                class="form-control"
+                formControlName="country"
+              />
             </div>
           </div>
 
@@ -140,28 +194,38 @@
           <div class="row g-3">
             <div class="col-md-4">
               <label class="form-label">Department</label>
-              <input type="text" class="form-control" name="department" />
+              <input
+                type="text"
+                class="form-control"
+                formControlName="department"
+              />
             </div>
 
             <div class="col-md-4">
               <label class="form-label">Company Name</label>
-              <input type="text" class="form-control" name="companyName" />
+              <input
+                type="text"
+                class="form-control"
+                formControlName="companyName"
+              />
             </div>
 
             <div class="col-md-4">
               <label class="form-label">Title</label>
-              <input type="text" class="form-control" name="title" />
+              <input type="text" class="form-control" formControlName="title" />
             </div>
           </div>
+
+          
         </div>
 
         <div class="card-footer d-flex justify-content-end gap-2">
           <button type="reset" class="btn btn-outline-secondary">Clear</button>
 
-          <button type="submit" class="btn btn-primary">Add User</button>
+          <button type="submit" class="btn btn-primary" [disabled]="form.invalid" >Add User</button>
         </div>
       </form>
-      }
+      <!-- } -->
     </div>
     <div class="table-wrapper">
       <table class="users-table table table-bordered table-striped table-hover">
