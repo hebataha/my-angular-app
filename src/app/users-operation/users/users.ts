@@ -13,6 +13,7 @@ export class Users implements OnInit {
   users: User[] = [];
   deletedUsers: User[] = [];
   loading = true;
+  showTable: boolean = false;
 
   constructor(private _users: UsersService) {
   }
@@ -48,5 +49,10 @@ export class Users implements OnInit {
     this._users.deleteUser(id).subscribe(() => {
       this.users = this.users.filter(user => user.id !== id);
     })
+  }
+
+  tableShown() {
+    console.log("showwwwwwwwwwwn")
+    this.showTable = !this.showTable;
   }
 }
