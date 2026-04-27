@@ -30,8 +30,8 @@ export class UsersService {
   deleteUser(id: number): Observable<any> {
     return this._apiService.delete(`${this.endPoint}/${id}`)
   }
-  addUser(user: User): Observable<any> {
-    return this._apiService.post(`${this.endPoint}`, user);
+  addUser(user: any): Observable<any> {
+    return this._apiService.post(`${this.endPoint}`+ '/add', user);
   }
   searchUsers(query: string) {
     return this._apiService.get(`${this.endPoint}/search?q=${query}`);

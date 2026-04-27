@@ -94,7 +94,17 @@ export class Users implements OnInit {
   }
   submit() {
     console.log(this.form.value);
-    // this._users.addUser(this.form.value)
+    this._users.addUser(this.form.value).subscribe({
+      next: (res) => {
+       this.users = [res, ...this.users];
+          console.log(res)
+    
+      },
+      error:(err)=> {
+        console.log(err);
+        
+      }
+    })
 
   }
 }
