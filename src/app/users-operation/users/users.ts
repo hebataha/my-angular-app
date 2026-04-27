@@ -22,11 +22,9 @@ export class Users implements OnInit {
 
   form = new FormGroup({
     id: new FormControl('', [Validators.required]),
-
     firstName: new FormControl('', [Validators.required]),
     lastName: new FormControl('', [Validators.required]),
-    maidenName: new FormControl(''),
-
+    maidenName: new FormControl('', [Validators.required]),
     age: new FormControl('', [Validators.required]),
     gender: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -36,16 +34,24 @@ export class Users implements OnInit {
     image: new FormControl('', [Validators.required]),
     height: new FormControl('', [Validators.required]),
     weight: new FormControl('', [Validators.required]),
-    address: new FormControl('', [Validators.required]),
-    city: new FormControl('', [Validators.required]),
-    state: new FormControl('', [Validators.required]),
-    stateCode: new FormControl('', [Validators.required]),
-    postalCode: new FormControl('', [Validators.required]),
-    country: new FormControl('', [Validators.required]),
+    address: new FormGroup({
+      address: new FormControl('', [Validators.required]),
+      city: new FormControl('', [Validators.required]),
+      state: new FormControl('', [Validators.required]),
+      stateCode: new FormControl('', [Validators.required]),
+      postalCode: new FormControl('', [Validators.required]),
+      country: new FormControl('', [Validators.required]),
+      coordinates: new FormGroup({
+        lat: new FormControl('', [Validators.required]),
+        lng: new FormControl('',[Validators.required])
+      })
+    }),
+    company: new FormGroup({
+      department: new FormControl('', [Validators.required]),
+      name: new FormControl('', [Validators.required]),
+      title: new FormControl('', [Validators.required])
+    }),
     university: new FormControl('', [Validators.required]),
-    department: new FormControl('', [Validators.required]),
-    companyName: new FormControl('', [Validators.required]),
-    title: new FormControl('', [Validators.required])
   });
 
   ngOnInit(): void {
@@ -88,6 +94,7 @@ export class Users implements OnInit {
   }
   submit() {
     console.log(this.form.value);
-    
+    // this._users.addUser(this.form.value)
+
   }
 }

@@ -8,7 +8,11 @@
         <button class="btn btn-add" (click)="tableShown()">Add User</button>
       </div>
       <!-- @if(showTable){ -->
-      <form [formGroup]="form" class="card shadow-sm mt-4 mb-4" (ngSubmit)="submit()">
+      <form
+        [formGroup]="form"
+        class="card shadow-sm mt-4 mb-4"
+        (ngSubmit)="submit()"
+      >
         <div class="card-header bg-primary text-white">
           <h5 class="mb-0">Add New User</h5>
         </div>
@@ -139,7 +143,7 @@
 
           <h6 class="mb-3 text-primary">Address Information</h6>
 
-          <div class="row g-3">
+          <div class="row g-3" formGroupName="address">
             <div class="col-md-6">
               <label class="form-label">Address</label>
               <input
@@ -185,13 +189,35 @@
                 formControlName="country"
               />
             </div>
+
+            <div class="col-12" formGroupName="coordinates">
+              <div class="row g-3">
+                <div class="col-md-3">
+                  <label class="form-label">Latitude</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="lat"
+                  />
+                </div>
+
+                <div class="col-md-3">
+                  <label class="form-label">Longitude</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="lng"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
           <hr class="my-4" />
 
           <h6 class="mb-3 text-primary">Company Information</h6>
 
-          <div class="row g-3">
+          <div class="row g-3" formGroupName="company">
             <div class="col-md-4">
               <label class="form-label">Department</label>
               <input
@@ -202,11 +228,11 @@
             </div>
 
             <div class="col-md-4">
-              <label class="form-label">Company Name</label>
+              <label class="form-label">Name</label>
               <input
                 type="text"
                 class="form-control"
-                formControlName="companyName"
+                formControlName="name"
               />
             </div>
 
@@ -215,14 +241,18 @@
               <input type="text" class="form-control" formControlName="title" />
             </div>
           </div>
-
-          
         </div>
 
         <div class="card-footer d-flex justify-content-end gap-2">
           <button type="reset" class="btn btn-outline-secondary">Clear</button>
 
-          <button type="submit" class="btn btn-primary" [disabled]="form.invalid" >Add User</button>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="form.invalid"
+          >
+            Add User
+          </button>
         </div>
       </form>
       <!-- } -->
@@ -245,6 +275,8 @@
             <th>Height</th>
             <th>Weight</th>
             <th>Address</th>
+            <th>Coordinates lat</th>
+            <th>Coordinates lng</th>
             <th>department</th>
             <th>name</th>
             <th>title</th>
@@ -289,6 +321,8 @@
             <td>{{ user.height }}</td>
             <td>{{ user.weight }}</td>
             <td>{{ user.address.address }}</td>
+            <td>{{ user.address.coordinates.lat }}</td>
+            <td>{{ user.address.coordinates.lng }}</td>
             <td>{{ user.company.department }}</td>
             <td>{{ user.company.name }}</td>
             <td>{{ user.company.title }}</td>
