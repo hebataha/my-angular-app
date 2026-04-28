@@ -16,12 +16,14 @@ export class Users implements OnInit {
   deletedUsers: User[] = [];
   loading = true;
   showTable: boolean = false;
+  editMode: boolean = false;
+  userEditId: number = 0;
 
   constructor(private _users: UsersService) {
   }
 
   form = new FormGroup({
-    id: new FormControl('', [Validators.required]),
+    // id: new FormControl('', [Validators.required]),
     firstName: new FormControl('', [Validators.required]),
     lastName: new FormControl('', [Validators.required]),
     maidenName: new FormControl('', [Validators.required]),
@@ -43,7 +45,7 @@ export class Users implements OnInit {
       country: new FormControl('', [Validators.required]),
       coordinates: new FormGroup({
         lat: new FormControl('', [Validators.required]),
-        lng: new FormControl('',[Validators.required])
+        lng: new FormControl('', [Validators.required])
       })
     }),
     company: new FormGroup({
@@ -78,7 +80,10 @@ export class Users implements OnInit {
   }
 
 
-  update() {
+  update(id:number) {
+    console.log("update", id);
+    this.userEditId = id;
+    this.editMode = !this.editMode;
 
   }
 
@@ -96,13 +101,11 @@ export class Users implements OnInit {
     console.log(this.form.value);
     this._users.addUser(this.form.value).subscribe({
       next: (res) => {
-       this.users = [res, ...this.users];
-          console.log(res)
-    
+        this.users = [...this.users, res];
+        console.log("this is results", this.users)
       },
-      error:(err)=> {
+      error: (err) => {
         console.log(err);
-        
       }
     })
 

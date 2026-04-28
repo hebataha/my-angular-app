@@ -23,10 +23,10 @@
           <h6 class="mb-3 text-primary">Basic Information</h6>
 
           <div class="row g-3">
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
               <label class="form-label">ID</label>
               <input type="number" class="form-control" formControlName="id" />
-            </div>
+            </div> -->
 
             <div class="col-md-3">
               <label class="form-label">First Name</label>
@@ -180,7 +180,7 @@
                 formControlName="postalCode"
               />
             </div>
-<!-- @if (this.form.controls.postalCode.touched ) {} -->
+            <!-- @if (this.form.controls.postalCode.touched ) {} -->
             <div class="col-md-6">
               <label class="form-label">Country</label>
               <input
@@ -229,11 +229,7 @@
 
             <div class="col-md-4">
               <label class="form-label">Name</label>
-              <input
-                type="text"
-                class="form-control"
-                formControlName="name"
-              />
+              <input type="text" class="form-control" formControlName="name" />
             </div>
 
             <div class="col-md-4">
@@ -305,44 +301,219 @@
           }@else { @for (user of users; track user.id) {
           <tr>
             <td>{{ user.id }}</td>
-            <td>{{ user.firstName }}</td>
-            <td>{{ user.lastName }}</td>
-            <td>{{ user.maidenName }}</td>
-            <td>{{ user.age }}</td>
-            <td>{{ user.gender }}</td>
-            <td>{{ user.email }}</td>
-            <td>{{ user.phone }}</td>
-            <td>{{ user.username }}</td>
-            <td>{{ user.birthDate }}</td>
+
             <td>
-              <img [src]="user.image" class="w-100 h-100" />
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.firstName" />
+              } @else {
+              {{ user.firstName }}
+              }
             </td>
 
-            <td>{{ user.height }}</td>
-            <td>{{ user.weight }}</td>
-            <td>{{ user.address.address }}</td>
-            <td>{{ user.address.coordinates.lat }}</td>
-            <td>{{ user.address.coordinates.lng }}</td>
-            <td>{{ user.company.department }}</td>
-            <td>{{ user.company.name }}</td>
-            <td>{{ user.company.title }}</td>
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.lastName" />
+              } @else {
+              {{ user.lastName }}
+              }
+            </td>
 
-            <td>{{ user.address.city }}</td>
-            <td>{{ user.address.state }}</td>
-            <td>{{ user.address.stateCode }}</td>
-            <td>{{ user.address.postalCode }}</td>
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.maidenName" />
+              } @else {
+              {{ user.maidenName }}
+              }
+            </td>
 
-            <td>{{ user.university }}</td>
-            <td>{{ user.company.name }}</td>
-            <th>{{ user.address.country }}</th>
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="number" [value]="user.age" />
+              } @else {
+              {{ user.age }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.gender" />
+              } @else {
+              {{ user.gender }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="email" [value]="user.email" />
+              } @else {
+              {{ user.email }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.phone" />
+              } @else {
+              {{ user.phone }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.username" />
+              } @else {
+              {{ user.username }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.birthDate" />
+              } @else {
+              {{ user.birthDate }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.image" />
+              } @else {
+              <img [src]="user.image" class="w-100 h-100" />
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="number" [value]="user.height" />
+              } @else {
+              {{ user.height }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="number" [value]="user.weight" />
+              } @else {
+              {{ user.weight }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.address.address" />
+              } @else {
+              {{ user.address.address }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="number" [value]="user.address.coordinates.lat" />
+              } @else {
+              {{ user.address.coordinates.lat }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="number" [value]="user.address.coordinates.lng" />
+              } @else {
+              {{ user.address.coordinates.lng }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.company.department" />
+              } @else {
+              {{ user.company.department }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.company.name" />
+              } @else {
+              {{ user.company.name }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.company.title" />
+              } @else {
+              {{ user.company.title }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.address.city" />
+              } @else {
+              {{ user.address.city }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.address.state" />
+              } @else {
+              {{ user.address.state }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.address.stateCode" />
+              } @else {
+              {{ user.address.stateCode }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.address.postalCode" />
+              } @else {
+              {{ user.address.postalCode }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.university" />
+              } @else {
+              {{ user.university }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.company.name" />
+              } @else {
+              {{ user.company.name }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [value]="user.address.country" />
+              } @else {
+              {{ user.address.country }}
+              }
+            </td>
+
+            <td>{{ editMode }}</td>
+
             <td>
               <div class="actions">
-                <a class="btn btn-view" [routerLink]="['/users', user.id]"
-                  >View</a
-                >
-                <button class="btn btn-update" (click)="update()">
+                <a class="btn btn-view" [routerLink]="['/users', user.id]">
+                  View
+                </a>
+
+                <button class="btn btn-update" (click)="update(user.id)">
                   Update
                 </button>
+
                 <button class="btn btn-delete" (click)="delete(user.id)">
                   Delete
                 </button>
