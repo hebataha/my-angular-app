@@ -61,12 +61,23 @@
         <div><span>Department:</span> {{ singleUser.company.department }}</div>
         <div><span>Name:</span> {{ singleUser.company.name }}</div>
         <div><span>Title:</span> {{ singleUser.company.title }}</div>
-        <div><span>City:</span> {{ singleUser.company.address.city }}</div>
+        <!-- <div><span>City:</span> {{ singleUser.company.address.city }}</div>
         <div><span>State:</span> {{ singleUser.company.address.state }}</div>
-        <div><span>Country:</span> {{ singleUser.company.address.country }}</div>
+        <div><span>Country:</span> {{ singleUser.company.address.country }}</div> -->
       </div>
     </div>
 
+    <!-- Education -->
+    <div class="section">
+      <h3>coordinates</h3>
+      <div class="grid">
+        <div><span>Latitude:</span> {{ singleUser.address.coordinates.lat }}</div>
+        <div><span>Longitude:</span> {{ singleUser.address.coordinates.lng }}</div>add
+
+      </div>
+    </div>
+
+   
     <!-- Education -->
     <div class="section">
       <h3>Education</h3>
@@ -74,8 +85,6 @@
         <div><span>University:</span> {{ singleUser.university }}</div>
       </div>
     </div>
-
-   
 
     <!-- Actions -->
     <div class="actions">
