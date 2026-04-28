@@ -18,7 +18,59 @@ export class Users implements OnInit {
   showTable: boolean = false;
   editMode: boolean = false;
   userEditId: number = 0;
+  firstName: string = "";
+  lastName: string = "";
+  maidenName: string = "";
+  age: number = 0;
+  gender: string = "";
+  email: string = "";
+  phone: string = "";
+  username: string = "";
+  birthDate: string = "";
+  image: string = "";
+  height: number = 0;
+  weight: number = 0;
+  address: string = "";
+  coordinatesLat: number = 0;
+  coordinatesLng: number = 0;
+  department: string = "";
+  companyName: string = "";
+  title: string = "";
+  city: string = "";
+  state: string = "";
+  stateCode: string = "";
+  postalCode: string = "";
+  university: string = "";
+  company: string = "";
+  country: string = "";
 
+  userData = {
+    firstName: "",
+    lastName: "",
+    maidenName: "",
+    age: 0,
+    gender: "",
+    email: "",
+    phone: "",
+    username: "",
+    birthDate: "",
+    image: "",
+    height: 0,
+    weight: 0,
+    address: "",
+    coordinatesLat: 0,
+    coordinatesLng: 0,
+    department: "",
+    companyName: "",
+    title: "",
+    city: "",
+    state: "",
+    stateCode: "",
+    postalCode: "",
+    university: "",
+    company: "",
+    country: ""
+  };
   constructor(private _users: UsersService) {
   }
 
@@ -80,11 +132,25 @@ export class Users implements OnInit {
   }
 
 
-  update(id:number) {
+  update(id: number) {
     console.log("update", id);
     this.userEditId = id;
     this.editMode = !this.editMode;
+    // updateUser(id: number, user: User): Observable<any> {
+    //   return this._apiService.put(`${this.endPoint}/${id}`, user);
+    // }
+    this._users.updateUser(id, this.userData).subscribe({
+      next: (res) => {
+        console.log(res);
+        // this.users = [...this.users, res];
 
+
+      },
+      error: (err) => {
+        console.log(err);
+
+      }
+    })
   }
 
   delete(id: any) {

@@ -152,3 +152,10 @@
 tr{
   vertical-align: middle;
 }
+
+thead th {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 2;
+}

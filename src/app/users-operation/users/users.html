@@ -7,7 +7,8 @@
       <div class="btn-wrapper d-flex justify-content-end">
         <button class="btn btn-add" (click)="tableShown()">Add User</button>
       </div>
-      <!-- @if(showTable){ -->
+      ed
+      @if(showTable){
       <form
         [formGroup]="form"
         class="card shadow-sm mt-4 mb-4"
@@ -251,7 +252,7 @@
           </button>
         </div>
       </form>
-      <!-- } -->
+      }
     </div>
     <div class="table-wrapper">
       <table class="users-table table table-bordered table-striped table-hover">
@@ -276,15 +277,13 @@
             <th>department</th>
             <th>name</th>
             <th>title</th>
-
             <th>city</th>
             <td>state</td>
-            <td>stateCode</td>
-            <td>postalCode</td>
+            <th>stateCode</th>
+            <th>postalCode</th>
             <th>University</th>
             <th>Company</th>
             <th>country</th>
-
             <th>Actions</th>
           </tr>
         </thead>
@@ -298,13 +297,15 @@
               </div>
             </td>
           </tr>
+
           }@else { @for (user of users; track user.id) {
           <tr>
             <td>{{ user.id }}</td>
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.firstName" />
+              <input type="text" [(ngModel)]="user.firstName" />
+
               } @else {
               {{ user.firstName }}
               }
@@ -312,7 +313,8 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.lastName" />
+              <input type="text" [(ngModel)]="user.lastName" />
+
               } @else {
               {{ user.lastName }}
               }
@@ -320,7 +322,8 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.maidenName" />
+              <input type="text" [(ngModel)]="user.maidenName" />
+
               } @else {
               {{ user.maidenName }}
               }
@@ -328,7 +331,8 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="number" [value]="user.age" />
+              <input type="number" [(ngModel)]="user.age" />
+
               } @else {
               {{ user.age }}
               }
@@ -336,7 +340,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.gender" />
+              <input type="text" [(ngModel)]="user.gender" />
               } @else {
               {{ user.gender }}
               }
@@ -344,7 +348,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="email" [value]="user.email" />
+              <input type="email" [(ngModel)]="user.email" />
               } @else {
               {{ user.email }}
               }
@@ -352,7 +356,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.phone" />
+              <input type="text" [(ngModel)]="user.phone" />
               } @else {
               {{ user.phone }}
               }
@@ -360,7 +364,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.username" />
+              <input type="text" [(ngModel)]="user.username" />
               } @else {
               {{ user.username }}
               }
@@ -368,7 +372,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.birthDate" />
+              <input type="text" [(ngModel)]="user.birthDate" />
               } @else {
               {{ user.birthDate }}
               }
@@ -376,7 +380,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.image" />
+              <input type="text" [(ngModel)]="user.image" />
               } @else {
               <img [src]="user.image" class="w-100 h-100" />
               }
@@ -384,7 +388,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="number" [value]="user.height" />
+              <input type="number" [(ngModel)]="user.height" />
               } @else {
               {{ user.height }}
               }
@@ -392,7 +396,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="number" [value]="user.weight" />
+              <input type="number" [(ngModel)]="user.weight" />
               } @else {
               {{ user.weight }}
               }
@@ -400,7 +404,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.address.address" />
+              <input type="text" [(ngModel)]="user.address.address" />
               } @else {
               {{ user.address.address }}
               }
@@ -408,7 +412,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="number" [value]="user.address.coordinates.lat" />
+              <input type="number" [(ngModel)]="user.address.coordinates.lat" />
               } @else {
               {{ user.address.coordinates.lat }}
               }
@@ -416,7 +420,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="number" [value]="user.address.coordinates.lng" />
+              <input type="number" [(ngModel)]="user.address.coordinates.lng" />
               } @else {
               {{ user.address.coordinates.lng }}
               }
@@ -424,7 +428,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.company.department" />
+              <input type="text" [(ngModel)]="user.company.department" />
               } @else {
               {{ user.company.department }}
               }
@@ -432,7 +436,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.company.name" />
+              <input type="text" [(ngModel)]="user.company.name" />
               } @else {
               {{ user.company.name }}
               }
@@ -440,7 +444,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.company.title" />
+              <input type="text" [(ngModel)]="user.company.title" />
               } @else {
               {{ user.company.title }}
               }
@@ -448,7 +452,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.address.city" />
+              <input type="text" [(ngModel)]="user.address.city" />
               } @else {
               {{ user.address.city }}
               }
@@ -456,7 +460,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.address.state" />
+              <input type="text" [(ngModel)]="user.address.state" />
               } @else {
               {{ user.address.state }}
               }
@@ -464,7 +468,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.address.stateCode" />
+              <input type="text" [(ngModel)]="user.address.stateCode" />
               } @else {
               {{ user.address.stateCode }}
               }
@@ -472,7 +476,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.address.postalCode" />
+              <input type="text" [(ngModel)]="user.address.postalCode" />
               } @else {
               {{ user.address.postalCode }}
               }
@@ -480,7 +484,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.university" />
+              <input type="text" [(ngModel)]="user.university" />
               } @else {
               {{ user.university }}
               }
@@ -488,7 +492,7 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.company.name" />
+              <input type="text" [(ngModel)]="user.company.name" />
               } @else {
               {{ user.company.name }}
               }
@@ -496,13 +500,13 @@
 
             <td>
               @if(userEditId == user.id && editMode) {
-              <input type="text" [value]="user.address.country" />
+              <input type="text" [(ngModel)]="user.address.country" />
               } @else {
               {{ user.address.country }}
               }
             </td>
 
-            <td>{{ editMode }}</td>
+            <!-- <td>{{ editMode }}</td> -->
 
             <td>
               <div class="actions">
@@ -520,7 +524,6 @@
               </div>
             </td>
           </tr>
-
           } }
         </tbody>
       </table>

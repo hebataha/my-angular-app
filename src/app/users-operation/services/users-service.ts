@@ -23,7 +23,7 @@ export class UsersService {
     return this._apiService.get(`${this.endPoint}/${id}`);
   }
 
-  updateUser(id: number, user: User): Observable<any> {
+  updateUser(id: number, user: any): Observable<any> {
     return this._apiService.put(`${this.endPoint}/${id}`, user);
   }
 
