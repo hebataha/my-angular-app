@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiService } from '../../core/services/api-service';
+import { ApiService } from '../../core/services/api/api-service';
 import { User } from '../interface/user';
 
 
@@ -10,7 +10,7 @@ import { User } from '../interface/user';
 
 
 export class UsersService {
-  constructor( private _apiService: ApiService) {
+  constructor(private _apiService: ApiService) {
 
   }
   private endPoint = "users"
@@ -31,7 +31,7 @@ export class UsersService {
     return this._apiService.delete(`${this.endPoint}/${id}`)
   }
   addUser(user: any): Observable<any> {
-    return this._apiService.post(`${this.endPoint}`+ '/add', user);
+    return this._apiService.post(`${this.endPoint}` + '/add', user);
   }
   searchUsers(query: string) {
     return this._apiService.get(`${this.endPoint}/search?q=${query}`);

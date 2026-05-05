@@ -32,14 +32,15 @@ export class Register {
     return this.form.controls.email
   }
   onSubmit() {
-    this._loginCredentials.setEmail(this.form.controls.email.value!);
+    this._loginCredentials.setUserName(this.form.controls.email.value!);
     this._loginCredentials.setPassword(this.form.controls.password.value!)
-    const email = this._loginCredentials.getEmail();
+    const email = this._loginCredentials.getUserName();
     const password = this._loginCredentials.getPassword();
     console.log(email);
     console.log(password);
 
     if (this.form.valid) {
+      
       this.router.navigate(['/login'])
     }
 

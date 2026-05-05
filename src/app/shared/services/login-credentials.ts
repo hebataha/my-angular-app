@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class LoginCredentials {
-  email = new BehaviorSubject<string>('')
+  userName = new BehaviorSubject<string>('')
   password = new BehaviorSubject<string>('')
   loggedIn = new BehaviorSubject<boolean>(false)
 
@@ -18,13 +18,13 @@ export class LoginCredentials {
     return this.loggedIn.getValue()
   }
 
-  setEmail(email: string) {
+  setUserName(email: string) {
     console.log(email)
-    return this.email.next(email)
+    return this.userName.next(email)
   }
 
-  getEmail() {
-    return this.email.getValue();
+  getUserName() {
+    return this.userName.getValue();
 
   }
 

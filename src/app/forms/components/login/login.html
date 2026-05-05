@@ -2,19 +2,19 @@
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()" >
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
-        formControlName="email">
-      @if(email.touched && email.errors?.['required']){
+      <label for="exampleFormControlInput1" class="form-label">userName</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter your name"
+        formControlName="userName">
+      @if(userName.touched && userName.errors?.['required']){
       <p class="text-danger">this field is required</p>
       }
       <!-- {{email.errors | json}} -->
-      @if(email.touched && email.errors?.['minlength']){
+      @if(userName.touched && userName.errors?.['minlength']){
       <p class="text-danger"> charters should be more than 6</p>
       }
     </div>
-      @if(email.touched && email.errors?.['email']){
-      <p class="text-danger"> please enter valid email</p>
+      @if(userName.touched && userName.errors?.['email']){
+      <p class="text-danger"> please enter valid userName</p>
       }
 
     <!-- :::: {{form.controls.email.errors| json}} -->
@@ -30,7 +30,9 @@
       }
     </div>
     <p class="text-danger">{{errorMsg}}</p>
-
+@if(welcome){
+  <div class="p-3 bg-sucess text-white"> {{welcome}}</div>
+}
     <button type="submit" class="btn btn-primary" [disabled]="form.invalid"> Login</button>
   </form>
   <p class="my-3 text-capitalize text-center">if you don't have account click here to <a routerLink="/register">Register</a></p>
