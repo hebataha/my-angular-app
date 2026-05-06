@@ -3,6 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { LoginCredentials } from '../../../shared/services/login-credentials';
 import { DataLogin } from '../../../shared/header/interface/data-login';
 import { Router } from '@angular/router';
+import { ApiService } from '../../../core/services/api/api-service';
 
 @Component({
   selector: 'app-register',
@@ -25,7 +26,7 @@ export class Register {
   })
 
 
-  constructor(private _loginCredentials: LoginCredentials, private router: Router) {
+  constructor(private _loginCredentials: LoginCredentials, private router: Router, private _apiService: ApiService) {
 
   }
   get email() {
@@ -40,11 +41,26 @@ export class Register {
     console.log(password);
 
     if (this.form.valid) {
-      
       this.router.navigate(['/login'])
     }
 
+    this._apiService.post("users/add", {
+      email: this.form.controls.email.value,
+      password: this.form.controls.password.value,
+    }).subscribe({
+      next: (res:any) => {
+        console.log(res)
+      },
+      error: (err:any) => {
+        console.log(err)
+      }
+    })
 
+    // post<T>(endpoint: string, body: unknown): Observable<T> {
+    //   return this.http.post<T>(`${this.baseUrl}/${endpoint}`, body, {
+    //     headers: this.getHeaders()
+    //   });
+    // }
   }
   onTerms() {
     this.terms = !this.terms
