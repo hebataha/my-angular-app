@@ -1,0 +1,26 @@
+// Variables
+$font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$text-color: #333;
+$border-color: #e0e0e0;
+
+.price-container {
+  font-family: $font-stack;
+  padding-top: 15px;
+  border-top: 1px dashed $border-color; // The subtle dashed line at the top
+  display: flex;
+  align-items: center;
+  gap: 15px; // Space between label and value
+  max-width: 300px;
+
+  .price-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #444;
+  }
+
+  .price-value {
+    font-size: 1.1rem;
+    font-weight: 500; // Making the price stand out
+    color: $text-color;
+  }
+}

@@ -1,0 +1,76 @@
+// Variables
+$border-color: #e0e0e0;
+$primary-black: #1a1a1a;
+$font-stack: 'Segoe UI', Tahoma, sans-serif;
+
+.dial-pattern-container {
+  font-family: $font-stack;
+  max-width: 500px;
+
+  .section-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+  }
+
+  .action-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      border: 1px solid $border-color;
+      border-radius: 25px; // Pill shape
+      padding: 5px 15px;
+      flex: 1;
+      background: #fff;
+
+      .type-select {
+        border: none;
+        background: transparent;
+        font-size: 0.9rem;
+        padding-right: 10px;
+        outline: none;
+        cursor: pointer;
+        color: #444;
+        // Custom arrow logic could be added here
+      }
+
+      .vertical-divider {
+        width: 1px;
+        height: 20px;
+        background-color: #eee;
+        margin: 0 10px;
+      }
+
+      .pattern-input {
+        border: none;
+        outline: none;
+        font-size: 0.95rem;
+        color: #555;
+        flex: 1;
+        background: transparent;
+      }
+    }
+
+    .btn-apply {
+      background-color: $primary-black;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 35px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: lighten($primary-black, 15%);
+      }
+    }
+  }
+}

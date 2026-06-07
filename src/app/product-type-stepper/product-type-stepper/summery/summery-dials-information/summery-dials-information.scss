@@ -1,0 +1,66 @@
+// Variables
+$text-dark: #333;
+$text-muted: #888;
+$bg-card: #e6e6e6; // Very light greyish blue
+$border-radius: 12px;
+
+.dials-container {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  max-width: 450px;
+
+
+  .dial-card {
+    background-color: $bg-card;
+    padding: 20px;
+    border-radius: $border-radius;
+    position: relative;
+    border: 1px solid dashed #fff;
+    margin-bottom: 10px;
+    
+    // The Notch: Cuts the top-right corner
+    clip-path: polygon(
+      0% 0%, 
+      calc(100% - 30px) 0%, 100% 30px, 
+      100% 100%, 
+      0% 100%
+    );
+
+    .phone-number {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: $text-dark;
+      margin: 0 0 15px 0;
+    }
+
+    .details-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .detail-item {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-size: 0.75rem;
+          color: $text-muted;
+          margin-bottom: 4px;
+        }
+
+        .value {
+          font-size: 0.9rem;
+          font-weight: 500;
+          color: $text-dark;
+        }
+      }
+
+      .divider {
+        width: 1px;
+        height: 25px;
+        background-color: #ddd;
+        border-style: dashed; // Matching the subtle dashed look in your image
+        border-width: 0 1px 0 0;
+      }
+    }
+  }
+}

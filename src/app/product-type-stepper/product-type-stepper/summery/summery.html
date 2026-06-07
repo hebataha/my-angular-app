@@ -1,0 +1,75 @@
+<div class="summary-card w-100">
+    <!-- <h1>{{stepCount}}</h1> -->
+    <h2 class="card-title">Summary</h2>
+    @if(stepNum === 1){
+    @if (stepCount === 1 || (stepCount === 2 && !theNumber && !theNumber2 && !theNumber3 && !theNumber4)) {
+    <app-summery-choose-dials></app-summery-choose-dials>
+    }
+    <!-- app-summery-choose-dials -->
+    @if (stepCount === 2 ) {
+    <!-- dials-header -->
+    @if(theNumber || theNumber2 || theNumber3 || theNumber4 ){
+    <header class="dials-header">
+        <h2 class="title">Dials Info</h2>
+        <p class="subtitle">2 Dials Selected From 10 Dials</p>
+    </header>
+    }
+    <!-- dials-header -->
+    @if(theNumber){
+    <app-summery-dials-information [numberValue]="theNumber"></app-summery-dials-information>
+    }
+    <!--theNu mber  -->
+    @if(theNumber2){
+    <app-summery-dials-information [numberValue]="theNumber2"></app-summery-dials-information>
+    }
+    <!--theNumber2  -->
+    @if(theNumber3){
+    <app-summery-dials-information [numberValue]="theNumber3"></app-summery-dials-information>
+    }
+    <!--theNumber3  -->
+    @if(theNumber4){
+    <app-summery-dials-information [numberValue]="theNumber4"></app-summery-dials-information>
+    }
+    <!--theNumber4  -->
+    }
+
+    @if (stepCount === 3) {
+
+     @if(theNumber){
+    <app-summery-dials-information [numberValue]="theNumber"></app-summery-dials-information>
+    }
+    <!--theNumber  -->
+    @if(theNumber2){
+    <app-summery-dials-information [numberValue]="theNumber2"></app-summery-dials-information>
+    }
+    <!--theNumber2  -->
+    @if(theNumber3){
+    <app-summery-dials-information [numberValue]="theNumber3"></app-summery-dials-information>
+    }
+    <!--theNumber3  -->
+    @if(theNumber4){
+    <app-summery-dials-information [numberValue]="theNumber4"></app-summery-dials-information>
+    }
+    <app-summery-customer-information></app-summery-customer-information>
+    }
+    }
+
+        @if (stepCount === 4) {
+    <app-summery-card-advanced [cardColor]="cardColor" [imageShown]="true"></app-summery-card-advanced>
+    <app-summery-card-advanced  [imageShown]="false"></app-summery-card-advanced>
+    <app-summery-customer-information></app-summery-customer-information>
+    }
+
+
+
+     @if (stepCount === 5) {
+    <app-summery-card-advanced [cardColor]="cardColor" [imageShown]="true"></app-summery-card-advanced>
+    <app-summery-card-advanced [imageShown]="true"></app-summery-card-advanced>
+    <app-summery-customer-information></app-summery-customer-information>
+    }
+    <!-- <app-dial-card-advanced></app-dial-card-advanced> -->
+    <!-- <app-summery-dials-information></app-summery-dials-information> -->
+    <!-- <app-summery-total></app-summery-total> -->
+    <!-- <app-summery-total-details></app-summery-total-details> -->
+    <!-- <button class="proceed-btn mt-4"> Purachse</button> -->
+</div>

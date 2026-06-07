@@ -1,0 +1,65 @@
+<div class="modal fade" id="exampleModalToggle" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header flex-column align-items-start" >
+        <h5 class="modal-title" id="exampleModalToggleLabel">purchase</h5>
+        <h6>select product type</h6>
+        <p>choose purchase type to proceed purchasing</p>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="close()"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="product-options">
+
+          <label class="product-card" (click)= "numberFun(1)">
+            <div class="left" >
+              <div class="icon">
+                <i class="bi bi-phone"></i>
+              </div>
+              <span>Voice SIM</span>
+            </div>
+            <input type="radio" name="product" checked />
+          </label>
+
+          <label class="product-card" (click)= "numberFun(2)">
+            <div class="left" >
+              <div class="icon">
+                <i class="bi bi-mic"></i>
+              </div>
+              <span>Data SIM</span>
+            </div>
+            <input type="radio" name="product" />
+          </label>
+
+          <label class="product-card" (click)= "numberFun(3)">
+            <div class="left" >
+              <div class="icon">
+                <i class="bi bi-phone-vibrate-fill"></i>
+              </div>
+              <span>Landline</span>
+            </div>
+            <input type="radio" name="product" />
+          </label>
+
+          <label class="product-card" (click)= "numberFun(4)">
+            <div class="left" >
+              <div class="icon">
+                <img src="/icons/adsl.svg" />
+              </div>
+              <span>ADSL</span>
+            </div>
+            <input type="radio" name="product" />
+          </label>
+
+        </div>
+
+        <div class="modal-footer-custom">
+
+          <button class="proceed-btn" routerLink="/productStepper" (click)="close()" > Proceed</button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

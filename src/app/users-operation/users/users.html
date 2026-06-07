@@ -1,0 +1,537 @@
+<div class="users-page">
+  <div class="table-card">
+    <div class="table-header">
+      <h2>Users List</h2>
+    </div>
+    <div class="add-section my-5">
+      <div class="btn-wrapper d-flex justify-content-end">
+        <button class="btn btn-add" (click)="tableShown()">Add User</button>
+      </div>
+   
+      @if(showTable){
+      <form
+        [formGroup]="form"
+        class="card shadow-sm mt-4 mb-4"
+        (ngSubmit)="submit()"
+      >
+        <div class="card-header bg-primary text-white">
+          <h5 class="mb-0">Add New User</h5>
+        </div>
+        <!-- <pre class="bg-light p-3 mt-4"
+          >{{ form.value | json }}
+      </pre> -->
+        <div class="card-body">
+          <h6 class="mb-3 text-primary">Basic Information</h6>
+
+          <div class="row g-3">
+            <!-- <div class="col-md-3">
+              <label class="form-label">ID</label>
+              <input type="number" class="form-control" formControlName="id" />
+            </div> -->
+
+            <div class="col-md-3">
+              <label class="form-label">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="firstName"
+              />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="lastName"
+              />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Maiden Name</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="maidenName"
+              />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Age</label>
+              <input type="number" class="form-control" formControlName="age" />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Gender</label>
+              <select class="form-select" formControlName="gender">
+                <option value="">Select Gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                formControlName="email"
+              />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Phone</label>
+              <input type="text" class="form-control" formControlName="phone" />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="username"
+              />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Birth Date</label>
+              <input
+                type="date"
+                class="form-control"
+                formControlName="birthDate"
+              />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Height</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="height"
+              />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Weight</label>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="weight"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Image URL</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="https://..."
+                formControlName="image"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">University</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="university"
+              />
+            </div>
+          </div>
+
+          <hr class="my-4" />
+
+          <h6 class="mb-3 text-primary">Address Information</h6>
+
+          <div class="row g-3" formGroupName="address">
+            <div class="col-md-6">
+              <label class="form-label">Address</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="address"
+              />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">City</label>
+              <input type="text" class="form-control" formControlName="city" />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">State</label>
+              <input type="text" class="form-control" formControlName="state" />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">State Code</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="stateCode"
+              />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Postal Code</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="postalCode"
+              />
+            </div>
+            <!-- @if (this.form.controls.postalCode.touched ) {} -->
+            <div class="col-md-6">
+              <label class="form-label">Country</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="country"
+              />
+            </div>
+
+            <div class="col-12" formGroupName="coordinates">
+              <div class="row g-3">
+                <div class="col-md-3">
+                  <label class="form-label">Latitude</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="lat"
+                  />
+                </div>
+
+                <div class="col-md-3">
+                  <label class="form-label">Longitude</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="lng"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4" />
+
+          <h6 class="mb-3 text-primary">Company Information</h6>
+
+          <div class="row g-3" formGroupName="company">
+            <div class="col-md-4">
+              <label class="form-label">Department</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="department"
+              />
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" formControlName="name" />
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Title</label>
+              <input type="text" class="form-control" formControlName="title" />
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer d-flex justify-content-end gap-2">
+          <button type="reset" class="btn btn-outline-secondary">Clear</button>
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="form.invalid"
+          >
+            Add User
+          </button>
+        </div>
+      </form>
+      }
+    </div>
+    <div class="table-wrapper">
+      <table class="users-table table table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Maiden Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Username</th>
+            <th>Birth Date</th>
+            <th>Image</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Address</th>
+            <th>Coordinates lat</th>
+            <th>Coordinates lng</th>
+            <th>department</th>
+            <th>name</th>
+            <th>title</th>
+            <th>city</th>
+            <td>state</td>
+            <th>stateCode</th>
+            <th>postalCode</th>
+            <th>University</th>
+            <th>Company</th>
+            <th>country</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @if(loading ){
+          <tr>
+            <td colspan="17" class="text-center">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </td>
+          </tr>
+
+          }@else { @for (user of users; track user.id) {
+          <tr>
+            <td>{{ user.id }}</td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.firstName" />
+
+              } @else {
+              {{ user.firstName }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.lastName" />
+
+              } @else {
+              {{ user.lastName }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.maidenName" />
+
+              } @else {
+              {{ user.maidenName }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="number" [(ngModel)]="user.age" />
+
+              } @else {
+              {{ user.age }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.gender" />
+              } @else {
+              {{ user.gender }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="email" [(ngModel)]="user.email" />
+              } @else {
+              {{ user.email }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.phone" />
+              } @else {
+              {{ user.phone }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.username" />
+              } @else {
+              {{ user.username }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.birthDate" />
+              } @else {
+              {{ user.birthDate }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.image" />
+              } @else {
+              <img [src]="user.image" class="w-100 h-100" />
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="number" [(ngModel)]="user.height" />
+              } @else {
+              {{ user.height }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="number" [(ngModel)]="user.weight" />
+              } @else {
+              {{ user.weight }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.address.address" />
+              } @else {
+              {{ user.address.address }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="number" [(ngModel)]="user.address.coordinates.lat" />
+              } @else {
+              {{ user.address.coordinates.lat }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="number" [(ngModel)]="user.address.coordinates.lng" />
+              } @else {
+              {{ user.address.coordinates.lng }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.company.department" />
+              } @else {
+              {{ user.company.department }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.company.name" />
+              } @else {
+              {{ user.company.name }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.company.title" />
+              } @else {
+              {{ user.company.title }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.address.city" />
+              } @else {
+              {{ user.address.city }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.address.state" />
+              } @else {
+              {{ user.address.state }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.address.stateCode" />
+              } @else {
+              {{ user.address.stateCode }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.address.postalCode" />
+              } @else {
+              {{ user.address.postalCode }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.university" />
+              } @else {
+              {{ user.university }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.company.name" />
+              } @else {
+              {{ user.company.name }}
+              }
+            </td>
+
+            <td>
+              @if(userEditId == user.id && editMode) {
+              <input type="text" [(ngModel)]="user.address.country" />
+              } @else {
+              {{ user.address.country }}
+              }
+            </td>
+
+            <!-- <td>{{ editMode }}</td> -->
+
+            <td>
+              <div class="actions">
+                <a class="btn btn-view" [routerLink]="['/users', user.id]">
+                  View
+                </a>
+
+                <button class="btn btn-update" (click)="update(user.id)">
+                  Update
+                </button>
+
+                <button class="btn btn-delete" (click)="delete(user.id)">
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+          } }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- @for(let user of users){
+    sss
+  
+} -->

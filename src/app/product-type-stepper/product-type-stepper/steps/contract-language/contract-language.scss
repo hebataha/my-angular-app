@@ -1,0 +1,76 @@
+$radio-red: #d9534f;
+$radio-border: #999;
+$font-stack: 'Segoe UI', sans-serif;
+
+.radio-settings {
+  display: flex;
+  gap: 60px; // Space between the two groups
+  font-family: $font-stack;
+  padding: 20px;
+
+  .group-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+  }
+
+  .options {
+    display: flex;
+    gap: 25px; // Space between individual radio options
+  }
+
+  .custom-radio {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    font-size: 0.9rem;
+    user-select: none;
+
+    // Hide the browser's default radio button
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    // The custom outer circle
+    .radio-mark {
+      height: 18px;
+      width: 18px;
+      border: 1px solid $radio-border;
+      border-radius: 50%;
+      margin-right: 10px;
+      display: inline-block;
+      position: relative;
+      transition: border-color 0.2s;
+
+      // The inner dot (hidden by default)
+      &::after {
+        content: "";
+        position: absolute;
+        display: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $radio-red;
+      }
+    }
+
+    // When checked: change border color and show dot
+    input:checked ~ .radio-mark {
+      border-color: $radio-red;
+      border-width: 1.5px;
+
+      &::after {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+$border-color: #e6e6e6;
+$text-dark: #222;
+$text-light: #777;
+$primary: #ff6b6b;
+
+.bundle-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .dial-select {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      label {
+        font-size: 14px;
+        color: $text-light;
+      }
+
+      select {
+        padding: 10px 14px;
+        border-radius: 8px;
+        border: 1px solid $border-color;
+        font-size: 14px;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+
+    .search-box {
+      position: relative;
+      width: 260px;
+
+      input {
+        width: 100%;
+        padding: 10px 36px 10px 14px;
+        border-radius: 20px;
+        border: 1px solid $border-color;
+        outline: none;
+        font-size: 14px;
+      }
+
+      .icon {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 14px;
+        color: $text-light;
+      }
+    }
+  }
+
+  .bundle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .bundle-card {
+    display: flex;
+    justify-content: space-between;
+    // align-items: flex-start;
+    flex-direction: row-reverse;
+    padding: 16px;
+    border: 1px solid $border-color;
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    input {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid $border-color;
+      border-radius: 50%;
+      // margin-left: auto;
+      position: relative;
+      cursor: pointer;
+
+      &:checked {
+        border-color: $primary;
+
+        &::after {
+          content: "";
+          width: 8px;
+          height: 8px;
+          background: $primary;
+          border-radius: 50%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    .content {
+      h4 {
+        margin: 0 0 6px;
+        font-size: 16px;
+        color: $text-dark;
+      }
+
+      .title {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .subtitle {
+        margin: 2px 0 0;
+        font-size: 13px;
+        color: $text-light;
+      }
+    }
+
+    &:hover {
+      border-color: $primary;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+.icon {
+  img {
+    width: 18px;
+    height: 18px
+  }
+}

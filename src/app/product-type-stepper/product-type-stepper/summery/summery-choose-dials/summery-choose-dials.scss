@@ -1,0 +1,71 @@
+// Variables
+$bg-white: #ffffff;
+$text-main: #333;
+$text-secondary: #666;
+$border-radius: 20px;
+$card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+.summary-card {
+  background-color: $bg-white;
+  border-radius: $border-radius;
+  padding: 24px;
+  width: 100%;
+  max-width: 400px; // Adjusted to match the narrow portrait look
+  // min-height: 550px; // Ensures the tall aspect ratio
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+
+  .card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $text-main;
+    margin: 0 0 20px 0;
+  }
+
+  .empty-state {
+    flex: 1; // Takes up remaining space
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // Vertical centering
+    align-items: center;     // Horizontal centering
+    text-align: center;
+
+    .illustration-wrapper {
+      margin-bottom: 20px;
+      
+      // Simple CSS representation of the file icon in the image
+      .file-icon {
+        height: 80px;
+        border-radius: 4px;
+        position: relative;
+
+      
+
+        .badge { // The small gold/orange circles
+          position: absolute;
+          bottom: 10px;
+          right: -5px;
+          width: 15px;
+          height: 15px;
+          background: #e6b05b;
+          border-radius: 50%;
+          box-shadow: -8px 0 0 #f39c12; // Second circle
+        }
+      }
+    }
+
+    .message {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: $text-main;
+      font-weight: 500;
+
+      span {
+        display: block;
+        color: $text-main;
+        font-weight: 400;
+      }
+    }
+  }
+}

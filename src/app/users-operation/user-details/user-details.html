@@ -1,0 +1,98 @@
+<a class="back-btn text-decoration-none" routerLink="/users">
+  ← Back
+</a>
+@if(loading){
+  loading
+}@else{
+<div class="user-details">
+  <div class="user-card">
+
+    <!-- Header -->
+    <div class="user-header">
+      <img [src]="singleUser.image" alt="user image" />
+      <div>
+        <h2>{{ singleUser.firstName }} {{ singleUser.lastName }}</h2>
+        <p>{{ singleUser.company.department }}</p>
+      </div>
+    </div>
+
+    <!-- Personal Info -->
+    <div class="section">
+      <h3>Personal Info</h3>
+      <div class="grid">
+        <div><span>ID:</span> {{ singleUser.id }}</div>
+        <div><span>Age:</span> {{ singleUser.age }}</div>
+        <div><span>Gender:</span> {{ singleUser.gender }}</div>
+        <div><span>Birth Date:</span> {{ singleUser.birthDate }}</div>
+        <div><span>Height:</span> {{ singleUser.height }}</div>
+        <div><span>Weight:</span> {{ singleUser.weight }}</div>
+        <div><span>Maiden Name:</span> {{ singleUser.maidenName || '-' }}</div>
+
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="section">
+      <h3>Contact</h3>
+      <div class="grid">
+        <div><span>Email:</span> {{ singleUser.email }}</div>
+        <div><span>Phone:</span> {{ singleUser.phone }}</div>
+        <div><span>Username:</span> {{ singleUser.username }}</div>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="section">
+      <h3>Address</h3>
+      <div class="grid">
+        <div><span>Street:</span> {{ singleUser.address.address }}</div>
+        <div><span>City:</span> {{ singleUser.address.city }}</div>
+        <div><span>State:</span> {{ singleUser.address.state }}</div>
+        <div><span>State Code:</span> {{ singleUser.address.stateCode }}</div>
+        <div><span>Postal Code:</span> {{ singleUser.address.postalCode }}</div>
+        <div><span>Country:</span> {{ singleUser.address.country }}</div>
+      </div>
+    </div>
+
+    <!-- Company -->
+    <div class="section">
+      <h3>Company</h3>
+      <div class="grid">
+        <div><span>Department:</span> {{ singleUser.company.department }}</div>
+        <div><span>Name:</span> {{ singleUser.company.name }}</div>
+        <div><span>Title:</span> {{ singleUser.company.title }}</div>
+        <!-- <div><span>City:</span> {{ singleUser.company.address.city }}</div>
+        <div><span>State:</span> {{ singleUser.company.address.state }}</div>
+        <div><span>Country:</span> {{ singleUser.company.address.country }}</div> -->
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+      <h3>coordinates</h3>
+      <div class="grid">
+        <div><span>Latitude:</span> {{ singleUser.address.coordinates.lat }}</div>
+        <div><span>Longitude:</span> {{ singleUser.address.coordinates.lng }}</div>
+
+      </div>
+    </div>
+
+   
+    <!-- Education -->
+    <div class="section">
+      <h3>Education</h3>
+      <div class="grid">
+        <div><span>University:</span> {{ singleUser.university }}</div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button class="edit">Update</button>
+      <button class="delete">Delete</button>
+      <button class="back"  routerLink="/users">Back</button>
+    </div>
+
+  </div>
+</div>
+}

@@ -1,1 +1,163 @@
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((color: (primary: mat.$cyan-palette,
+        tertiary: mat.$orange-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+  font-family: "Courgette", cursive;
+  // Reset the user agent margin.
+  margin: 0;
+}
+
+* {
+  font-family: "Courgette", cursive;
+
+}
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+form {
+  font-size: 1.3rem;
+
+  input {
+    margin: 15px 0;
+  }
+}
+
+form {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+hr {
+  color: #ddd;
+  opacity: 1;
+}
+
+.proceed-btn {
+  background: #e60000;
+  color: white;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    background: #e60000c0;
+
+  }
+
+  &.disabled {
+    opacity: .3;
+  }
+}
+
+.outline-btn {
+  background: white;
+  color: #e60000c0;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all .3s ease-in-out;
+  border: 1px solid #e60000c0;
+
+  &:hover {
+    background: #e60000c0;
+    color: white;
+  }
+
+  &.disabled {
+    opacity: .3;
+  }
+}
+[disabled] {
+    opacity: .3;
+
+}
+
+input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #e60000;
+}
+
+
+.consumer-info-card {
+  padding: 16px;
+  font-family: Arial, sans-serif;
+  color: #222;
+  background: #fff;
+
+  h3 {
+    margin: 0 0 16px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .form-group {
+    .question {
+      display: block;
+      margin-bottom: 14px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .radio-group {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      cursor: pointer;
+
+      input[type='radio'] {
+        width: 18px;
+        height: 18px;
+        margin: 0;
+        cursor: pointer;
+      }
+
+      span {
+        line-height: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+// Variables
+$font-stack: 'Segoe UI', Tahoma, sans-serif;
+$text-dark: #333;
+$text-muted: #8c8c8c;
+$divider-color: #d9d9d9;
+
+.consumer-info {
+  font-family: $font-stack;
+  padding: 20px;
+  max-width: 600px;
+
+  .section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: 20px;
+  }
+
+  .user-assignment {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 12px;
+
+    .user-name {
+      font-weight: 700;
+      color: $text-dark;
+    }
+  }
+
+  .data-row {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    .data-item {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 0.75rem;
+        color: $text-muted;
+        margin-bottom: 4px;
+        letter-spacing: 0.02em;
+      }
+
+      .value {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: $text-dark;
+      }
+    }
+
+    .divider {
+      height: 30px;
+      width: 1px;
+      border-left: 1px dashed $divider-color;
+      margin: 0 5px;
+    }
+  }
+}

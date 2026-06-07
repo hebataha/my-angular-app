@@ -1,0 +1,14 @@
+    <div class="todo d-flex flex-column gap-3 mt-3  w-100">
+        <div class="d-flex justify-content-between align-items-center todo-details">
+            <div class="todo__data">
+              <p>Todo Number {{item.id }}</p>
+                <h4 class="mb-0"> {{item.title }} </h4>
+                <!-- <p>typed: {{typedTodo}}</p>   -->
+                 <!-- <p>typed : {{inputType}}</p> -->
+            </div>
+            <div class="todo__actions d-flex gap-3">
+                <button class="btn-dark btn text-light" (click)="handleEditItem(item)">edit</button>
+                <button class="btn-danger btn" (click)="handelDeleteItem()">delete</button>
+            </div>
+        </div>
+    </div>

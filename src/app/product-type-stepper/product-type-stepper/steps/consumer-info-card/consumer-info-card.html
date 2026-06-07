@@ -1,0 +1,31 @@
+<div class="consumer-info-card">
+  <h3>Enter Consumer Information</h3>
+
+  <div class="form-group">
+    <label class="question">What Is Citizenship Status?</label>
+
+    <div class="radio-group">
+
+      <label class="radio-option">
+        <input type="radio" name="citizenshipStatus" value="citizen" [(ngModel)]="citizenStatus"/>
+        <span>Citizen</span>
+        </label>
+      <label class="radio-option">
+        <input type="radio" name="citizenshipStatus" value="foreigner" [(ngModel)]="citizenStatus"/>
+        <span>Foreigner</span>
+      </label>
+    </div>
+  </div>
+
+
+
+  <h1>
+     @if(citizenStatus === "citizen"){
+   }
+
+      @if(citizenStatus === "foreigner"){
+      <app-customer-type></app-customer-type>
+
+   }
+</h1>
+</div>

@@ -1,0 +1,88 @@
+<!-- 
+ <h1>the number1 {{theNumber}}</h1>
+
+    <h1>the number2 {{theNumber2}}</h1>
+  <h1>the number 3{{theNumber3}}</h1>
+  <h1>the number 4{{theNumber4}}</h1> -->
+
+  <div class="reserved-dials-header">
+  <h3 class="title">Choose From Reserved Dials</h3>
+  <button type="button" class="reserve-btn">Reserve Dial</button>
+</div>
+<div class="dials-container">
+
+  <!-- Column 1 -->
+
+  <div class="column">
+    <label class="dial-card">
+      <div class="wrapper">
+        <div class="card-wrapper">
+          <div class="dial-info">
+            <span class="phone-number">01112235521</span>
+            <span class="pool-info">B2B Pool | Golden | 12344</span>
+          </div>
+          <input type="checkbox" [(ngModel)]="dial1" (change)="inputNumber(1112235521)"> 
+        </div>
+        @if(dial1){
+          <div class="sim-wrapper">
+            <app-sim-number></app-sim-number>
+          </div>
+        }
+      </div>
+    </label>
+    <label class="dial-card">
+      <div class="wrapper">
+        <div class="card-wrapper">
+          <div class="dial-info">
+            <span class="phone-number">011122355210</span>
+            <span class="pool-info">B2B Pool | Golden | 12344</span>
+          </div>
+          <input type="checkbox" [(ngModel)]="dial3" (change)="inputNumber3(11122355210)"/>
+        </div>
+         @if(dial3){
+          <div class="sim-wrapper">
+            <app-sim-number></app-sim-number>
+          </div>
+        }
+      </div>
+    </label>
+  </div>
+
+  <!-- Column 2 -->
+  <div class="column">
+    <label class="dial-card">
+      <div class="wrapper">
+        <div class="card-wrapper">
+          <div class="dial-info">
+            <span class="phone-number">01112235500</span>
+            <span class="pool-info">B2B Pool | Golden | 12344</span>
+          </div>
+          <input type="checkbox" [(ngModel)]="dial2" (change)="inputNumber2(1112235500)"/>
+        </div>
+         @if(dial2){
+          <div class="sim-wrapper">
+            <app-sim-number></app-sim-number>
+          </div>
+        }
+      </div>
+    </label>
+
+    <label class="dial-card">
+      <div class="wrapper">
+        <div class="card-wrapper">
+          <div class="dial-info">
+            <span class="phone-number">01112235521</span>
+            <span class="pool-info">B2B Pool | Golden | 12344</span>
+          </div>
+          <input type="checkbox"  [(ngModel)]="dial4" (change)="inputNumber4(1112235590)">
+        </div>
+               @if(dial4){
+          <div class="sim-wrapper">
+            <app-sim-number></app-sim-number>
+          </div>
+        }
+      </div>
+    </label>
+  </div>
+
+</div>

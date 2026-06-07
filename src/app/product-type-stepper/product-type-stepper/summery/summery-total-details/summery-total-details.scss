@@ -1,0 +1,52 @@
+// Variables
+$bg-card-grey: #e3e3e3;
+$border-dashed-grey: #dce1e6;
+$text-dark: #333;
+$text-muted: #9aa1a9;
+
+.dial-info-card {
+  background-color: $bg-card-grey;
+  border: 1.5px dashed $border-dashed-grey; // Dashed border around the card
+  border-radius: 12px;
+  padding: 15px 20px;
+  max-width: 400px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 20px 0 ;
+
+  .phone-number {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: $text-dark;
+    margin: 0 0 12px 0;
+  }
+
+  .info-details {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 0.75rem;
+        color: $text-muted;
+        margin-bottom: 2px;
+      }
+
+      .value {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: $text-dark;
+      }
+    }
+
+    .separator {
+      height: 24px;
+      width: 1px;
+      border-left: 1px dashed #ccc; // The vertical dotted/dashed line
+      margin: 0 5px;
+    }
+  }
+}

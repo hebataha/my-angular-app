@@ -1,0 +1,31 @@
+<div class="consumer-info-card d-flex flex-column gap-3">
+  <div class="form-group">
+    <label class="question">Choose SIM type</label>
+    <div class="radio-group">
+      <label class="radio-option">
+        <input type="radio" name="SIM" value="Row" [(ngModel)]="selectedRadio"/>
+        <span>Row</span>
+      </label>
+
+      <label class="radio-option">
+        <input type="radio" name="SIM" value="Pre-Active" [(ngModel)]="selectedRadio"/>
+        <span>Pre-Active</span>
+      </label>
+    </div>
+  </div>
+
+   <div class="form-group">
+    <label class="question">Choose Reservation type</label>
+    <div class="radio-group">
+      <label class="radio-option">
+        <input type="radio" name="type" value="Pool"  [(ngModel)]="selectedType"/>
+        <span>Pool selection</span>
+      </label>
+
+      <label class="radio-option">
+        <input type="radio" name="type" value="Manual" [(ngModel)]="selectedType"/>
+        <span>Manual Input</span>
+      </label>
+    </div>
+  </div>
+</div>
